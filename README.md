@@ -1,5 +1,7 @@
 # FYE 100 Pathfinder Guidebook
 
+> Students see **Modules** (matching Blackboard). The folders are still named `chapters/ch01` and so on, so published links keep working.
+
 The digital textbook for **FYE 100: Strategies for College Success** at Owensboro Community & Technical College.
 
 **Live site:** https://octc-id.github.io/FYE100-pathfinder-guidebook/
@@ -32,7 +34,7 @@ faculty/alignment.html  Objective → lesson → 10ES → BE map (planned)
 
 1. **Never rename or move a published file or folder.** Blackboard links point to these exact paths in every course shell.
 2. **Lowercase, with hyphens instead of spaces**, for every new file and folder. Chapter folders use two digits: `ch01` through `ch12`.
-3. **No dates, deadlines, points, or assignment names in the book.** Those live in Blackboard, so the book works every term without edits.
+3. **No dates, deadlines, or point values in the book.** Those live in Blackboard, so the book works every term without edits. Mile Marker pages may name the assignment and describe it, but always send students to Blackboard for the due date.
 4. **Learning objectives come from the FYE 100 Competency Framework, word for word.**
 5. **Every link that leaves the book opens in a new tab.** Use `target="_blank" rel="noopener"` plus `<span class="sr-only"> (opens in a new tab)</span>` inside the link. Links between pages of the book stay in the same tab. (`js/book.js` also enforces this as a backup.)
 6. **After any change to `css/styles.css` or `js/book.js`**, raise the `?v=` number on every page (for example, `styles.css?v=1` to `styles.css?v=2`) so browsers load the new version.
@@ -51,4 +53,5 @@ faculty/alignment.html  Objective → lesson → 10ES → BE map (planned)
 - **Rest-stop dividers** (`<span class="rest">`) between major sections, for breathing room.
 - **Sticky-note blocks** (`.sticky`) for "Why this matters" and for stops in the reading such as Reflect.
 - **10 Essential Skills** always appear with their coin icon and number (`.coin`, `.coin-sm`), and use the official CPE names word for word.
-- The **last page of each chapter** ends the reading path with a link back to the book contents.
+- **Mile Marker pages** (`mile-marker.html`) present the assignment with support, then a fill-in form. `js/book.js` saves typing in the student's browser, requires a name, and saves the PDF with the title "Mile Marker #N - Name".
+- The **last page of each module** ends the reading path with a link back to the book contents.
