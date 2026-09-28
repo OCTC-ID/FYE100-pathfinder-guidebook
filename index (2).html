@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 1: Your Pathfinder Journey Begins | FYE 100</title>
+<!-- MOCKUP: styles are inline for preview. In the build they move to css/styles.css?v=1 -->
+<style>
+  :root {
+    --blue: #00467f;
+    --dark-blue: #00345f;
+    --navy: #011d41;
+    --sky: #3bb3e5;
+    --gold: #e7a614;
+    --soft-blue: #eaf4fb;
+    --soft-gold: #fff5dc;
+    --ink: #17212b;
+    --muted: #52606d;
+    --border: #d9e2ea;
+    --accent: var(--sky);            /* chapter accent: Ch 1 = sky */
+    --accent-ink: #0b5f86;           /* sky darkened for text on white (AA) */
+    --accent-soft: #e3f4fc;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+  body {
+    margin: 0;
+    font-family: Aptos, Calibri, "Segoe UI", Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--ink);
+    background: #ffffff;
+  }
+  a { color: var(--blue); }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+  .skip-link {
+    position: absolute; left: -999px; top: 0;
+    background: var(--navy); color: #fff; padding: .6rem 1rem; z-index: 10;
+  }
+  .skip-link:focus { left: 1rem; top: 1rem; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+
+  /* ---------- Running header ---------- */
+  .bookbar {
+    background: var(--navy);
+    color: #fff;
+    border-bottom: 4px solid var(--accent);
+  }
+  .bookbar .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; min-height: 58px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; min-width: 0; color: #fff; text-decoration: none; }
+  .logo-placeholder {
+    flex-shrink: 0;
+    font-weight: 800; font-size: .8rem; letter-spacing: .06em;
+    border: 2px dashed rgba(255,255,255,.55); border-radius: 6px;
+    padding: 4px 8px;
+  }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+  .brand-text .book { font-weight: 700; font-size: .95rem; }
+  .brand-text .where {
+    font-size: .8rem; color: #bfe6f7;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .contents-btn {
+    flex-shrink: 0;
+    display: inline-flex; align-items: center; gap: 6px;
+    background: transparent; color: #fff;
+    border: 2px solid rgba(255,255,255,.7); border-radius: 999px;
+    padding: 5px 14px; font: inherit; font-size: .9rem; font-weight: 700;
+    text-decoration: none;
+  }
+  .contents-btn:hover { background: rgba(255,255,255,.12); }
+  .contents-btn svg { width: 18px; height: 18px; }
+
+  /* ---------- Chapter banner ---------- */
+  .banner {
+    position: relative; overflow: hidden;
+    background: linear-gradient(160deg, var(--blue) 0%, var(--dark-blue) 55%, var(--navy) 100%);
+    color: #fff;
+  }
+  .banner .wrap { position: relative; z-index: 1; padding-top: 40px; padding-bottom: 150px; }
+  .chapter-kicker {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-weight: 800; letter-spacing: .12em; text-transform: uppercase; font-size: .85rem;
+    color: var(--gold);
+  }
+  .chapter-num {
+    display: inline-grid; place-items: center;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--accent); color: var(--navy);
+    font-size: 1.35rem; letter-spacing: 0;
+  }
+  .banner h1 {
+    font-size: clamp(2rem, 6vw, 3.1rem);
+    line-height: 1.1; margin: 14px 0 12px; font-weight: 800;
+    max-width: 16ch;
+  }
+  .banner .tagline { font-size: 1.15rem; color: #d6eefa; margin: 0; max-width: 34ch; }
+  .banner-art {
+    position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 170px;
+  }
+
+  main { padding-bottom: 48px; }
+  section { margin-top: 80px; }
+  section:first-child { margin-top: 56px; }
+  /* trail-marker divider between sections: a small dashed path + dot, for a visual rest stop */
+  section + section::before {
+    content: ""; display: block; width: 120px; height: 12px; margin: 0 auto 64px;
+    background:
+      radial-gradient(circle, var(--accent) 5px, transparent 6px) center / 12px 12px no-repeat,
+      linear-gradient(90deg, var(--border) 50%, transparent 50%) left center / 12px 2px repeat-x;
+  }
+  p { max-width: 65ch; }
+  h2 {
+    font-size: 1.6rem; line-height: 1.25; margin: 0 0 20px; color: var(--navy);
+    display: inline-block;
+    background-image: linear-gradient(transparent 62%, var(--accent-soft) 62%);
+    padding-right: 4px;
+  }
+
+  /* ---------- Why this matters: sticky note ---------- */
+  .sticky {
+    position: relative;
+    background: var(--soft-gold);
+    border: 1px solid #f0dca6;
+    border-radius: 4px 4px 4px 22px;
+    padding: 40px 36px 32px;
+    box-shadow: 0 10px 22px -14px rgba(1,29,65,.35);
+    margin-top: 8px;
+  }
+  .sticky::before {       /* tape strip */
+    content: ""; position: absolute; top: -12px; left: 50%;
+    width: 110px; height: 24px; transform: translateX(-50%) rotate(-2deg);
+    background: rgba(59,179,229,.35);
+    border-left: 1px dashed rgba(1,29,65,.2); border-right: 1px dashed rgba(1,29,65,.2);
+  }
+  .sticky h2 { background-image: none; padding: 0; font-size: 1.35rem; }
+  .sticky p { margin: 0 0 18px; }
+  .sticky p:last-child { margin-bottom: 0; }
+
+  /* ---------- Objectives ---------- */
+  .obj-intro { margin: 0 0 20px; color: var(--muted); }
+  .objectives { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+  .objectives li {
+    display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start;
+    border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 18px 20px; background: #fff;
+  }
+  .obj-letter {
+    display: grid; place-items: center;
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--soft-blue); color: var(--blue);
+    font-weight: 800; font-size: 1.1rem;
+  }
+  .obj-text { margin: 0; }
+  .obj-text strong { color: var(--navy); }
+  .in-course {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 8px; font-size: .85rem; font-weight: 700; color: var(--muted);
+    border: 1px dashed var(--border); border-radius: 999px; padding: 2px 10px;
+  }
+  .in-course svg { width: 15px; height: 15px; }
+
+  /* ---------- Skills ---------- */
+  .skill-groups { display: grid; gap: 28px; }
+  .skill-group h3 {
+    margin: 0 0 8px; font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+  }
+  .badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    border-radius: 999px; padding: 6px 14px 6px 6px;
+    font-weight: 700; font-size: .95rem; line-height: 1.2;
+  }
+  .badge-10es { background: var(--blue); color: #fff; }
+  .badge-10es .n {
+    display: grid; place-items: center; min-width: 28px; height: 28px; border-radius: 50%;
+    background: #fff; color: var(--blue); font-size: .85rem;
+  }
+  .badge-focus { background: var(--navy); box-shadow: inset 0 0 0 2px var(--gold); }
+  .badge-focus .focus {
+    font-size: .72rem; text-transform: uppercase; letter-spacing: .06em;
+    color: var(--gold); border-left: 1px solid rgba(255,255,255,.35); padding-left: 8px; margin-left: 2px;
+  }
+  .badge-be { background: var(--accent-soft); color: var(--navy); border: 2px solid var(--accent); padding: 5px 14px; }
+  .badge-be svg { width: 18px; height: 18px; }
+  .skill-note { margin: 8px 0 0; font-size: .92rem; color: var(--muted); }
+
+  /* ---------- Lessons ---------- */
+  .lessons { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+  .lesson-card {
+    display: grid; grid-template-columns: 58px 1fr; gap: 14px; align-items: start;
+    border: 1px solid var(--border); border-left: 6px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 20px 22px; text-decoration: none; color: var(--ink); background: #fff;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .lesson-card:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -14px rgba(1,29,65,.45); }
+  .lesson-num {
+    font-weight: 800; font-size: 1.25rem; color: var(--accent-ink);
+    line-height: 1.2; padding-top: 2px;
+  }
+  .lesson-card h3 { margin: 0; font-size: 1.15rem; color: var(--blue); line-height: 1.3; }
+  .lesson-card:hover h3 { text-decoration: underline; }
+  .lesson-card p { margin: 4px 0 0; color: var(--ink); }
+  .lesson-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 8px; font-size: .85rem; color: var(--muted); }
+  .lesson-meta span { display: inline-flex; align-items: center; gap: 5px; }
+  .lesson-meta svg { width: 14px; height: 14px; }
+  .lesson-card.tip { border-left-color: var(--gold); background: #fffdf7; }
+  .lesson-card.tip .lesson-num { color: #8a5d00; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; padding-top: 6px; }
+  .placeholder { background: #fff3f3; outline: 2px dashed #c0392b; outline-offset: 2px; }
+
+  /* ---------- Start button & page nav ---------- */
+  .start-row { margin-top: 48px; text-align: center; }
+  .start-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--gold); color: var(--navy);
+    font-weight: 800; font-size: 1.1rem; text-decoration: none;
+    padding: 14px 28px; border-radius: 999px;
+    box-shadow: 0 6px 0 #b98200;
+    transition: transform .1s ease, box-shadow .1s ease;
+  }
+  .start-btn:hover { transform: translateY(2px); box-shadow: 0 4px 0 #b98200; }
+  .start-btn svg { width: 22px; height: 22px; }
+
+  .pagenav {
+    margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  .pagenav a {
+    display: inline-flex; align-items: center; gap: 8px;
+    text-decoration: none; font-weight: 700; color: var(--blue);
+    border: 2px solid var(--border); border-radius: 999px; padding: 8px 16px;
+  }
+  .pagenav a:hover { border-color: var(--blue); }
+  .pagenav svg { width: 18px; height: 18px; }
+  .pagenav .next { margin-left: auto; }
+  .pagenav small { display: block; font-weight: 400; color: var(--muted); font-size: .8rem; line-height: 1.1; }
+
+  footer {
+    margin-top: 40px; background: var(--navy); color: #c9d6e3;
+    font-size: .88rem; padding: 18px 0;
+  }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+
+  @media (max-width: 560px) {
+    .banner .wrap { padding-top: 28px; padding-bottom: 120px; }
+    .banner-art { height: 130px; }
+    section { margin-top: 64px; }
+    section + section::before { margin-bottom: 48px; }
+    .sticky { padding: 34px 22px 24px; }
+    .lesson-card { grid-template-columns: 1fr; gap: 4px; }
+    .objectives li { grid-template-columns: 34px 1fr; gap: 10px; }
+    .obj-letter { width: 34px; height: 34px; }
+    .brand-text .where { display: none; }
+  }
+
+  @media print {
+    .bookbar, .skip-link, .start-row, .pagenav, .banner-art { display: none; }
+    .banner { background: none; color: var(--ink); border-bottom: 3px solid var(--ink); }
+    .banner .wrap { padding: 0 0 12px; }
+    .banner .tagline { color: var(--ink); }
+    .chapter-kicker { color: var(--ink); }
+    .sticky, .objectives li, .lesson-card { box-shadow: none; break-inside: avoid; }
+    .lesson-card::after { content: " (" attr(href) ")"; font-size: .8rem; color: var(--muted); }
+    footer { background: none; color: var(--ink); border-top: 1px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Running header: shows the student where they are, with a way back to the full book -->
+<header class="bookbar">
+  <div class="wrap">
+    <a class="brand" href="../../index.html" aria-label="FYE 100 book home">
+      <span class="logo-placeholder" aria-hidden="true">OCTC LOGO</span>
+      <span class="brand-text">
+        <span class="book">[Book title] · FYE 100</span>
+        <span class="where">Chapter 1 · Your Pathfinder Journey Begins</span>
+      </span>
+    </a>
+    <a class="contents-btn" href="../../index.html#contents" title="Book contents">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+      Contents
+    </a>
+  </div>
+</header>
+
+<!-- Chapter banner -->
+<div class="banner">
+  <div class="wrap">
+    <p class="chapter-kicker"><span class="chapter-num" aria-hidden="true">1</span>Chapter 1</p>
+    <h1>Your Pathfinder Journey Begins</h1>
+    <p class="tagline">Every journey starts with a single step, and this one is yours.</p>
+  </div>
+  <svg class="banner-art" viewBox="0 0 1200 170" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+    <circle cx="960" cy="70" r="34" fill="#e7a614"/>
+    <path d="M0 120 L140 60 L250 105 L380 40 L520 110 L640 70 L760 115 L900 50 L1040 105 L1200 65 L1200 170 L0 170 Z" fill="#00467f" opacity=".85"/>
+    <path d="M0 150 L180 100 L330 140 L470 95 L620 145 L800 105 L980 150 L1120 110 L1200 130 L1200 170 L0 170 Z" fill="#011d41"/>
+    <path d="M120 170 C 300 150, 420 150, 560 140 S 820 120, 930 110" fill="none" stroke="#3bb3e5" stroke-width="4" stroke-dasharray="10 10" stroke-linecap="round"/>
+    <g transform="translate(930 72)">
+      <rect x="-3" y="0" width="6" height="42" fill="#eaf4fb"/>
+      <rect x="-26" y="-6" width="52" height="26" rx="4" fill="#3bb3e5"/>
+      <text x="0" y="13" text-anchor="middle" font-family="Aptos, Calibri, Arial, sans-serif" font-weight="800" font-size="16" fill="#011d41">1</text>
+    </g>
+  </svg>
+</div>
+
+<main id="main" class="wrap">
+
+  <!-- WHY THIS MATTERS -->
+  <section aria-labelledby="why">
+    <div class="sticky">
+      <h2 id="why">Why this matters</h2>
+      <p>Most students who struggle in college don't struggle because they aren't capable. They struggle because the rules changed and nobody told them: about expectations, about how to ask for help, about what it means to own your own learning.</p>
+      <p>This chapter puts those things on the table early, while there's still time to build the right habits. What you set up here, including your goal, your sense of what college expects, and your first look at the skills and tools you'll use all semester, becomes the foundation for everything that follows.</p>
+    </div>
+  </section>
+
+  <!-- LEARNING OBJECTIVES: Competency Framework I Can 1.1–1.4, verbatim. Letters are for student cross-reference only; framework numbers live on the faculty alignment page. -->
+  <section aria-labelledby="objectives">
+    <h2 id="objectives">What you'll be able to do</h2>
+    <p class="obj-intro">By the end of this chapter:</p>
+    <ol class="objectives">
+      <li>
+        <span class="obj-letter" aria-hidden="true">A</span>
+        <div>
+          <p class="obj-text"><span class="visually-hidden-letter" style="position:absolute;left:-9999px">Objective A: </span><strong>I can</strong> describe my personal reasons for attending college and define what success means to me right now.</p>
+          <span class="in-course">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            You'll practice this in your course activities
+          </span>
+        </div>
+      </li>
+      <li>
+        <span class="obj-letter" aria-hidden="true">B</span>
+        <div>
+          <p class="obj-text"><span style="position:absolute;left:-9999px">Objective B: </span><strong>I can</strong> navigate Blackboard and locate key course information, assignments, and instructor contact details.</p>
+        </div>
+      </li>
+      <li>
+        <span class="obj-letter" aria-hidden="true">C</span>
+        <div>
+          <p class="obj-text"><span style="position:absolute;left:-9999px">Objective C: </span><strong>I can</strong> set one personal or academic goal for this semester and describe how I plan to reach it.</p>
+          <span class="in-course">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            You'll practice this in your course activities
+          </span>
+        </div>
+      </li>
+      <li>
+        <span class="obj-letter" aria-hidden="true">D</span>
+        <div>
+          <p class="obj-text"><span style="position:absolute;left:-9999px">Objective D: </span><strong>I can</strong> explain what artificial intelligence is and identify where it already shows up in my daily life.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- SKILLS: from Competency Framework tags for I Can 1.1–1.4 only -->
+  <section aria-labelledby="skills">
+    <h2 id="skills">Skills you'll build</h2>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3>Kentucky's 10 Essential Skills</h3>
+        <ul class="badges">
+          <li class="badge badge-10es"><span class="n">1</span>Communication</li>
+          <li class="badge badge-10es"><span class="n">5</span>Adaptability &amp; Leadership</li>
+          <li class="badge badge-10es badge-focus"><span class="n">6</span>Professionalism<span class="focus">Course focus skill</span></li>
+          <li class="badge badge-10es"><span class="n">10</span>Information Literacy</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>AI Literacy: BE behaviors</h3>
+        <ul class="badges">
+          <li class="badge badge-be">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/></svg>
+            Be Safe
+          </li>
+        </ul>
+        <p class="skill-note">This chapter also introduces all five BE behaviors you'll use throughout the book.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LESSONS -->
+  <section aria-labelledby="lessons">
+    <h2 id="lessons">Lessons in this chapter</h2>
+    <ol class="lessons">
+      <li>
+        <a class="lesson-card" href="1-1.html">
+          <span class="lesson-num">1.1</span>
+          <span>
+            <h3>College-Level Expectations</h3>
+            <p>The rules changed. Here's what nobody told you.</p>
+            <span class="lesson-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>About 7 minutes</span></span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="lesson-card" href="1-2.html">
+          <span class="lesson-num">1.2</span>
+          <span>
+            <h3>The 10 Essential Skills</h3>
+            <p>What Kentucky says every college graduate should be able to do, and where you're headed.</p>
+            <span class="lesson-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>About 4 minutes</span></span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="lesson-card" href="1-3.html">
+          <span class="lesson-num">1.3</span>
+          <span>
+            <h3>What's AI, Really?</h3>
+            <p>AI is already part of your daily life. This lesson is about using it thoughtfully.</p>
+            <span class="lesson-meta">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>About 5 minutes</span>
+              <span>Builds toward D</span>
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="lesson-card placeholder" href="1-4.html">
+          <span class="lesson-num">1.4</span>
+          <span>
+            <h3>Navigating AI Policies</h3>
+            <p>[Description needed: lesson content not yet provided]</p>
+            <span class="lesson-meta"><span>Builds toward D</span></span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="lesson-card" href="1-5.html">
+          <span class="lesson-num">1.5</span>
+          <span>
+            <h3>Getting Around Blackboard Ultra</h3>
+            <p>The basics you need to navigate your course with confidence.</p>
+            <span class="lesson-meta">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>About 5 minutes</span>
+              <span>Builds toward B</span>
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="lesson-card tip" href="1-trail-tip.html">
+          <span class="lesson-num">Trail Tip</span>
+          <span>
+            <h3>Your Free Office 365 Access</h3>
+            <p>As a KCTCS student, you already have the full Microsoft Office suite. Here's how to get it.</p>
+            <span class="lesson-meta">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>About 2 minutes</span>
+              <span>Builds toward B</span>
+            </span>
+          </span>
+        </a>
+      </li>
+    </ol>
+
+    <div class="start-row">
+      <a class="start-btn" href="1-1.html">
+        Start Chapter 1
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Page nav: first page of the book uses Home instead of a back arrow -->
+  <nav class="pagenav" aria-label="Page navigation">
+    <a href="../../index.html" aria-label="Book home" title="Book home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg>
+      Home
+    </a>
+    <a class="next" href="1-1.html" aria-label="Next: Lesson 1.1, College-Level Expectations" title="Next: Lesson 1.1, College-Level Expectations">
+      <span><small>Next</small>1.1 College-Level Expectations</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>FYE 100: Strategies for College Success</span>
+    <span>Owensboro Community &amp; Technical College</span>
+  </div>
+</footer>
+</body>
+</html>
