@@ -685,3 +685,11 @@ footer { border-top: 4px solid var(--accent); }
   .skills-side .btext { flex-direction: row; align-items: center; gap: 8px; }
   .skills-side .badge-focus .btext .focus { border-left: 1px solid rgba(255,255,255,.35); padding-left: 8px; }
 }
+
+/* Phone polish: bigger tap targets and no text under 11px */
+@media (max-width: 900px) {
+  .chapnav .home-link { padding: 10px 0; }
+  .chapnav a.les { padding-top: 10px; padding-bottom: 10px; }
+  .resource-card a, .res-grid a { display: inline-block; padding: 8px 0; }
+  .chapnav .tip-n, .skills-side .badge-focus .btext .focus, .badge-focus .focus { font-size: .7rem; }
+}
