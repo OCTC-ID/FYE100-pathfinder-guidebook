@@ -646,3 +646,7 @@ a[target="_blank"]::after { content: "\2197"; display: inline-block; margin-left
 .jump-btn { margin-top: 12px; font-size: 1rem; padding: 11px 22px; }
 .jump-btn svg { width: 20px; height: 20px; }
 @media print { .jump-btn { display: none !important; } }
+
+/* Footer: light blue top line to match the header */
+footer { border-top: 4px solid var(--accent); }
+@media print { footer { border-top: 1px solid var(--border); } }
