@@ -52,6 +52,8 @@ faculty/alignment.html  Objective → lesson → 10ES → BE map (planned)
 - **Margin notes** on the right (`.note-term`, `.note-tip`, `.note-see`) for Key Terms, Pathfinder Tips, and See Also links. They move into the text on smaller screens.
 - **Rest-stop dividers** (`<span class="rest">`) between major sections, for breathing room.
 - **Sticky-note blocks** (`.sticky`) for "Why this matters" and for stops in the reading such as Reflect.
-- **10 Essential Skills** always appear with their coin icon and number (`.coin`, `.coin-sm`), and use the official CPE names word for word.
+- **10 Essential Skills** always appear with their coin icon and number (`.coin`, `.coin-sm`), and use the official CPE names word for word. Module overviews show them in a toolbar under the banner; lessons show a slim strip of coins.
+- **AI Literacy BE behaviors** use the capsule style ("BE Honest") and stay visually separate from the 10ES coins.
+- **"Course focus" (assessed skill) labels** appear only on the assessment where that skill is assessed.
 - **Mile Marker pages** (`mile-marker.html`) present the assignment with support, then a fill-in form. `js/book.js` saves typing in the student's browser, requires a name, and saves the PDF with the title "Mile Marker #N - Name".
 - The **last page of each module** ends the reading path with a link back to the book contents.

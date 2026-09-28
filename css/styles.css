@@ -693,3 +693,37 @@ footer { border-top: 4px solid var(--accent); }
   .resource-card a, .res-grid a { display: inline-block; padding: 8px 0; }
   .chapnav .tip-n, .skills-side .badge-focus .btext .focus, .badge-focus .focus { font-size: .7rem; }
 }
+
+/* Banner art scales with screen width so the sun isn't clipped on wide screens */
+.banner-art { height: clamp(130px, 14.2vw, 240px); }
+.banner .inner { padding-bottom: calc(clamp(130px, 14.2vw, 240px) - 10px); }
+.hero .inner { padding-bottom: calc(clamp(130px, 14.2vw, 240px) + 10px); }
+@media (max-width: 900px) { .banner-art { height: 130px; } .banner .inner { padding-bottom: 124px; } }
+@media (max-width: 560px) { .hero .inner { padding-bottom: 130px; } }
+
+/* =====================================================================
+   10 Essential Skills toolbar (module overviews) and slim strip (lessons)
+   ===================================================================== */
+.skillbar { background: var(--soft-blue); border-bottom: 1px solid var(--border); }
+.skillbar .sb-inner { max-width: 1320px; margin: 0 auto; padding: 12px 16px 12px 316px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.sb-label { font-size: .74rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-ink); }
+.sb-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 10px; }
+.tb-skill { display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--border); border-radius: 999px; padding: 4px 14px 4px 4px; font-weight: 700; font-size: .9rem; color: var(--navy); }
+.tb-skill .coin-sm, .tb-skill .coin-sm img { width: 34px; height: 34px; }
+.tb-skill .coin-sm .n { min-width: 18px; height: 18px; font-size: .64rem; right: -5px; bottom: -4px; }
+.skillbar.slim { background: none; border: 0; margin: -14px 0 16px; }
+.skillbar.slim .sb-inner { padding: 0; max-width: none; gap: 6px 10px; }
+.skillbar.slim .sb-label { font-size: .66rem; color: var(--muted); }
+.skillbar.slim .tb-skill { padding: 0; border: 0; background: none; }
+.skillbar.slim .tb-skill .coin-sm, .skillbar.slim .tb-skill .coin-sm img { width: 30px; height: 30px; }
+@media (max-width: 900px) {
+  .skillbar .sb-inner { padding: 12px 16px; }
+  .skillbar:not(.slim) .sb-label { flex-basis: 100%; }
+  .skillbar.slim .sb-inner { padding: 0; }
+}
+@media print { .skillbar.slim { display: none; } .skillbar { background: none; } }
+
+/* AI Literacy BE capsules, kept separate from the 10ES skills */
+.be-block { margin-top: 28px; padding-top: 20px; border-top: 1px dashed var(--border); }
+.be-h { font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+.be-block .skill-note { margin-top: 10px; }
