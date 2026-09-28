@@ -532,3 +532,4 @@ footer .inner { max-width: 1320px; margin: 0 auto; padding: 0 16px; display: fle
 a[target="_blank"]::after { content: "\2197"; display: inline-block; margin-left: 3px; font-size: .8em; text-decoration: none; }
 .start-btn[target="_blank"]::after, .end-links a[target="_blank"]::after { content: none; }
 @media print { a[target="_blank"]::after { content: " (" attr(href) ")"; } }
+.res-grid li.more { background: var(--soft-blue); border-top-color: var(--navy); }
