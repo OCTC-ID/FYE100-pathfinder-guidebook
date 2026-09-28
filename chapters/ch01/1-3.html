@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>1.3 What's AI, Really? | Chapter 1 | Pathfinder Guidebook</title>
-<link rel="stylesheet" href="../../css/styles.css?v=1">
-<script src="../../js/book.js?v=1" defer></script>
+<link rel="stylesheet" href="../../css/styles.css?v=4">
+<script src="../../js/book.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -13,14 +13,13 @@
 <header class="bookbar">
   <div class="inner">
     <a class="brand" href="../../index.html" aria-label="Pathfinder Guidebook home">
-      <!-- LOGO: replace this span with <img src="../../images/shared/octc-logo.svg" alt="Owensboro Community & Technical College"> -->
-      <span class="logo-placeholder" aria-hidden="true">OCTC LOGO</span>
+      <img class="logo" src="../../images/shared/octc-logo-horizontal-gold.png" alt="OCTC" width="598" height="120">
       <span class="brand-text">
-        <span class="book">Pathfinder Guidebook · FYE 100</span>
+        <span class="book">Pathfinder Guidebook<span class="long"> · FYE 100</span></span>
         <span class="where">Chapter 1 · Your Pathfinder Journey Begins</span>
       </span>
     </a>
-    <a class="contents-btn" href="../../index.html#contents"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span><span class="long">Book </span>contents</span></a>
+    <a class="contents-btn" href="../../index.html#contents"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span><span class="long">Book </span>Contents</span></a>
   </div>
 </header>
 
@@ -46,6 +45,11 @@
           </li>
           <li>
             <a class="les" href="1-3.html" aria-current="page"><span class="n">1.3</span><span>What's AI, Really?</span></a>
+            <div class="sections" aria-label="Sections in this lesson">
+              <a href="#patterns">The part that trips people up</a>
+              <a href="#be">Five ways to show up</a>
+              <a href="#yours">Your choice to make</a>
+            </div>
           </li>
           <li>
             <a class="les" href="1-4.html"><span class="n">1.4</span><span>Navigating AI Policies</span></a>
@@ -55,6 +59,9 @@
           </li>
           <li>
             <a class="les" href="trail-tip.html"><span class="n tip-n">Trail Tip</span><span>Your Free Office 365 Access</span></a>
+          </li>
+          <li>
+            <a class="les" href="wrap-up.html"><span class="n tip-n">Wrap-up</span><span>Chapter 1 Wrap-up</span></a>
           </li>
         </ol>
         <a class="home-link" href="../../index.html#contents"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg> All chapters</a>
@@ -77,20 +84,116 @@
         <p class="lesson-sub">AI is already part of your daily life. This lesson is about using it thoughtfully.</p>
         <div class="lesson-meta">
           <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> About 5 minutes</span>
-          <span>3 of 6 in this chapter</span>
-          <span class="progress" aria-hidden="true"><i style="width:50%"></i></span>
+          <span>3 of 7 in this chapter</span>
+          <span class="progress" aria-hidden="true"><i style="width:43%"></i></span>
         </div>
       </div>
     </div>
-    <!-- STUB: replace with converted lesson content -->
     <div class="row gap-md">
       <div class="main">
-        <div class="note note-see">
-          <div class="label">Coming soon</div>
-          <p>This lesson is being moved into the guidebook. Until then, you'll find it in your course in Blackboard.</p>
+        <p class="lede">You already use AI. You may not call it that, but you do.</p>
+        <p>Every time you ask a voice assistant something, get a "you might also like" recommendation, or see a summary at the top of a search page, something behind the scenes is deciding what you see. That something is artificial intelligence.</p>
+        <p>AI isn't a robot, and it isn't magic. The chat tools most people mean when they say "AI" are systems trained on enormous amounts of human-written text. They've gotten very good at producing responses that sound confident, authoritative, and complete.</p>
+      </div>
+      <aside class="note-col" aria-label="Margin notes">
+        <div class="note note-term">
+          <div class="label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4Z"/></svg> Key term</div>
+          <p><dfn>Artificial intelligence (AI):</dfn> computer systems that do tasks we usually connect with human thinking, like answering questions, writing, or recognizing patterns.</p>
         </div>
+      </aside>
+    </div>
+
+    <div class="row gap-sm">
+      <div class="main">
+        <blockquote class="pull">Sounding confident isn't the same as being right.</blockquote>
+        <p>AI doesn't know you. It doesn't know your situation, your goals, or whether the answer it just gave you actually applies to your life. It produces what's statistically likely to be useful, which is often helpful and occasionally very, very wrong.</p>
       </div>
     </div>
+
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="patterns" aria-labelledby="patterns-h">
+      <div class="row">
+        <div class="main">
+          <div class="h2wrap"><h2 id="patterns-h">The part that trips people up</h2></div>
+          <p>AI isn't "wrong" the way a calculator is wrong. A calculator that says 2 + 2 = 5 is broken: it tried to compute the right answer and failed. AI doesn't really work that way.</p>
+        </div>
+      </div>
+      <div class="row gap-sm">
+        <div class="main">
+          <div class="sticky">
+            <div class="label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg> Try it</div>
+            <p>Hum this bassline: <strong class="riff">bum, bum, bum, buttabum, bum…</strong> (Bear with me.)</p>
+            <p>Now ask a few different people what song it is. Some will say Queen and David Bowie's "Under Pressure." Others, depending on their age and what they grew up with, will say Vanilla Ice's "Ice Ice Baby." <strong>Neither person is wrong.</strong> They both recognized a real pattern and completed it in the direction that was most familiar to them.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row gap-md">
+        <div class="main">
+          <p>That's surprisingly close to what an AI chat tool does. It isn't looking up a fact and checking whether it's true. It's recognizing patterns in language and producing the most likely next words, based on everything it was trained on. Most of the time, that's accurate and useful. But sometimes the answer that <em>sounds</em> most likely isn't the correct one. It's just the one that fits the pattern best.</p>
+          <p>When AI produces something that sounds completely believable but isn't true, it's called a <strong>hallucination</strong>. It's not a glitch that will eventually go away. It's what happens when a pattern-completing system runs into a gap and fills it with whatever fits.</p>
+          <p>So when something an AI tells you seems off, the question isn't "did it make a mistake?" It's this: <strong>that sounded right, but is sounding right the same as being right?</strong></p>
+          <p>That's why <strong>how you use AI matters more than whether you use it.</strong></p>
+        </div>
+        <aside class="note-col" aria-label="Margin notes">
+          <div class="note note-term">
+            <div class="label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4Z"/></svg> Key term</div>
+            <p><dfn>Hallucination:</dfn> when AI produces information that sounds believable but is false, such as a fact, quote, or source that doesn't exist.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="be" aria-labelledby="be-h">
+      <div class="row">
+        <div class="main">
+          <div class="h2wrap"><h2 id="be-h">Five ways to show up thoughtfully</h2></div>
+          <p>This course uses five behaviors to describe what thoughtful AI use looks like. You'll see them throughout the book. Two of them, BE Critical and BE Reflective, come up again and again, because they're the habits that travel with you into every course, every job, and every situation where someone is trying to tell you something.</p>
+        </div>
+      </div>
+      <div class="row wide gap-sm">
+        <div class="main">
+          <ul class="be-grid">
+            <li><h3>BE Safe</h3><p>Know what you're sharing and with whom. Your personal information, financial details, and private circumstances stay private.</p></li>
+            <li><h3>BE Honest</h3><p>There's a real difference between getting help from a tool and letting a tool do your thinking for you. Be clear about which one you're doing.</p></li>
+            <li class="lead"><h3>BE Critical</h3><p>Don't take AI output at face value. Check it. Ask where it came from. Notice when something seems off. This is the most transferable habit you'll build.</p></li>
+            <li><h3>BE Responsible</h3><p>Make intentional choices about when AI supports your learning and when it gets in the way. Knowing the difference is the skill.</p></li>
+            <li class="lead"><h3>BE Reflective</h3><p>Notice what happens to your thinking when you use AI. Are you learning more, or less? Are you more confident in your own ideas, or less?</p></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row gap-md">
+        <div class="main">
+          <p>These five behaviors describe <em>who</em> you want to be as an AI user. The next lesson turns them into something you can actually do, every time you use AI for coursework.</p>
+        </div>
+        <aside class="note-col" aria-label="Margin notes">
+          <div class="note note-see">
+            <div class="label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg> See also</div>
+            <p><a href="1-4.html">Lesson 1.4: Navigating AI Policies</a> puts these behaviors into practice.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="yours" aria-labelledby="yours-h">
+      <div class="row">
+        <div class="main">
+          <div class="h2wrap"><h2 id="yours-h">Your choice to make</h2></div>
+          <p>You don't have to love AI. You don't have to use it. What this course asks is simpler than that: think before you act, and pay attention to what you're learning and how.</p>
+          <p>That's true of AI. It's true of everything else in this book, too.</p>
+        </div>
+        <aside class="note-col" aria-label="Margin notes">
+          <div class="note note-tip">
+            <div class="label"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5Z"/></svg> Pathfinder Tip</div>
+            <p>If you want to explore, start with Microsoft Copilot. It comes with your KCTCS Office 365 account, so you sign in with your student login.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
     <div class="row"><div class="main">
       <nav class="pagenav" aria-label="Page navigation">
         <a href="1-2.html" aria-label="Previous: 1.2 The 10 Essential Skills" title="Previous: 1.2 The 10 Essential Skills"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span><small>Previous</small>1.2 The 10 Essential Skills</span></a>

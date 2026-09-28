@@ -38,8 +38,10 @@ svg.ic { width: 18px; height: 18px; flex-shrink: 0; }
 .bookbar { background: var(--navy); color: #fff; border-bottom: 4px solid var(--accent); }
 .bookbar .inner { max-width: 1320px; margin: 0 auto; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 58px; }
 .brand { display: flex; align-items: center; gap: 10px; min-width: 0; color: #fff; text-decoration: none; }
-.logo-placeholder { flex-shrink: 0; font-weight: 800; font-size: .8rem; letter-spacing: .06em; border: 2px dashed rgba(255,255,255,.55); border-radius: 6px; padding: 4px 8px; }
-.brand img { height: 34px; width: auto; display: block; }
+.brand img { width: auto; display: block; flex-shrink: 0; }
+.brand .logo { height: 32px; }
+.brand .logo-full { height: 38px; }
+.brand-text { border-left: 1px solid rgba(255,255,255,.35); padding-left: 12px; margin-left: 4px; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
 .brand-text .book { font-weight: 700; font-size: .95rem; }
 .brand-text .where { font-size: .8rem; color: #bfe6f7; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -302,7 +304,10 @@ footer .inner { max-width: 1320px; margin: 0 auto; padding: 0 16px; display: fle
   .toc > li { grid-template-columns: 1fr; gap: 10px; padding: 18px; }
   .toc .toc-lessons a { grid-template-columns: 56px 1fr; }
   .hero .inner { padding: 44px 16px 130px; }
-  .contents-btn .long { display: none; }
+  .contents-btn .long, .brand-text .long { display: none; }
+  .brand .logo { height: 28px; }
+  .brand .logo-full { height: 30px; }
+  .brand-text { display: none; }
 }
 
 /* =====================================================================
@@ -320,4 +325,99 @@ footer .inner { max-width: 1320px; margin: 0 auto; padding: 0 16px; display: fle
   .card, .expect, .compare li, .sticky, .note, .objectives li, .lesson-card, .toc > li { break-inside: avoid; box-shadow: none; }
   footer { background: none; color: var(--ink); border-top: 1px solid var(--border); }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .8em; }
+}
+
+/* =====================================================================
+   Lesson components (added with Chapter 1 lessons)
+   ===================================================================== */
+
+/* 10 Essential Skills grid */
+.skill-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.skill-grid li { display: grid; grid-template-columns: 38px 1fr; gap: 12px; border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; background: #fff; }
+.skill-grid .sn { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--blue); color: #fff; font-weight: 800; font-size: .9rem; }
+.skill-grid h3 { font-size: 1.05rem; color: var(--blue); margin-top: 4px; }
+.skill-grid p { margin: 4px 0 0; font-size: .96rem; }
+.skill-grid li.focus { border: 2px solid var(--navy); box-shadow: inset 0 0 0 1px var(--gold); }
+.skill-grid li.focus .sn { background: var(--navy); box-shadow: 0 0 0 2px var(--gold); }
+.focus-tag { display: inline-block; margin-top: 4px; font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--gold); background: var(--navy); border-radius: 999px; padding: 1px 9px; }
+
+/* Benchmark / Milestone / Capstone */
+.levels { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.levels li { border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; background: #fff; font-size: .97rem; }
+.levels h3 { font-size: 1.1rem; margin-bottom: 6px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.levels p { margin: 0 0 .6em; }
+.levels .anchor { margin: 10px 0 0; padding-top: 10px; border-top: 1px solid var(--border); font-size: .88rem; color: var(--muted); font-style: italic; }
+.levels li.target { border: 2px solid var(--accent); background: var(--accent-soft); }
+.target-tag { font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; background: var(--navy); color: var(--gold); border-radius: 999px; padding: 1px 9px; }
+
+/* BE behaviors */
+.riff { font-family: Consolas, "Courier New", monospace; color: var(--blue); background: #fff; padding: 1px 6px; border-radius: 4px; }
+.be-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.be-grid li { border: 1px solid var(--border); border-left: 5px solid var(--accent); border-radius: var(--radius); padding: 16px 18px; background: #fff; }
+.be-grid li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.be-grid h3 { font-size: 1.1rem; margin-bottom: 4px; }
+.be-grid p { margin: 0; font-size: .97rem; }
+.be-grid li.lead { border-left-color: var(--navy); background: var(--soft-blue); }
+
+/* Numbered steps with headings */
+.steps { list-style: none; margin: 18px 0 0; padding: 0; counter-reset: st; display: grid; gap: 14px; }
+.steps li { counter-increment: st; position: relative; padding: 14px 18px 14px 62px; border: 1px solid var(--border); border-radius: var(--radius); }
+.steps li::before { content: counter(st); position: absolute; left: 18px; top: 14px; width: 30px; height: 30px; border-radius: 50%; background: var(--blue); color: #fff; font-weight: 800; display: grid; place-items: center; font-size: .9rem; }
+.steps h3 { font-size: 1.05rem; margin-bottom: 2px; }
+.steps p { margin: 0; }
+
+/* AI use labels */
+.labels { list-style: none; margin: 14px 0 18px; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.labels li { border: 2px solid var(--navy); border-radius: 999px; padding: 4px 16px; font-weight: 800; color: var(--navy); background: #fff; }
+
+/* The 3 Qs */
+.qs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.qs li { border-top: 5px solid var(--accent); background: var(--soft-blue); border-radius: 0 0 var(--radius) var(--radius); padding: 16px 18px 18px; display: flex; flex-direction: column; }
+.qs .when { font-size: .74rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-ink); }
+.qs h3 { font-size: 1.12rem; margin: 6px 0 12px; }
+.qs .be { margin: auto 0 0; font-size: .82rem; font-weight: 700; color: var(--muted); border-top: 1px dashed var(--border); padding-top: 8px; }
+
+/* How-to numbered lists */
+.howto { list-style: none; margin: 18px 0 0; padding: 0; counter-reset: ht; display: grid; gap: 10px; }
+.howto li { counter-increment: ht; position: relative; padding-left: 40px; }
+.howto li::before { content: counter(ht); position: absolute; left: 0; top: 2px; width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--accent); color: var(--accent-ink); font-weight: 800; font-size: .8rem; display: grid; place-items: center; }
+.stepnum { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--gold); color: var(--navy); font-size: 1rem; margin-right: 10px; vertical-align: 3px; }
+
+/* Definition lists: Blackboard areas, Office apps */
+.areas, .apps { margin: 18px 0 0; display: grid; gap: 12px; }
+.apps { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.areas > div, .apps > div { border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px; background: #fff; }
+.areas dt, .apps dt { font-weight: 800; color: var(--navy); }
+.areas dd, .apps dd { margin: 2px 0 0; font-size: .96rem; }
+
+/* Resource card (external link) */
+.resource-card { display: grid; grid-template-columns: 52px 1fr; gap: 16px; align-items: start; border: 2px solid var(--blue); border-radius: var(--radius); padding: 18px 20px; }
+.rc-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; background: var(--blue); color: #fff; }
+.rc-icon svg { width: 22px; height: 22px; }
+.resource-card h3 { font-size: 1.1rem; margin-bottom: 4px; }
+.resource-card p { margin: 0 0 8px; }
+.resource-card a { font-weight: 700; }
+
+/* Chapter wrap-up */
+.takeaways { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.takeaways li { position: relative; padding: 14px 18px 14px 52px; border: 1px solid var(--border); border-radius: var(--radius); background: #fff; }
+.takeaways li::before { content: ""; position: absolute; left: 18px; top: 20px; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+.takeaways strong { color: var(--navy); }
+.end-card { text-align: center; background: var(--navy); color: #fff; border-radius: var(--radius); padding: 36px 24px; }
+.end-card .end-h { color: #fff; background: none; display: block; padding: 0; font-size: 1.8rem; margin-bottom: 8px; }
+.end-card p { margin: 0 0 16px; color: #d6eefa; }
+.end-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 24px; align-items: center; }
+.end-links a { color: var(--navy); background: var(--gold); font-weight: 800; text-decoration: none; padding: 10px 22px; border-radius: 999px; }
+.end-links .soon-link { color: #bfe6f7; font-size: .92rem; }
+
+@media (max-width: 900px) {
+  .skill-grid, .be-grid, .levels, .qs, .apps { grid-template-columns: 1fr; }
+}
+@media (max-width: 1180px) and (min-width: 901px) {
+  .levels, .qs, .apps { grid-template-columns: 1fr 1fr; }
+}
+@media print {
+  .skill-grid li, .levels li, .be-grid li, .qs li, .steps li, .takeaways li, .resource-card { break-inside: avoid; }
+  .end-card { background: none; color: var(--ink); border: 2px solid var(--ink); }
+  .end-card .end-h, .end-card p { color: var(--ink); }
 }
