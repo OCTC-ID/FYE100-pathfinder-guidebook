@@ -734,3 +734,10 @@ footer { border-top: 4px solid var(--accent); }
 .hero .inner { padding-bottom: calc(clamp(170px, 20vw, 330px) - 20px); }
 @media (max-width: 900px) { .banner-art { height: 150px; } .banner .inner { padding-bottom: 120px; } }
 @media (max-width: 560px) { .hero .inner { padding-bottom: 140px; } }
+
+/* Keep the sun whole on very wide or zoomed-out screens */
+.banner-art { height: clamp(170px, 20vw, 560px); }
+.banner .inner { padding-bottom: calc(clamp(170px, 20vw, 560px) - 50px); }
+.hero .inner { padding-bottom: calc(clamp(170px, 20vw, 560px) - 20px); }
+@media (max-width: 900px) { .banner-art { height: 150px; } .banner .inner { padding-bottom: 120px; } }
+@media (max-width: 560px) { .hero .inner { padding-bottom: 140px; } }
