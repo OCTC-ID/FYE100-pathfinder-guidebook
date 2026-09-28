@@ -636,3 +636,13 @@ a[target="_blank"]::after { content: "\2197"; display: inline-block; margin-left
 .ai-chars b { font-weight: 400; color: var(--blue); font-size: 1.05rem; }
 .ai-chars b.on { color: var(--gold); }
 .ai-tag-policy { font-size: .88rem; color: var(--muted); margin: 0; }
+
+/* Sidebar: wider label column so two-word labels (Trail Tip, Mile Marker, Wrap Up) fit cleanly */
+.chapnav a.les { grid-template-columns: 52px 1fr; gap: 6px; }
+.chapnav .tip-n { font-size: .64rem; letter-spacing: .03em; line-height: 1.25; padding-top: 3px; word-break: normal; overflow-wrap: normal; }
+.chapnav .sections { margin-left: 62px; }
+
+/* Jump-to-form button on Mile Marker pages */
+.jump-btn { margin-top: 12px; font-size: 1rem; padding: 11px 22px; }
+.jump-btn svg { width: 20px; height: 20px; }
+@media print { .jump-btn { display: none !important; } }
