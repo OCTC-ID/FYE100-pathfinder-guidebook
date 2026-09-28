@@ -34,7 +34,8 @@ faculty/alignment.html  Objective → lesson → 10ES → BE map (planned)
 2. **Lowercase, with hyphens instead of spaces**, for every new file and folder. Chapter folders use two digits: `ch01` through `ch12`.
 3. **No dates, deadlines, points, or assignment names in the book.** Those live in Blackboard, so the book works every term without edits.
 4. **Learning objectives come from the FYE 100 Competency Framework, word for word.**
-5. **After any change to `css/styles.css` or `js/book.js`**, raise the `?v=` number on every page (for example, `styles.css?v=1` to `styles.css?v=2`) so browsers load the new version.
+5. **Every link that leaves the book opens in a new tab.** Use `target="_blank" rel="noopener"` plus `<span class="sr-only"> (opens in a new tab)</span>` inside the link. Links between pages of the book stay in the same tab. (`js/book.js` also enforces this as a backup.)
+6. **After any change to `css/styles.css` or `js/book.js`**, raise the `?v=` number on every page (for example, `styles.css?v=1` to `styles.css?v=2`) so browsers load the new version.
 
 ## Updating the site
 

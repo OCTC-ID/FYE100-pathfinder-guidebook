@@ -3,6 +3,11 @@
    2. Highlights the section being read in the sidebar's section list.
    Pages work without this file; it only adds polish. */
 (function () {
+  // HARD RULE backup: any link that leaves the book opens in a new tab.
+  document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+    if (a.hostname !== location.hostname) { a.target = '_blank'; a.rel = 'noopener'; }
+  });
+
   var d = document.getElementById('chapdetails');
   if (d) {
     var mq = window.matchMedia('(max-width: 900px)');
