@@ -741,3 +741,6 @@ footer { border-top: 4px solid var(--accent); }
 .hero .inner { padding-bottom: calc(clamp(170px, 20vw, 560px) - 20px); }
 @media (max-width: 900px) { .banner-art { height: 150px; } .banner .inner { padding-bottom: 120px; } }
 @media (max-width: 560px) { .hero .inner { padding-bottom: 140px; } }
+
+/* Home intro spans the same width as the contents list */
+.home .home-intro { max-width: none; margin: 0; padding: 18px 22px; border-radius: var(--radius); background: var(--soft-blue); border: 1px solid var(--border); border-left: 5px solid var(--accent); }
