@@ -672,3 +672,16 @@ footer { border-top: 4px solid var(--accent); }
   .skills-side .badge-focus .focus { flex-basis: auto; padding-left: 8px; border-left: 1px solid rgba(255,255,255,.35); }
   .opener .row.obj-row + .rest { margin-left: auto; }
 }
+
+/* Skill badge text: name + optional focus label */
+.btext { display: inline-flex; align-items: center; gap: 8px; }
+.badge-focus .btext .focus { border-left: 1px solid rgba(255,255,255,.35); padding-left: 8px; margin-left: 0; }
+.obj-row { grid-template-columns: minmax(0, 600px) 300px; }
+.skills-side .badge { padding: 7px 16px 7px 7px; border-radius: 18px; gap: 14px; }
+.skills-side .btext { flex-direction: column; align-items: flex-start; gap: 3px; line-height: 1.25; }
+.skills-side .badge-focus { flex-wrap: nowrap; }
+.skills-side .badge-focus .btext .focus { border-left: 0; padding-left: 0; flex-basis: auto; font-size: .64rem; line-height: 1.2; }
+@media (max-width: 1180px) {
+  .skills-side .btext { flex-direction: row; align-items: center; gap: 8px; }
+  .skills-side .badge-focus .btext .focus { border-left: 1px solid rgba(255,255,255,.35); padding-left: 8px; }
+}
