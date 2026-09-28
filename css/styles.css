@@ -650,3 +650,25 @@ a[target="_blank"]::after { content: "\2197"; display: inline-block; margin-left
 /* Footer: light blue top line to match the header */
 footer { border-top: 4px solid var(--accent); }
 @media print { footer { border-top: 1px solid var(--border); } }
+
+/* Module overview: skills in the side column next to the objectives, tighter section spacing */
+.obj-row { grid-template-columns: minmax(0, 640px) 264px; column-gap: 32px; }
+.skills-side { padding: 18px 18px 20px; border-radius: var(--radius); background: var(--soft-blue); border: 1px solid var(--border); align-self: start; margin-top: 4px; }
+.skills-side .side-h { display: block; background: none; padding: 0; font-size: 1.15rem; margin: 0 0 14px; }
+.skills-side .skill-group + .skill-group { margin-top: 18px; }
+.skills-side .skill-group h3 { font-size: .72rem; margin-bottom: 8px; }
+.skills-side .badges { flex-direction: column; align-items: stretch; gap: 8px; }
+.skills-side .badge { font-size: .88rem; }
+.skills-side .badge-focus { flex-wrap: wrap; row-gap: 2px; }
+.skills-side .badge-focus .focus { border-left: 0; padding-left: 0; margin-left: 0; flex-basis: 100%; padding-left: 52px; font-size: .64rem; }
+.skills-side .badge-be { align-self: flex-start; }
+.skills-side .skill-note { font-size: .84rem; }
+.opener .rest { margin-top: 56px; margin-bottom: 48px; }
+.opener .row.obj-row + .rest { margin-left: 402px; }
+@media (max-width: 1180px) {
+  .obj-row { grid-template-columns: minmax(0, 760px); }
+  .skills-side { margin-top: 28px; }
+  .skills-side .badges { flex-direction: row; flex-wrap: wrap; }
+  .skills-side .badge-focus .focus { flex-basis: auto; padding-left: 8px; border-left: 1px solid rgba(255,255,255,.35); }
+  .opener .row.obj-row + .rest { margin-left: auto; }
+}
