@@ -18,7 +18,8 @@ https://octc-id.github.io/FYE100-pathfinder-guidebook/chapters/ch04/
 index.html              Book home: cover and full table of contents
 css/styles.css          One stylesheet for every page
 js/book.js              Sidebar behavior and section highlighting
-images/shared/          Logo and images used across the book
+images/shared/          Logos and images used across the book
+images/shared/10es/     10 Essential Skills coin icons, 10es-01.png to 10es-10.png
 images/chNN/            Images for one chapter
 chapters/chNN/
   index.html            Chapter opener (why it matters, objectives, skills, lessons)
@@ -48,4 +49,5 @@ faculty/alignment.html  Objective → lesson → 10ES → BE map (planned)
 - **Margin notes** on the right (`.note-term`, `.note-tip`, `.note-see`) for Key Terms, Pathfinder Tips, and See Also links. They move into the text on smaller screens.
 - **Rest-stop dividers** (`<span class="rest">`) between major sections, for breathing room.
 - **Sticky-note blocks** (`.sticky`) for "Why this matters" and for stops in the reading such as Reflect.
+- **10 Essential Skills** always appear with their coin icon and number (`.coin`, `.coin-sm`), and use the official CPE names word for word.
 - The **last page of each chapter** ends the reading path with a link back to the book contents.
