@@ -909,3 +909,12 @@ footer { border-top: 4px solid var(--accent); }
   .creep-stages { grid-template-columns: repeat(3, 1fr); row-gap: 10px; }
 }
 @media print { .ai-box, .creep, .roles li, .attr, .applied, .try-note { break-inside: avoid; } }
+/* SMART goal */
+.smart { list-style: none; margin: 14px 0; padding: 0; display: grid; gap: 8px; }
+.smart li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: center; border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px; background: #fff; }
+.smart-letter { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: var(--gold); font-weight: 800; font-size: 1.1rem; }
+.compare-one { display: grid; gap: 8px; margin-top: 14px; }
+.compare-one p { margin: 0; border-radius: 10px; padding: 10px 14px; }
+.compare-one .tag { display: block; font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 2px; }
+.c1-no { background: #f6f8fa; color: #34414d; } .c1-no .tag { color: var(--muted); }
+.c1-yes { background: var(--accent-soft); } .c1-yes .tag { color: var(--accent-ink); }

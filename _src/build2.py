@@ -183,30 +183,30 @@ CHAPTERS = [
   why=["You're surrounded by more information than any generation before you, and more of it is wrong, misleading, or designed to grab your attention rather than inform you.",
        "This module helps you build your academic toolkit: study strategies that actually work, a framework for evaluating what you read, and a direct look at where AI helps, and where it doesn't."],
   objectives=[("identify and apply at least one evidence-based study strategy and describe what I noticed about my learning.", 'Mile Marker #4'),
-              ("evaluate a source or AI-generated response using the SIFT method and explain whether I would use it and why.", True),
-              ("apply at least one digital organization strategy to manage my course files and reduce information overload.", True),
-              ("explain the ethical and practical considerations of using AI note-takers in academic and professional settings.", True),
-              ("write one SMART goal for continuing a study strategy or academic habit this semester.", True)],
-  es=[6,10], be=['Safe','Honest','Critical','Responsible'], be_note='',
+              ("evaluate a source or AI-generated response using the SIFT method and explain whether I would use it and why.", 'the AI Chat: Is This Legit?'),
+              ("apply at least one digital organization strategy to manage my course files.", True),
+              ("recognize AI creep in my own work and describe honestly how I used AI.", 'Mile Marker #4'),
+              ("write one SMART goal for continuing a study strategy or academic habit this semester.", 'Mile Marker #4')],
+  es=[6,10], be=['Honest','Critical','Responsible'], be_note='',
   lessons=[
    ('trail-tip.html','Trail Tip','Your Office 365 Academic Toolkit',"You already have powerful tools. Here's how to use them for school.",5,
      [('onenote','OneNote'),('onedrive','OneDrive'),('teams','Teams'),('copilot','Copilot')]),
    ('4-1.html','4.1','Skill Spotlight: Information Literacy',"Finding, evaluating, and responsibly using information to make good decisions.",5,
      [('what','What this skill is'),('headed',"Where you're headed"),('module','Where it shows up'),('life','In your own life'),('later','How it shows up later')]),
    ('4-2.html','4.2','Study Strategies That Actually Work',"What the research says, and what to do with it.",8,
-     [('strategies','Four strategies'),('myths',"What feels productive but isn't"),('ai-study','AI as a study partner')]),
-   ('4-3.html','4.3','Recording in the Classroom',"Technology made recording easy. That doesn't make it automatic.",6,
-     [('principles','Three principles'),('ai-notetakers','AI note-takers')]),
-   ('4-4.html','4.4','SIFT: Stop Before You Scroll',"Four moves for evaluating any information, including what AI tells you.",9,
+     [('strategies','Four strategies'),('myths',"What feels productive but isn't"),('smart','Write a SMART goal'),('ai-study','AI as a study partner')]),
+   ('4-3.html','4.3','SIFT: Stop Before You Scroll',"Four moves for evaluating any information, including what AI tells you.",9,
      [('moves','The four moves'),('sift-ai','SIFT and AI'),('practice','Practice it')]),
-   ('4-5.html','4.5','AI Literacy: Beware of the Creep',"Did you cross the line, and did you notice?",6,
+   ('4-4.html','4.4','AI Literacy: Beware of the Creep',"Did you cross the line, and did you notice?",6,
      [('meter','The AI Creep Meter'),('boundary','Set your boundary'),('honest','BE Honest'),('attribution','Attribution'),('before','Before you submit')]),
+   ('trail-tip-recording.html','Trail Tip','Recording in the Classroom',"Technology made recording easy. That doesn't make it automatic.",6,
+     [('principles','Three principles'),('ai-notetakers','AI note-takers')]),
    ('mile-marker.html','Mile Marker','Mile Marker #4: My Academic Toolkit',"The assignment, with support, and a form you can fill in and save.",10,
      [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
    ('wrap-up.html','Wrap Up','Module 4 Wrap Up',"Pull it together before you head back to your course.",2,
      [('takeaways','Key takeaways')]),
   ],
-  builds={'trail-tip.html':'C','4-2.html':'A, E','4-3.html':'D','4-4.html':'B','mile-marker.html':'A'}),
+  builds={'trail-tip.html':'C','4-2.html':'A, E','4-3.html':'B','4-4.html':'D','mile-marker.html':'A, D, E'}),
 ]
 LATER = [
  (5,"Financial Planning with Purpose","Build a zero-based budget, look honestly at your spending patterns, and explore what financial wellness means for your overall wellbeing."),
@@ -410,9 +410,12 @@ def build_chapter(ch):
     letters = 'ABCDEFGH'; objs = []
     for k,(txt, inc) in enumerate(ch['objectives']):
         L = letters[k]
-        if isinstance(inc, str):
+        if isinstance(inc, str) and inc.startswith('Mile Marker'):
             mark = f'''
             <a class="in-course" href="mile-marker.html">{ICON['pen']} You'll show this in {inc}</a>'''
+        elif isinstance(inc, str):
+            mark = f'''
+            <span class="in-course">{ICON['pen']} You'll show this in {inc}</span>'''
         elif inc:
             mark = f'''
             <span class="in-course">{ICON['pen']} You'll practice this in your course activities</span>'''
