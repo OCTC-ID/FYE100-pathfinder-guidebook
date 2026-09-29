@@ -854,3 +854,58 @@ footer { border-top: 4px solid var(--accent); }
   body.mm-printing .prio-row { grid-template-columns: 30px 1fr 120px; }
 }
 @media (max-width: 700px) { .tool-form .mm-id.even { grid-template-columns: 1fr; } }
+
+/* ---------- Module 4 components ---------- */
+.pill-start { display: inline-block; vertical-align: middle; margin-left: 8px; font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: var(--gold); color: var(--navy); border-radius: 999px; padding: 2px 10px; }
+/* AI literacy callout: matches the BE capsules */
+.ai-box { border: 2px solid var(--accent); border-left-width: 8px; border-radius: var(--radius); background: #f5fbfe; padding: 18px 22px 20px; margin: 8px 0 0; }
+.ai-box h3 { font-size: 1.1rem; margin: 4px 0 8px; }
+.ai-box p { margin: 0 0 .7em; }
+.ai-box .dots { margin: 6px 0 12px; }
+.ai-box-label { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 10px !important; }
+.be-chip { font-size: .72rem; letter-spacing: .04em; text-transform: none; font-weight: 800; color: var(--navy); background: #fff; border: 2px solid var(--accent); border-radius: 999px; padding: 1px 10px; }
+.ai-box-foot { margin: 12px 0 0 !important; padding-top: 12px; border-top: 1px dashed #9fd3ea; font-size: .95rem; color: #34414d; }
+/* study strategy examples + try-it */
+.examples { list-style: none; margin: 12px 0; padding: 0; display: grid; gap: 8px; }
+.examples li { background: var(--soft-blue); border-radius: 10px; padding: 10px 14px; font-size: .97rem; }
+.try-note { border-left: 5px solid var(--gold); background: var(--soft-gold); border-radius: 0 10px 10px 0; padding: 10px 14px; font-size: .97rem; margin-top: 12px; }
+.try-label { display: block; font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #7a5500; margin-bottom: 2px; }
+/* recording script */
+.ask-script { margin: 16px 0 14px; border: 1px solid var(--border); border-radius: 12px; background: var(--soft-blue); padding: 14px 18px; }
+.ask-script figcaption { font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 6px; }
+.ask-script blockquote { margin: 0; font-style: italic; }
+/* SIFT */
+.card.consider .card-head { background: var(--dark-blue); }
+.card-foot { padding: 14px 20px; background: #fdf1ef; border-top: 1px solid #f0c8c0; font-size: .97rem; }
+.sift-h { display: flex; align-items: center; gap: 12px; font-size: 1.25rem; margin: 0 0 10px; }
+.sift-letter { display: inline-grid; place-items: center; width: 42px; height: 42px; flex-shrink: 0; border-radius: 50%; background: var(--navy); color: var(--gold); font-size: 1.3rem; font-weight: 800; }
+.applied { border: 1px solid #9fd3ea; background: #f5fbfe; border-radius: 10px; padding: 10px 14px; font-size: .97rem; }
+.applied-label { display: block; font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 2px; }
+.video-link { display: flex; align-items: center; gap: 8px; font-weight: 700; }
+.video-link svg { width: 16px; height: 16px; color: var(--blue); flex-shrink: 0; }
+.sift-ai { list-style: none; margin: 8px 0 12px; padding: 0; display: grid; gap: 8px; }
+.sift-ai li { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; }
+/* AI Creep Meter */
+.creep { margin: 18px 0 22px; border: 1px solid var(--border); border-radius: var(--radius); background: #fff; padding: 18px 20px 16px; }
+.creep-title { font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--navy); margin: 0 0 10px; }
+.creep-bar { height: 12px; border-radius: 6px; background: linear-gradient(90deg, #1D9E75, #EF9F27, #E24B4A); }
+.creep-stages { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; counter-reset: cs; }
+.creep-stages li { counter-increment: cs; text-align: center; font-size: .86rem; font-weight: 700; color: var(--navy); }
+.creep-stages li::before { content: counter(cs); display: block; width: 22px; height: 22px; margin: 0 auto 2px; border-radius: 50%; background: var(--soft-blue); color: var(--blue); font-size: .72rem; line-height: 22px; }
+.creep-ends { display: flex; justify-content: space-between; margin: 6px 0 0; font-size: .8rem; font-style: italic; color: var(--muted); }
+.creep figcaption { margin-top: 12px; text-align: center; font-weight: 700; color: var(--navy); }
+.mm-q .creep { margin: 12px 0 14px; }
+/* roles + attribution */
+.roles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.roles li { border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 12px; padding: 14px 18px; background: #fff; }
+.role-name { display: block; font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 4px; }
+.roles q { font-style: italic; }
+.attr-pair { margin-top: 0; }
+.attr { margin: 0; border: 1px solid var(--border); border-left: 5px solid var(--gold); border-radius: 12px; padding: 14px 18px; background: var(--soft-gold); }
+.attr figcaption { font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #7a5500; margin-bottom: 6px; }
+.attr blockquote { margin: 0; font-style: italic; }
+@media (max-width: 700px) {
+  .roles { grid-template-columns: 1fr; }
+  .creep-stages { grid-template-columns: repeat(3, 1fr); row-gap: 10px; }
+}
+@media print { .ai-box, .creep, .roles li, .attr, .applied, .try-note { break-inside: avoid; } }

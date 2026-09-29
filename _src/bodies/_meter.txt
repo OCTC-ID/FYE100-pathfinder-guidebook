@@ -1,0 +1,9 @@
+<figure class="creep" aria-labelledby="{id}-cap">
+            <p class="creep-title">The AI Creep Meter</p>
+            <div class="creep-bar" aria-hidden="true"></div>
+            <ol class="creep-stages">
+              <li>Brainstorming</li><li>Outlining</li><li>Drafting</li><li>Revising</li><li>Rewriting</li><li>Submitting</li>
+            </ol>
+            <p class="creep-ends"><span>Lower stakes</span><span>Higher stakes</span></p>
+            <figcaption id="{id}-cap">The farther AI moves into the creation of your work, the more important transparency becomes.</figcaption>
+          </figure>

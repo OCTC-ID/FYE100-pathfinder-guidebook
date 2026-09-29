@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 25
+V = 26
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -177,9 +177,38 @@ CHAPTERS = [
      [('takeaways','Key takeaways')]),
   ],
   builds={'where-my-time-goes.html':'A','3-2.html':'B','my-week-at-a-glance.html':'B','3-3.html':'A, D','3-4.html':'A, D','3-5.html':'C','3-6.html':'D','mile-marker.html':'A, B, C, D'}),
+ dict(n=4, title='Your Academic Toolkit',
+  desc="Study strategies grounded in how memory actually works, the SIFT method for evaluating information, and the tools you already have through Office 365.",
+  tagline="The right tools make all the difference, but only if you know how to use them.",
+  why=["You're surrounded by more information than any generation before you, and more of it is wrong, misleading, or designed to grab your attention rather than inform you.",
+       "This module helps you build your academic toolkit: study strategies that actually work, a framework for evaluating what you read, and a direct look at where AI helps, and where it doesn't."],
+  objectives=[("identify and apply at least one evidence-based study strategy and describe what I noticed about my learning.", 'Mile Marker #4'),
+              ("evaluate a source or AI-generated response using the SIFT method and explain whether I would use it and why.", True),
+              ("apply at least one digital organization strategy to manage my course files and reduce information overload.", True),
+              ("explain the ethical and practical considerations of using AI note-takers in academic and professional settings.", True),
+              ("write one SMART goal for continuing a study strategy or academic habit this semester.", True)],
+  es=[6,10], be=['Safe','Honest','Critical','Responsible'], be_note='',
+  lessons=[
+   ('trail-tip.html','Trail Tip','Your Office 365 Academic Toolkit',"You already have powerful tools. Here's how to use them for school.",5,
+     [('onenote','OneNote'),('onedrive','OneDrive'),('teams','Teams'),('copilot','Copilot')]),
+   ('4-1.html','4.1','Skill Spotlight: Information Literacy',"Finding, evaluating, and responsibly using information to make good decisions.",5,
+     [('what','What this skill is'),('headed',"Where you're headed"),('module','Where it shows up'),('life','In your own life'),('later','How it shows up later')]),
+   ('4-2.html','4.2','Study Strategies That Actually Work',"What the research says, and what to do with it.",8,
+     [('strategies','Four strategies'),('myths',"What feels productive but isn't"),('ai-study','AI as a study partner')]),
+   ('4-3.html','4.3','Recording in the Classroom',"Technology made recording easy. That doesn't make it automatic.",6,
+     [('principles','Three principles'),('ai-notetakers','AI note-takers')]),
+   ('4-4.html','4.4','SIFT: Stop Before You Scroll',"Four moves for evaluating any information, including what AI tells you.",9,
+     [('moves','The four moves'),('sift-ai','SIFT and AI'),('practice','Practice it')]),
+   ('4-5.html','4.5','AI Literacy: Beware of the Creep',"Did you cross the line, and did you notice?",6,
+     [('meter','The AI Creep Meter'),('boundary','Set your boundary'),('honest','BE Honest'),('attribution','Attribution'),('before','Before you submit')]),
+   ('mile-marker.html','Mile Marker','Mile Marker #4: My Academic Toolkit',"The assignment, with support, and a form you can fill in and save.",10,
+     [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
+   ('wrap-up.html','Wrap Up','Module 4 Wrap Up',"Pull it together before you head back to your course.",2,
+     [('takeaways','Key takeaways')]),
+  ],
+  builds={'trail-tip.html':'C','4-2.html':'A, E','4-3.html':'D','4-4.html':'B','mile-marker.html':'A'}),
 ]
 LATER = [
- (4,"Your Academic Toolkit","Study strategies grounded in how memory actually works, the SIFT method for evaluating information, and the tools you already have through Office 365."),
  (5,"Financial Planning with Purpose","Build a zero-based budget, look honestly at your spending patterns, and explore what financial wellness means for your overall wellbeing."),
  (6,"Map Your Path — Academic Planning","Explore your interests, learn the difference between certificates, diplomas, and degrees, and prepare the questions you'll bring to your Success Coach."),
  (7,"Knowing Your Strengths &amp; Values","Discover your top strengths and personal values, and connect them to your academic habits and career direction."),
