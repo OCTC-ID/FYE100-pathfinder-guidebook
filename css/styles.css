@@ -918,3 +918,8 @@ footer { border-top: 4px solid var(--accent); }
 .compare-one .tag { display: block; font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 2px; }
 .c1-no { background: #f6f8fa; color: #34414d; } .c1-no .tag { color: var(--muted); }
 .c1-yes { background: var(--accent-soft); } .c1-yes .tag { color: var(--accent-ink); }
+/* Merit reminder on module overviews (Modules 4, 7, 10) */
+.merit-note { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; border: 2px solid var(--gold); border-left-width: 8px; border-radius: var(--radius); background: var(--soft-gold); padding: 14px 18px; }
+.merit-badge { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--navy); color: var(--gold); font-weight: 800; font-size: 1.15rem; }
+.merit-note p { margin: 0 0 .3em; } .merit-note p:last-child { margin: 0; }
+.merit-h { font-weight: 800; color: var(--navy); }

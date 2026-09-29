@@ -67,3 +67,4 @@ The pages in `chapters/` and `index.html` are generated. Edit the source, then r
 - `_src/export.py` + `_src/export.css` build the offline editions: `python3 _src/export.py <output-folder>` writes an EPUB and `print.html` (printed to a tagged PDF with Playwright).
 
 Students never see `_src/`; nothing in the book links to it.
+- Merit reminders: set `merit=N` in a module's config to show "Merit Activity #N is due with this module" on its overview. Module 4 = 1, Module 7 = 2, Module 10 = 3. No dates; students check Blackboard.

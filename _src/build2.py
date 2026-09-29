@@ -187,7 +187,7 @@ CHAPTERS = [
               ("apply at least one digital organization strategy to manage my course files.", True),
               ("recognize AI creep in my own work and describe honestly how I used AI.", 'Mile Marker #4'),
               ("write one SMART goal for continuing a study strategy or academic habit this semester.", 'Mile Marker #4')],
-  es=[6,10], be=['Honest','Critical','Responsible'], be_note='',
+  es=[6,10], be=['Honest','Critical','Responsible'], be_note='', merit=1,
   lessons=[
    ('trail-tip.html','Trail Tip','Your Office 365 Academic Toolkit',"You already have powerful tools. Here's how to use them for school.",5,
      [('onenote','OneNote'),('onedrive','OneDrive'),('teams','Teams'),('copilot','Copilot')]),
@@ -391,6 +391,25 @@ def coin_sm(k):
     return f'<span class="coin-sm"><img src="../../images/shared/10es/10es-{k:02d}.png" alt="" width="160" height="160"><span class="n">{k}</span></span>'
 
 # ------------------------------------------------------------------ build chapter
+def merit_note(ch):
+    """Reminder on the overview of each module that a Merit activity is due with (Modules 4, 7, 10)."""
+    m = ch.get('merit')
+    if not m: return ''
+    up = '' if ch['n'] == 2 else '../ch02/'
+    return f'''
+    <div class="row wide gap-sm">
+      <div class="main">
+        <div class="merit-note" role="note">
+          <span class="merit-badge" aria-hidden="true">M</span>
+          <div>
+            <p class="merit-h">Merit reminder: Merit Activity #{m} is due with this module</p>
+            <p>Submit it on the Merit platform. Check Blackboard for the due date and the activity options. Need to set up your page first? See <a href="{up}trail-tip-merit.html">Setting Up Your Merit Page</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+'''
+
 def build_chapter(ch):
     n = ch['n']; d = ROOT/f'chapters/ch{n:02d}'; d.mkdir(parents=True, exist_ok=True)
     where = f'Module {n} · {ch["title"]}'
@@ -474,7 +493,7 @@ def build_chapter(ch):
         </div>
       </div>
     </section>
-
+{merit_note(ch)}
     <span class="rest wide" aria-hidden="true"></span>
 
     <!-- LEARNING OBJECTIVES: Competency Framework I Can {n}.x, verbatim. -->
