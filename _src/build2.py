@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 26
+V = 27
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -155,14 +155,14 @@ CHAPTERS = [
               ("describe one small habit or adjustment I will make to manage my time more effectively.", 'Mile Marker #3')],
   es=[5,6], be=['Responsible'], be_note='',
   lessons=[
-   ('3-1.html','3.1','Skill Spotlight: Professionalism',"Being reliable, accountable, and intentional, not perfect.",5,
-     [('what','What this skill is'),('headed',"Where you're headed"),('module','Where it shows up'),('life','In your own life'),('later','How it shows up later')]),
    ('where-my-time-goes.html','Trail Tool','Where My Time Goes',"Look back: an honest log of where your time and energy actually go.",5,
      [('how','How to log honestly'),('form','Fill in your log')]),
-   ('3-2.html','3.2','Map Your Week',"Before the week runs you, run the week.",5,
-     [('back-ahead','Look back, then ahead'),('steps','Three steps'),('mistakes','What gets in the way'),('start','Five minutes to start')]),
    ('my-week-at-a-glance.html','Trail Tool','My Week at a Glance',"Look ahead: plan from your priorities, not from empty boxes.",10,
      [('form','Plan your week')]),
+   ('3-1.html','3.1','Skill Spotlight: Professionalism',"Being reliable, accountable, and intentional, not perfect.",5,
+     [('what','What this skill is'),('headed',"Where you're headed"),('module','Where it shows up'),('life','In your own life'),('later','How it shows up later')]),
+   ('3-2.html','3.2','Map Your Week',"Before the week runs you, run the week.",5,
+     [('back-ahead','Look back, then ahead'),('steps','Three steps'),('mistakes','What gets in the way'),('start','Five minutes to start')]),
    ('3-3.html','3.3',"Run the Day (Don't Let It Run You)","Small, intentional decisions, made consistently, are how the day becomes yours.",7,
      [('moves','Four moves'),('real','What it sounds like'),('pilot',"You're the pilot")]),
    ('3-4.html','3.4','The Multitasking Myth',"You're not doing two things at once. You're switching really fast, and paying for it.",4,
@@ -540,19 +540,24 @@ def build_home():
           <span class="cnum" aria-hidden="true">{n}</span>
           <div>
             <h3><a href="chapters/ch{n:02d}/index.html"><span class="sr-only">Module {n}: </span>{ch['title']}</a></h3>
-            <p class="cdesc">{ch['desc']}</p>
-            <ol class="toc-lessons" aria-label="Module {n} lessons">
+            <details class="toc-more">
+              <summary>What's inside <span class="sr-only">Module {n}</span></summary>
+              <p class="cdesc">{ch['desc']}</p>
+              <ol class="toc-lessons" aria-label="Module {n} lessons">
 {les}
-            </ol>
+              </ol>
+            </details>
           </div>
         </li>''')
     for n,t,dsc in LATER:
         toc.append(f'''        <li class="pending">
           <span class="cnum" aria-hidden="true">{n}</span>
           <div>
-            <h3><span class="sr-only">Module {n}: </span>{t}</h3>
-            <p class="cdesc">{dsc}</p>
-            <span class="soon">Coming soon</span>
+            <h3><span class="sr-only">Module {n}: </span>{t} <span class="soon">Coming soon</span></h3>
+            <details class="toc-more">
+              <summary>What's inside <span class="sr-only">Module {n}</span></summary>
+              <p class="cdesc">{dsc}</p>
+            </details>
           </div>
         </li>''')
     home = head(f'{BOOK} | FYE 100: Strategies for College Success', 0) + bookbar(0, '') + f'''

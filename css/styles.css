@@ -923,3 +923,22 @@ footer { border-top: 4px solid var(--accent); }
 .merit-badge { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--navy); color: var(--gold); font-weight: 800; font-size: 1.15rem; }
 .merit-note p { margin: 0 0 .3em; } .merit-note p:last-child { margin: 0; }
 .merit-h { font-weight: 800; color: var(--navy); }
+/* Home contents: modules collapse to their title */
+.toc { gap: 12px; }
+.toc > li { padding: 16px 22px; align-items: center; }
+.toc > li > div { min-width: 0; }
+.toc .toc-more { margin-top: 4px; }
+.toc .toc-more summary { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: .9rem; font-weight: 700; color: var(--accent-ink); padding: 6px 0; list-style: none; }
+.toc .toc-more summary::-webkit-details-marker { display: none; }
+.toc .toc-more summary::before { content: ""; width: 8px; height: 8px; border-right: 2.5px solid currentColor; border-bottom: 2.5px solid currentColor; transform: rotate(-45deg); transition: transform .15s; margin-right: 2px; }
+.toc .toc-more[open] summary::before { transform: rotate(45deg); }
+.toc .toc-more summary:hover { text-decoration: underline; }
+.toc .toc-more summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+.toc .toc-more .cdesc { margin: 4px 0 0; }
+.toc h3 .soon { margin: 0 0 0 8px; vertical-align: middle; }
+@media print { .toc .toc-more > *:not(summary) { display: block; } }
+.toc > li { align-items: start; }
+@media (max-width: 900px) {
+  .toc > li { grid-template-columns: 40px 1fr; gap: 12px; padding: 14px 16px; }
+  .toc .cnum { width: 38px; height: 38px; font-size: 1.05rem; }
+}
