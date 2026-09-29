@@ -57,3 +57,13 @@ faculty/alignment.html  Objective → lesson → 10ES → BE map (planned)
 - **"Course focus" (assessed skill) labels** appear only on the assessment where that skill is assessed.
 - **Mile Marker pages** (`mile-marker.html`) present the assignment with support, then a fill-in form. `js/book.js` saves typing in the student's browser, requires a name, and saves the PDF with the title "Mile Marker #N - Name".
 - The **last page of each module** ends the reading path with a link back to the book contents.
+
+## Source files and build (`_src/`)
+
+The pages in `chapters/` and `index.html` are generated. Edit the source, then rebuild:
+
+- `_src/bodies/chNN/*.html` holds each page's body content.
+- `_src/build2.py` holds the module config (titles, "I Can" objectives, skills, lesson list) and builds every page. Run `python3 _src/build2.py` from anywhere. Bump `V` when CSS or JS changes.
+- `_src/export.py` + `_src/export.css` build the offline editions: `python3 _src/export.py <output-folder>` writes an EPUB and `print.html` (printed to a tagged PDF with Playwright).
+
+Students never see `_src/`; nothing in the book links to it.

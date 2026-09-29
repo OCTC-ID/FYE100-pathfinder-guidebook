@@ -1,0 +1,10 @@
+          <div class="pair tool-pair">
+            <article class="card{a}">
+              <div class="card-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg><h3>Look back: Where My Time Goes</h3></div>
+              <div class="card-body"><p>A <strong>reality check</strong>. Log what actually happened with your time and energy, day by day. No judging, no fixing yet. Just notice.</p><p class="tool-use">Use it for: Mile Marker #3, Question 1</p>{la}</div>
+            </article>
+            <article class="card{b}">
+              <div class="card-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/></svg><h3>Look ahead: My Week at a Glance</h3></div>
+              <div class="card-body"><p>A <strong>plan</strong>. Use what you learned from looking back to map your priorities into the week ahead.</p><p class="tool-use">Use it for: Mile Marker #3, Question 3</p>{lb}</div>
+            </article>
+          </div>
