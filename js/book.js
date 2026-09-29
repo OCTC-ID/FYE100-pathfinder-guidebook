@@ -111,3 +111,36 @@
     try { localStorage.removeItem(key); } catch (e) {}
   });
 })();
+
+/* Running totals for the money tools (Module 5).
+   Inputs with data-amt="g" add up into <output data-sum="g">.
+   <output data-left="a-b"> shows total a minus total b, and [data-left-msg] explains it. */
+(function () {
+  var outs = document.querySelectorAll('[data-sum], [data-left]');
+  if (!outs.length) return;
+  function num(v) { var n = parseFloat(String(v || '').replace(/[^0-9.\-]/g, '')); return isNaN(n) ? 0 : n; }
+  function money(n) {
+    var neg = n < 0, a = Math.abs(Math.round(n * 100) / 100);
+    var whole = Math.floor(a).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','), cents = Math.round((a - Math.floor(a)) * 100);
+    return (neg ? '-$' : '$') + whole + (cents ? '.' + (cents < 10 ? '0' : '') + cents : '');
+  }
+  function total(g) { var t = 0; document.querySelectorAll('[data-amt="' + g + '"]').forEach(function (i) { t += num(i.value); }); return t; }
+  function calc() {
+    document.querySelectorAll('[data-sum]').forEach(function (o) { o.value = money(total(o.getAttribute('data-sum'))); });
+    document.querySelectorAll('[data-left]').forEach(function (o) {
+      var p = o.getAttribute('data-left').split('-'), left = total(p[0]) - total(p[1]);
+      o.value = money(left);
+      var box = o.closest('.left-box'), msg = box && box.querySelector('[data-left-msg]');
+      if (box) { box.classList.toggle('is-zero', Math.abs(left) < 0.005 && total(p[0]) > 0); box.classList.toggle('is-over', left < -0.004); }
+      if (msg) {
+        if (total(p[0]) === 0) msg.textContent = 'Start by entering the money coming in this month.';
+        else if (Math.abs(left) < 0.005) msg.textContent = 'Every dollar has a job. That is a zero-based budget.';
+        else if (left > 0) msg.textContent = 'You still have money without a job. Give it one, even if the job is savings.';
+        else msg.textContent = 'You have assigned more than is coming in. Trim a category until this reaches $0.';
+      }
+    });
+  }
+  document.addEventListener('input', calc);
+  document.querySelectorAll('.mm-clear').forEach(function (b) { b.addEventListener('click', function () { setTimeout(calc, 50); }); });
+  calc();
+})();

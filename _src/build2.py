@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 27
+V = 28
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -207,9 +207,35 @@ CHAPTERS = [
      [('takeaways','Key takeaways')]),
   ],
   builds={'trail-tip.html':'C','4-2.html':'A, E','4-3.html':'B','4-4.html':'D','mile-marker.html':'A, D, E'}),
+ dict(n=5, title='Financial Planning with Purpose',
+  desc="Build a zero-based budget, look honestly at your spending patterns, and explore what financial wellness means for your overall wellbeing.",
+  tagline="Money touches everything. This module is about seeing it clearly, before trying to change anything.",
+  why=["Financial stress is one of the biggest, and least talked about, barriers to college success. It isn't just uncomfortable. It's mentally expensive: your brain keeps working on money problems in the background, even when you're trying to focus on something else.",
+       "This module won't tell you to follow a strict budget or stop buying coffee. It will help you see your financial situation more clearly, and give your money a plan that fits your real life. That's the only honest starting point."],
+  objectives=[("build a realistic zero-based budget that assigns all available income to specific categories.", 'Mile Marker #5'),
+              ("identify at least one pattern in my spending habits and describe one small change I want to make.", 'Mile Marker #5'),
+              ("explain what financial wellness means and describe how it connects to my overall wellbeing.", 'Mile Marker #5'),
+              ("use AI tools safely for budgeting exploration without sharing personal financial information.", True)],
+  es=[3,6], be=['Safe','Responsible'], be_note='',
+  lessons=[
+   ('dollar-tracker.html','Trail Tool','Dollar Tracker',"Look back: where your money actually goes.",5,
+     [('form','Fill in your tracker')]),
+   ('budget-builder.html','Trail Tool','Budget Builder',"Look ahead: give every dollar a job.",10,
+     [('form','Build your budget')]),
+   ('5-1.html','5.1','Skill Spotlight: Quantitative Reasoning',"Thinking clearly with numbers, which you already do every day.",6,
+     [('name-it','Name the thing'),('already','You already do this'),('headed',"Where you're headed"),('module','Where it shows up'),('anxiety','Math anxiety'),('life','In your own life')]),
+   ('5-2.html','5.2','What Is Financial Wellness?',"A feeling of steadiness you can work toward from wherever you're starting.",7,
+     [('is',"What it is, and isn't"),('dimensions','Eight dimensions'),('stress','Money stress and school')]),
+   ('5-3.html','5.3','Where Does My Money Go?',"You can't manage what you can't see. Awareness comes first.",10,
+     [('steps','Three steps'),('every-dollar','Give every dollar a job'),('tools','Tools'),('ai-money','AI and money')]),
+   ('mile-marker.html','Mile Marker','Mile Marker #5: Understanding My Money',"The assignment, with support, and a form you can fill in and save.",10,
+     [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
+   ('wrap-up.html','Wrap Up','Module 5 Wrap Up',"Pull it together before you head back to your course.",2,
+     [('takeaways','Key takeaways')]),
+  ],
+  builds={'dollar-tracker.html':'B','budget-builder.html':'A','5-2.html':'C','5-3.html':'A, B, D','mile-marker.html':'A, B, C'}),
 ]
 LATER = [
- (5,"Financial Planning with Purpose","Build a zero-based budget, look honestly at your spending patterns, and explore what financial wellness means for your overall wellbeing."),
  (6,"Map Your Path — Academic Planning","Explore your interests, learn the difference between certificates, diplomas, and degrees, and prepare the questions you'll bring to your Success Coach."),
  (7,"Knowing Your Strengths &amp; Values","Discover your top strengths and personal values, and connect them to your academic habits and career direction."),
  (8,"Explore Your Career Options","Research a career, then honestly evaluate whether it fits your strengths, values, and work style."),

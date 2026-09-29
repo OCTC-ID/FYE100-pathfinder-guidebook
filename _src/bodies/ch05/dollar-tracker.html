@@ -1,0 +1,120 @@
+    <div class="row gap-md">
+      <div class="main">
+        <p class="lede">Most people think they know where their money goes, until they actually look.</p>
+        <p>The Dollar Tracker is a reality check, not a budget. Write down where your money went, big and small, with no judging. Choose the option that fits your situation. Both give you the same thing: a clearer picture of your spending patterns. Rough estimates are fine.</p>
+      </div>
+      <div class="note-col">
+          <div class="note note-tip">
+            <div class="label">[[tip]] Your numbers stay with you</div>
+            <p>What you type is saved only in this browser, on this device. It isn't sent anywhere. Rounded or practice numbers work just as well as exact ones.</p>
+          </div>
+      </div>
+    </div>
+
+    <div class="row wide gap-md">
+      <div class="main">
+          <div class="pair tool-pair">
+            <article class="card is-here">
+              <div class="card-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg><h3>Look back: Dollar Tracker</h3></div>
+              <div class="card-body"><p>A <strong>reality check</strong>. Write down where your money actually went, with no judging. Just notice.</p><p class="tool-use">Use it for: Mile Marker #5, Question 1</p><p class="here-tag">You are here</p></div>
+            </article>
+            <article class="card">
+              <div class="card-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/></svg><h3>Look ahead: Budget Builder</h3></div>
+              <div class="card-body"><p>A <strong>plan</strong>. Give every dollar coming in this month a job, until nothing is left unassigned.</p><p class="tool-use">Use it for: Mile Marker #5, Question 4</p><p><a href="budget-builder.html">Open the Budget Builder</a></p></div>
+            </article>
+          </div>
+      </div>
+    </div>
+
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="form" aria-labelledby="form-h">
+      <div class="row">
+        <div class="main">
+          <div class="h2wrap"><h2 id="form-h">Fill in your tracker</h2></div>
+          <p>Fill in Option A, Option B, or both. The totals add up as you type. When you're done, select <strong>Save as PDF</strong> to keep a copy.</p>
+        </div>
+        <div class="note-col">
+          <div class="note note-see">
+            <div class="label">[[see]] Look ahead</div>
+            <p><a href="5-3.html#steps">Lesson 5.3</a> walks you through what to look for.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row wide gap-sm">
+        <div class="main">
+          <form class="mm-form tool-form" id="mm-form" data-title="Dollar Tracker" novalidate>
+            <p class="mm-print-title">Dollar Tracker: Where Does My Money Go?</p>
+            <div class="mm-id">
+              <div class="mm-field">
+                <label for="dt-name">Your name <span class="req">(required)</span></label>
+                <input type="text" id="dt-name" data-save autocomplete="name" required aria-describedby="dt-name-err">
+                <p class="mm-err" id="dt-name-err" hidden>Enter your name before saving.</p>
+              </div>
+              <div class="mm-field">
+                <label for="dt-date">Week of</label>
+                <input type="date" id="dt-date" data-save>
+              </div>
+            </div>
+            <fieldset class="mm-field">
+              <legend><span class="mm-num">Option A</span>Look back at the past 7 days</legend>
+              <p class="tool-hint">Where did your money go? Rename any category so it fits your life.</p>
+              <div class="money-head" aria-hidden="true"><span>Category</span><span>Amount</span></div>
+              <div class="money-rows">
+                <div class="money-row"><input type="text" id="dt-a1-c" data-save aria-label="Category 1" value="Food: groceries"><span class="dollar"><input type="text" inputmode="decimal" id="dt-a1" data-save data-amt="dta" aria-label="Amount for category 1" placeholder="0"></span></div>
+                <div class="money-row"><input type="text" id="dt-a2-c" data-save aria-label="Category 2" value="Food: eating out or delivery"><span class="dollar"><input type="text" inputmode="decimal" id="dt-a2" data-save data-amt="dta" aria-label="Amount for category 2" placeholder="0"></span></div>
+                <div class="money-row"><input type="text" id="dt-a3-c" data-save aria-label="Category 3" value="Transportation: gas or rideshare"><span class="dollar"><input type="text" inputmode="decimal" id="dt-a3" data-save data-amt="dta" aria-label="Amount for category 3" placeholder="0"></span></div>
+                <div class="money-row"><input type="text" id="dt-a4-c" data-save aria-label="Category 4" value="School: books, fees, supplies"><span class="dollar"><input type="text" inputmode="decimal" id="dt-a4" data-save data-amt="dta" aria-label="Amount for category 4" placeholder="0"></span></div>
+                <div class="money-row"><input type="text" id="dt-a5-c" data-save aria-label="Category 5" value="Subscriptions: streaming, apps, music"><span class="dollar"><input type="text" inputmode="decimal" id="dt-a5" data-save data-amt="dta" aria-label="Amount for category 5" placeholder="0"></span></div>
+                <div class="money-row"><input type="text" id="dt-a6-c" data-save aria-label="Category 6" value="Personal: toiletries, clothing"><span class="dollar"><input type="text" inputmode="decimal" id="dt-a6" data-save data-amt="dta" aria-label="Amount for category 6" placeholder="0"></span></div>
+                <div class="money-row"><input type="text" id="dt-a7-c" data-save aria-label="Category 7" value="Bills: phone, rent, utilities"><span class="dollar"><input type="text" inputmode="decimal" id="dt-a7" data-save data-amt="dta" aria-label="Amount for category 7" placeholder="0"></span></div>
+                <div class="money-row"><input type="text" id="dt-a8-c" data-save aria-label="Category 8" value="Social: going out, gifts"><span class="dollar"><input type="text" inputmode="decimal" id="dt-a8" data-save data-amt="dta" aria-label="Amount for category 8" placeholder="0"></span></div>
+                <div class="money-row"><input type="text" id="dt-a9-c" data-save aria-label="Category 9" value="Random or impulse buys"><span class="dollar"><input type="text" inputmode="decimal" id="dt-a9" data-save data-amt="dta" aria-label="Amount for category 9" placeholder="0"></span></div>
+                <div class="money-row"><input type="text" id="dt-a10-c" data-save aria-label="Category 10" value="" placeholder="Your own category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-a10" data-save data-amt="dta" aria-label="Amount for category 10" placeholder="0"></span></div>
+                <div class="money-row"><input type="text" id="dt-a11-c" data-save aria-label="Category 11" value="" placeholder="Your own category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-a11" data-save data-amt="dta" aria-label="Amount for category 11" placeholder="0"></span></div>
+                <div class="money-row"><input type="text" id="dt-a12-c" data-save aria-label="Category 12" value="" placeholder="Your own category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-a12" data-save data-amt="dta" aria-label="Amount for category 12" placeholder="0"></span></div>
+              </div>
+              <p class="money-total">Estimated total spent <output data-sum="dta" aria-live="polite">$0</output></p>
+            </fieldset>
+            <fieldset class="mm-field">
+              <legend><span class="mm-num">Option B</span>Track every purchase for the next 7 days</legend>
+              <p class="tool-hint">Write down every purchase this week, big or small. No judging.</p>
+              <div class="money-rows">
+                <div class="log-row5"><input type="text" id="dt-b1-d" data-save aria-label="Purchase 1 day" placeholder="Day"><input type="text" id="dt-b1-w" data-save aria-label="Purchase 1: what you bought" placeholder="What you bought"><input type="text" id="dt-b1-c" data-save aria-label="Purchase 1 category" placeholder="Category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-b1" data-save data-amt="dtb" aria-label="Purchase 1 amount" placeholder="0"></span></div>
+                <div class="log-row5"><input type="text" id="dt-b2-d" data-save aria-label="Purchase 2 day" placeholder="Day"><input type="text" id="dt-b2-w" data-save aria-label="Purchase 2: what you bought" placeholder="What you bought"><input type="text" id="dt-b2-c" data-save aria-label="Purchase 2 category" placeholder="Category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-b2" data-save data-amt="dtb" aria-label="Purchase 2 amount" placeholder="0"></span></div>
+                <div class="log-row5"><input type="text" id="dt-b3-d" data-save aria-label="Purchase 3 day" placeholder="Day"><input type="text" id="dt-b3-w" data-save aria-label="Purchase 3: what you bought" placeholder="What you bought"><input type="text" id="dt-b3-c" data-save aria-label="Purchase 3 category" placeholder="Category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-b3" data-save data-amt="dtb" aria-label="Purchase 3 amount" placeholder="0"></span></div>
+                <div class="log-row5"><input type="text" id="dt-b4-d" data-save aria-label="Purchase 4 day" placeholder="Day"><input type="text" id="dt-b4-w" data-save aria-label="Purchase 4: what you bought" placeholder="What you bought"><input type="text" id="dt-b4-c" data-save aria-label="Purchase 4 category" placeholder="Category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-b4" data-save data-amt="dtb" aria-label="Purchase 4 amount" placeholder="0"></span></div>
+                <div class="log-row5"><input type="text" id="dt-b5-d" data-save aria-label="Purchase 5 day" placeholder="Day"><input type="text" id="dt-b5-w" data-save aria-label="Purchase 5: what you bought" placeholder="What you bought"><input type="text" id="dt-b5-c" data-save aria-label="Purchase 5 category" placeholder="Category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-b5" data-save data-amt="dtb" aria-label="Purchase 5 amount" placeholder="0"></span></div>
+                <div class="log-row5"><input type="text" id="dt-b6-d" data-save aria-label="Purchase 6 day" placeholder="Day"><input type="text" id="dt-b6-w" data-save aria-label="Purchase 6: what you bought" placeholder="What you bought"><input type="text" id="dt-b6-c" data-save aria-label="Purchase 6 category" placeholder="Category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-b6" data-save data-amt="dtb" aria-label="Purchase 6 amount" placeholder="0"></span></div>
+                <div class="log-row5"><input type="text" id="dt-b7-d" data-save aria-label="Purchase 7 day" placeholder="Day"><input type="text" id="dt-b7-w" data-save aria-label="Purchase 7: what you bought" placeholder="What you bought"><input type="text" id="dt-b7-c" data-save aria-label="Purchase 7 category" placeholder="Category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-b7" data-save data-amt="dtb" aria-label="Purchase 7 amount" placeholder="0"></span></div>
+                <div class="log-row5"><input type="text" id="dt-b8-d" data-save aria-label="Purchase 8 day" placeholder="Day"><input type="text" id="dt-b8-w" data-save aria-label="Purchase 8: what you bought" placeholder="What you bought"><input type="text" id="dt-b8-c" data-save aria-label="Purchase 8 category" placeholder="Category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-b8" data-save data-amt="dtb" aria-label="Purchase 8 amount" placeholder="0"></span></div>
+                <div class="log-row5"><input type="text" id="dt-b9-d" data-save aria-label="Purchase 9 day" placeholder="Day"><input type="text" id="dt-b9-w" data-save aria-label="Purchase 9: what you bought" placeholder="What you bought"><input type="text" id="dt-b9-c" data-save aria-label="Purchase 9 category" placeholder="Category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-b9" data-save data-amt="dtb" aria-label="Purchase 9 amount" placeholder="0"></span></div>
+                <div class="log-row5"><input type="text" id="dt-b10-d" data-save aria-label="Purchase 10 day" placeholder="Day"><input type="text" id="dt-b10-w" data-save aria-label="Purchase 10: what you bought" placeholder="What you bought"><input type="text" id="dt-b10-c" data-save aria-label="Purchase 10 category" placeholder="Category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-b10" data-save data-amt="dtb" aria-label="Purchase 10 amount" placeholder="0"></span></div>
+                <div class="log-row5"><input type="text" id="dt-b11-d" data-save aria-label="Purchase 11 day" placeholder="Day"><input type="text" id="dt-b11-w" data-save aria-label="Purchase 11: what you bought" placeholder="What you bought"><input type="text" id="dt-b11-c" data-save aria-label="Purchase 11 category" placeholder="Category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-b11" data-save data-amt="dtb" aria-label="Purchase 11 amount" placeholder="0"></span></div>
+                <div class="log-row5"><input type="text" id="dt-b12-d" data-save aria-label="Purchase 12 day" placeholder="Day"><input type="text" id="dt-b12-w" data-save aria-label="Purchase 12: what you bought" placeholder="What you bought"><input type="text" id="dt-b12-c" data-save aria-label="Purchase 12 category" placeholder="Category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-b12" data-save data-amt="dtb" aria-label="Purchase 12 amount" placeholder="0"></span></div>
+                <div class="log-row5"><input type="text" id="dt-b13-d" data-save aria-label="Purchase 13 day" placeholder="Day"><input type="text" id="dt-b13-w" data-save aria-label="Purchase 13: what you bought" placeholder="What you bought"><input type="text" id="dt-b13-c" data-save aria-label="Purchase 13 category" placeholder="Category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-b13" data-save data-amt="dtb" aria-label="Purchase 13 amount" placeholder="0"></span></div>
+                <div class="log-row5"><input type="text" id="dt-b14-d" data-save aria-label="Purchase 14 day" placeholder="Day"><input type="text" id="dt-b14-w" data-save aria-label="Purchase 14: what you bought" placeholder="What you bought"><input type="text" id="dt-b14-c" data-save aria-label="Purchase 14 category" placeholder="Category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-b14" data-save data-amt="dtb" aria-label="Purchase 14 amount" placeholder="0"></span></div>
+                <div class="log-row5"><input type="text" id="dt-b15-d" data-save aria-label="Purchase 15 day" placeholder="Day"><input type="text" id="dt-b15-w" data-save aria-label="Purchase 15: what you bought" placeholder="What you bought"><input type="text" id="dt-b15-c" data-save aria-label="Purchase 15 category" placeholder="Category"><span class="dollar"><input type="text" inputmode="decimal" id="dt-b15" data-save data-amt="dtb" aria-label="Purchase 15 amount" placeholder="0"></span></div>
+              </div>
+              <p class="money-total">Week total <output data-sum="dtb" aria-live="polite">$0</output></p>
+            </fieldset>
+            <fieldset class="mm-field wk-look">
+              <legend><span class="mm-num">Looking back</span>What did you notice?</legend>
+              <label class="mm-sub" for="dt-r1">What surprised you the most?</label>
+              <textarea id="dt-r1" data-save rows="3"></textarea>
+              <label class="mm-sub" for="dt-r2">Which category took more than you expected?</label>
+              <textarea id="dt-r2" data-save rows="3"></textarea>
+              <label class="mm-sub" for="dt-r3">Where did small purchases add up?</label>
+              <textarea id="dt-r3" data-save rows="3"></textarea>
+              <label class="mm-sub" for="dt-r4">One thing you'd do differently next week, not because you have to, but because it would feel better</label>
+              <textarea id="dt-r4" data-save rows="3"></textarea>
+            </fieldset>
+            <div class="mm-actions">
+              <button type="button" class="start-btn mm-save">Save as PDF [[download]]</button>
+              <button type="button" class="mm-clear">Clear my answers</button>
+            </div>
+            <p class="mm-how">In the print window, choose <strong>Save as PDF</strong> (or <strong>Microsoft Print to PDF</strong>) as the printer. The file name will start with "Dollar Tracker".</p>
+          </form>
+        </div>
+      </div>
+    </section>
