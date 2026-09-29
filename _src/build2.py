@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 28
+V = 29
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -234,9 +234,38 @@ CHAPTERS = [
      [('takeaways','Key takeaways')]),
   ],
   builds={'dollar-tracker.html':'B','budget-builder.html':'A','5-2.html':'C','5-3.html':'A, B, D','mile-marker.html':'A, B, C'}),
+ dict(n=6, title='Map Your Path — Academic Planning',
+  desc="Explore your interests, learn the difference between certificates, diplomas, and degrees, and prepare the questions you'll bring to your Success Coach.",
+  tagline="Your plan doesn't have to be final. It has to be specific enough to start a real conversation.",
+  why=["Most students walk into advising appointments without a plan, and walk out with a generic schedule that may or may not fit their actual goals.",
+       "This module helps you explore programs that might fit, understand how credentials stack at OCTC, and build the specific questions that turn a routine appointment into a useful one."],
+  objectives=[("interpret my Career Coach or O*NET Interest Profiler results and connect them to at least one program or career direction at OCTC.", 'Mile Marker #6'),
+              ("describe the difference between certificates, diplomas, AAS degrees, and transfer pathways at OCTC.", 'Mile Marker #6'),
+              ("draft a realistic course load for next term based on my goals, schedule, and program requirements.", 'Mile Marker #6'),
+              ("write five specific questions to bring to my Success Coach advising appointment.", 'Mile Marker #6'),
+              ("use AI responsibly to explore academic pathways without sharing personal identifying information.", True)],
+  es=[1,6,9,10], be=['Responsible','Reflective'], be_note='',
+  lessons=[
+   ('academic-planner.html','Trail Tool','Academic Planner',"Look ahead: sketch your next terms and the questions to bring.",15,
+     [('form','Fill in your plan')]),
+   ('6-1.html','6.1','Skill Spotlight: Knowledge Application',"Turning what you know into real decisions.",5,
+     [('what','What this skill is'),('headed',"Where you're headed"),('module','Where it shows up'),('life','In your own life'),('later','How it shows up later')]),
+   ('6-2.html','6.2','Explore Your Interests with Career Coach',"Take the assessment, read your results, and see what they point toward.",8,
+     [('riasec','Six interest types'),('take','Take the assessment'),('results','Use your results'),('ai-results','AI and your results')]),
+   ('6-3.html','6.3','Programs &amp; Pathways at OCTC',"How credentials stack, and how your results connect to real programs.",8,
+     [('stack','How credentials stack'),('types','What each one means'),('connect','Connect your results'),('bring','What to bring')]),
+   ('6-4.html','6.4','Build a Simple Academic Plan',"A map, not a rigid schedule.",9,
+     [('strategist','Think like a strategist'),('examples','What it looks like'),('questions','Questions to bring'),('ai-plan','AI and your plan')]),
+   ('trail-tip-grades.html','Trail Tip','Wait... How Is My Grade Actually Calculated?',"Most students don't know. Now you will.",8,
+     [('in-class','In a class'),('gpa','Your GPA'),('practice','Try it')]),
+   ('mile-marker.html','Mile Marker','Mile Marker #6: My Academic Plan',"The assignment, with support, and a form you can fill in and save.",10,
+     [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
+   ('wrap-up.html','Wrap Up','Module 6 Wrap Up',"Pull it together before you head back to your course.",2,
+     [('takeaways','Key takeaways')]),
+  ],
+  builds={'academic-planner.html':'C, D','6-2.html':'A, E','6-3.html':'A, B','6-4.html':'C, D, E','mile-marker.html':'A, B, C, D'}),
 ]
 LATER = [
- (6,"Map Your Path — Academic Planning","Explore your interests, learn the difference between certificates, diplomas, and degrees, and prepare the questions you'll bring to your Success Coach."),
  (7,"Knowing Your Strengths &amp; Values","Discover your top strengths and personal values, and connect them to your academic habits and career direction."),
  (8,"Explore Your Career Options","Research a career, then honestly evaluate whether it fits your strengths, values, and work style."),
  (9,"Think It Through — Critical Thinking + STAR(T) Introduction","Build your critical thinking toolkit with the 4C Check, and meet the STAR(T) framework for telling your story."),

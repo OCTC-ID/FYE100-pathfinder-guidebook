@@ -126,7 +126,7 @@
   }
   function total(g) { var t = 0; document.querySelectorAll('[data-amt="' + g + '"]').forEach(function (i) { t += num(i.value); }); return t; }
   function calc() {
-    document.querySelectorAll('[data-sum]').forEach(function (o) { o.value = money(total(o.getAttribute('data-sum'))); });
+    document.querySelectorAll('[data-sum]').forEach(function (o) { var t = total(o.getAttribute('data-sum')); o.value = o.hasAttribute('data-plain') ? String(Math.round(t * 10) / 10) : money(t); });
     document.querySelectorAll('[data-left]').forEach(function (o) {
       var p = o.getAttribute('data-left').split('-'), left = total(p[0]) - total(p[1]);
       o.value = money(left);

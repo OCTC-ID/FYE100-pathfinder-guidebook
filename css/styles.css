@@ -996,3 +996,68 @@ footer { border-top: 4px solid var(--accent); }
   .left-box, .budget-ex, .dims { break-inside: avoid; }
 }
 @media (max-width: 480px) { .money-row, .money-head { grid-template-columns: 1fr 96px; gap: 6px; } .tool-form .money-row input { font-size: .95rem; padding-left: 10px; } .tool-form .dollar input { padding-left: 22px; } }
+
+/* ---------- Module 6: pathways, planner, grades ---------- */
+.small-link { font-size: .92rem; margin-top: 8px !important; }
+.small-link a { font-weight: 600 !important; }
+.riasec { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.riasec li { position: relative; border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px 16px 70px; background: #fff; }
+.riasec .r-letter { position: absolute; left: 16px; top: 16px; width: 40px; height: 40px; border-radius: 10px; background: var(--navy); color: var(--gold); font-weight: 800; font-size: 1.3rem; display: grid; place-items: center; }
+.riasec h3 { font-size: 1.05rem; margin-bottom: 4px; }
+.riasec p { margin: 0; font-size: .96rem; }
+.ladder { margin: 0; border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; background: #fff; }
+.ladder figcaption { font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 12px; }
+.ladder-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ladder-steps li { display: grid; grid-template-columns: 220px 1fr; gap: 14px; align-items: center; padding: 12px 16px; border-radius: 10px; border-left: 6px solid var(--blue); background: var(--soft-blue); }
+.ladder-steps .l-course { border-left-color: #8aa3b8; background: #f3f6f9; }
+.ladder-steps .l-cert { margin-left: 0; }
+.ladder-steps .l-dip { margin-left: 24px; }
+.ladder-steps .l-aas { margin-left: 48px; border-left-color: var(--navy); }
+.ladder-steps .l-trans { border-left-color: var(--gold); background: var(--soft-gold); }
+.l-name { font-weight: 800; color: var(--navy); }
+.l-sub { display: block; font-weight: 600; font-size: .82rem; color: var(--muted); }
+.l-desc { font-size: .96rem; }
+.ladder-or { margin: 14px 0 8px; font-weight: 700; color: var(--muted); font-size: .95rem; }
+.ladder-ends { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 0; }
+.ladder-ends span { font-size: .88rem; font-weight: 700; padding: 5px 12px; border-radius: 999px; }
+.ladder-ends .to-work { background: var(--soft-blue); color: var(--dark-blue); border: 1px solid #b9d6ec; }
+.ladder-ends .to-uni { background: var(--soft-gold); color: #6b4a00; border: 1px solid #f0d08a; }
+.cred-grid, .scen-grid, .practice-grid { margin-top: 0; }
+.plain-table { width: 100%; border-collapse: collapse; font-size: .96rem; margin: 14px 0 0; }
+.plain-table th, .plain-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+.plain-table thead th { background: var(--navy); color: #fff; }
+.plain-table tbody th { font-weight: 700; color: var(--navy); }
+.plain-table tfoot th, .plain-table tfoot td { font-weight: 800; border-top: 2px solid var(--navy); border-bottom: 0; }
+.plain-table .num { text-align: right; white-space: nowrap; }
+.grade-ex { font-size: .92rem; }
+.grade-ex th, .grade-ex td { padding: 6px 8px; }
+.calc { margin: 12px 0 8px; font-size: .98rem; }
+.grade-scale { list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; max-width: 520px; }
+.grade-scale li { text-align: center; border-radius: 10px; padding: 10px 6px; border: 1px solid; }
+.g-letter { display: block; font-size: 1.3rem; font-weight: 800; }
+.g-pts { display: block; font-size: .85rem; }
+.g-a { background: #eaf6f0; color: #1a6640; border-color: #a5d6b7 !important; }
+.g-b { background: #e8f0f8; color: #003560; border-color: #90c0e0 !important; }
+.g-c { background: #fff8e1; color: #6b4a00; border-color: #e7a614 !important; }
+.g-d { background: #fdf0ee; color: #8b2500; border-color: #f0b0a0 !important; }
+.g-f { background: #f5f5f5; color: #444; border-color: #ccc !important; }
+.gpa-result { margin: 14px 0 0; display: inline-block; padding: 10px 16px; border-radius: 10px; background: var(--soft-blue); color: var(--navy); font-size: 1.05rem; }
+details.answer { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; }
+details.answer summary { cursor: pointer; font-weight: 700; color: var(--blue); }
+details.answer summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+details.answer p { margin: 8px 0 0; }
+.terms { display: grid; gap: 18px; margin-top: 18px; }
+.checklist-card { border: 2px solid var(--gold); border-radius: var(--radius); padding: 18px 20px; background: var(--soft-gold); }
+.checklist-card h3 { font-size: 1.1rem; margin-bottom: 6px; }
+@media (max-width: 900px) { .riasec { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 700px) {
+  .riasec { grid-template-columns: 1fr; }
+  .ladder-steps li { grid-template-columns: 1fr; gap: 2px; }
+  .ladder-steps .l-dip { margin-left: 12px; } .ladder-steps .l-aas { margin-left: 24px; }
+  .grade-scale { gap: 6px; }
+  .gpa-table { font-size: .86rem; } .gpa-table th, .gpa-table td { padding: 6px 5px; }
+}
+@media print {
+  details.answer:not([open]) > *:not(summary) { display: block; }
+  .riasec li, .ladder, .grade-scale, .plain-table, .checklist-card { break-inside: avoid; }
+}
