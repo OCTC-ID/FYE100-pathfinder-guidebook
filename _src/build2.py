@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 45
+V = 46
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -402,9 +402,31 @@ CHAPTERS = [
      [('takeaways','Key takeaways')]),
   ],
   builds={'community-snapshot.html':'A, B, C','11-2.html':'A, B','11-3.html':'C','trail-tip-start.html':'D','mile-marker.html':'A, B, C, D'}),
+ dict(n=12, title='Reflecting Back, Moving Forward',
+  desc="Look back at how far you've come, finish and submit your STAR(T) Stories, and decide what you're taking with you.",
+  tagline="The last mile marker on the trail, and a look at everything you've built along the way.",
+  why=["This is the last module of new content. From here, it's about finishing strong: completing your STAR(T) Stories, taking stock of how far you've come, and getting ready for the rest of the term.",
+       "Your STAR(T) Stories are your capstone: four true stories that show what you've built, in your own voice. Mile Marker #12 is short on purpose, so you can spend most of your time on them."],
+  objectives=[("record four STAR(T) responses, one per selected Essential Skill, that are specific, honest, and clearly structured.", 'your STAR(T) Stories (capstone)'),
+              ("articulate how each skill connects to my future in college, my career, and my life: the Transfer step.", 'your STAR(T) Stories (capstone)'),
+              ("explain my choice of student-selected skill in my own words.", 'your STAR(T) Stories (capstone)'),
+              ("reflect honestly on my growth this semester, what I am taking with me, and what I want to work on next.", 'Mile Marker #12')],
+  es=[1,5,6,9], be=['Honest','Reflective'], be_note='Your STAR(T) Stories bring all ten skills together: three assigned, and one you choose.',
+  lessons=[
+   ('look-back.html','Trail Tool','Look Back',"Your Mile Markers in one place, and room to notice what stands out.",15,
+     [('trail','Your Mile Markers'),('form','Fill in your look back')]),
+   ('12-1.html','12.1','Finish Your STAR(T) Stories',"Final review, and how to submit your capstone.",8,
+     [('where','Where you are'),('review','Final review'),('submit','Submitting your stories')]),
+   ('trail-tip-finish.html','Trail Tip','Finishing Strong',"FYE 100 may end before your other classes do. Here's how to finish the term.",3,
+     [('finals','Heading into finals')]),
+   ('mile-marker.html','Mile Marker','Mile Marker #12: My Story to Share',"Your final reflection, with support, and a form you can fill in and save.",20,
+     [('before','A quick look back'),('questions','The questions'),('scoring',"How it's scored"),('form','Fill in and save')]),
+   ('wrap-up.html','Wrap Up','Module 12 Wrap Up',"You've walked the whole trail.",2,
+     [('takeaways',"What you're taking with you")]),
+  ],
+  builds={'look-back.html':'D','12-1.html':'A, B, C','mile-marker.html':'D'}),
 ]
 LATER = [
- (12,"Reflecting Back, Moving Forward","Look back at how far you've come, gather your evidence, and decide what you're taking with you."),
 ]
 
 # ------------------------------------------------------------------ shared parts
@@ -787,7 +809,7 @@ GUIDES = [
          "The maps are built from the same source as the book, so they grow as modules are completed. Like the rest of the book, this guide is public. It contains no answer keys, scoring guidance, or points. Those stay in Blackboard."],
   lessons=[
    ('how-the-book-works.html','1','How the Book Works',"The book, Blackboard, and how a module is put together.",8,
-     [('split','The book and Blackboard'),('anatomy','How a module is built'),('design','Design commitments'),('teaching','Teaching with the book'),('current','Keeping the book current'),('reporting','Using the maps')]),
+     [('split','The book and Blackboard'),('anatomy','How a module is built'),('design','Design commitments'),('teaching','Teaching with the book'),('current','Keeping the book current'),('assessment','Course-level assessment'),('reporting','Using the maps')]),
    ('course-map.html','2','Course Map',"Every I Can statement, the outcome it serves, and where students show it.",10,
      [('outcomes','Learning outcomes'),('glance','At a glance'),('modules','Module by module')]),
    ('essential-skills-map.html','3','10 Essential Skills Map',"Kentucky Graduate Profile coverage, by module and by skill.",8,

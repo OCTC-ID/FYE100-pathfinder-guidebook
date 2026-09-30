@@ -103,10 +103,11 @@ def status(m):
 # ---------------------------------------------------------------- Course Map
 def course_map(C):
     E = C.E; out = []
+    PLANNED_NOTE = ' Modules still in development are marked <span class="planned-tag">Planned</span> and use the Framework as written.' if any(not m['built'] for m in C.mods) else ''
     out.append('''    <div class="row gap-md">
       <div class="main">
         <p class="lede">Every "I Can" statement in FYE 100, with the outcome it serves, the skills and behaviors it builds, and where students show it.</p>
-        <p>Objectives for built modules use the book's wording. Modules still in development are marked <span class="planned-tag">Planned</span> and use the Competency Framework. A <span class="anchor-star">★</span> marks an institutional assessment anchor: an I Can statement that generates evidence for SLO reporting.</p>
+        <p>Objectives use the book's wording, which follows the Competency Framework.{PLANNED_NOTE} A <span class="anchor-star">★</span> marks an institutional assessment anchor: an I Can statement that generates evidence for SLO reporting.</p>
       </div>
     </div>
 ''' + print_btn() + '''
@@ -212,7 +213,7 @@ def course_map(C):
       </div></div>
     </section>
 ''')
-    return ''.join(out)
+    return ''.join(out).replace('{PLANNED_NOTE}', PLANNED_NOTE)
 
 
 # ---------------------------------------------------------------- 10 Essential Skills

@@ -1392,3 +1392,14 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
 .req-tag.choice { background: #00695c; color: #fff; }
 @media (max-width: 560px) { .skill-prompts > li { grid-template-columns: 1fr; } }
 @media print { .skill-prompts > li { break-inside: avoid; } }
+
+/* ---------- Module 12 ---------- */
+.mm-trail { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.mm-trail a { display: flex; align-items: center; gap: 10px; border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; background: #fff; text-decoration: none; color: var(--navy); font-weight: 600; font-size: .95rem; }
+.mm-trail a:hover { border-color: var(--accent); background: var(--accent-soft); }
+.mmn { display: inline-grid; place-items: center; min-width: 38px; height: 28px; border-radius: 999px; background: var(--gold); color: #3a2800; font-weight: 800; font-size: .85rem; }
+.mm-hint { font-weight: 400; color: var(--muted); font-size: .88rem; }
+.end-card a.inline-light { color: #fff; text-decoration: underline; }
+@media (max-width: 900px) { .mm-trail { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .mm-trail { grid-template-columns: 1fr; } }
+@media print { .end-card a.inline-light { color: var(--ink); } }
