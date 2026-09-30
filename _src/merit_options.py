@@ -12,8 +12,8 @@ EDIT THIS LIST EACH TERM. Keep entries timeless (no dates or points). Each entry
 OPTIONS = [
     dict(title='Career Services workshops',
          who='OCTC Career Services',
-         what='Career Services offers workshops each term on topics like resumes, interviewing, and career readiness. Some are virtual or on demand.',
-         how="Check the current Merit listing your instructor posts in Blackboard for this term's workshops and how to join them.",
+         what='Career Services offers workshops each semester on topics like resumes, interviewing, and career readiness. Some are virtual or on demand.',
+         how="Check the current Merit listing your instructor posts in Blackboard for this semester's workshops and how to join them.",
          proof='A screenshot, confirmation email, or certificate of completion.',
          link='https://owensboro.kctcs.edu/current-students/experiential-learning-center/index.aspx',
          linktext='OCTC Career Services'),

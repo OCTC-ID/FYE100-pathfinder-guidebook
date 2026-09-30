@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 46
+V = 47
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -14,6 +14,7 @@ ICON = {
  'flag': svg('<path d="M4 21V4M4 4h12l-2 4 2 4H4"/>'),
  'home': svg('<path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/>'),
  'menu': svg('<path d="M4 6h16M4 12h16M4 18h10"/>', '2.2'),
+ 'help': svg('<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.7M12 17h.01"/>'),
  'next': svg('<path d="M5 12h14M13 6l6 6-6 6"/>', '2.5'),
  'prev': svg('<path d="M19 12H5M11 6l-6 6 6 6"/>', '2.5'),
  'clock': svg('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),
@@ -89,7 +90,7 @@ CHAPTERS = [
   desc="Get oriented, set up your tools, and start thinking about why you're here and where you want to go.",
   tagline='Every journey starts with a single step, and this one is yours.',
   why=["Most students who struggle in college don't struggle because they aren't capable. They struggle because the rules changed and nobody told them: about expectations, about how to ask for help, about what it means to own your own learning.",
-       "This module puts those things on the table early, while there's still time to build the right habits. What you set up here, including your goal, your sense of what college expects, and your first look at the skills and tools you'll use all semester, becomes the foundation for everything that follows."],
+       "This module puts those things on the table early, while there's still time to build the right habits. What you set up here, including your goal, your sense of what college expects, and your first look at the skills and tools you'll use all semester, becomes the foundation for everything that follows. New to this book? Take a few minutes with <a href=\"../help/index.html\">How to Use This Book</a> first."],
   objectives=[("describe my personal reasons for attending college and define what success means to me right now.", 'Mile Marker #1'),
               ("navigate Blackboard and locate key course information, assignments, and instructor contact details.", 'the Syllabus &amp; Blackboard Scavenger Hunt (optional practice)'),
               ("set one personal or academic goal for this semester and describe how I plan to reach it.", 'Mile Marker #1'),
@@ -241,12 +242,12 @@ CHAPTERS = [
        "This module helps you explore programs that might fit, understand how credentials stack at OCTC, and build the specific questions that turn a routine appointment into a useful one."],
   objectives=[("interpret my Career Coach or O*NET Interest Profiler results and connect them to at least one program or career direction at OCTC.", 'Mile Marker #6'),
               ("describe the difference between certificates, diplomas, AAS degrees, and transfer pathways at OCTC.", 'Mile Marker #6'),
-              ("draft a realistic course load for next term based on my goals, schedule, and program requirements.", 'Mile Marker #6'),
+              ("draft a realistic course load for next semester based on my goals, schedule, and program requirements.", 'Mile Marker #6'),
               ("write five specific questions to bring to my Success Coach advising appointment.", 'Mile Marker #6'),
               ("use AI responsibly to explore academic pathways without sharing personal identifying information.", True)],
   es=[1,6,9,10], be=['Responsible','Reflective'], be_note='',
   lessons=[
-   ('academic-planner.html','Trail Tool','Academic Planner',"Look ahead: sketch your next terms and the questions to bring.",15,
+   ('academic-planner.html','Trail Tool','Academic Planner',"Look ahead: sketch your next semesters and the questions to bring.",15,
      [('form','Fill in your plan')]),
    ('6-1.html','6.1','Skill Spotlight: Knowledge Application',"Turning what you know into real decisions.",5,
      [('what','What this skill is'),('headed',"Where you're headed"),('module','Where it shows up'),('life','In your own life'),('later','How it shows up later')]),
@@ -268,7 +269,7 @@ CHAPTERS = [
   desc="Discover your top strengths and personal values, and connect them to your academic habits and career direction.",
   tagline="Not what you're doing. Who you are, and what you bring to everything you do.",
   why=["You've spent the last several modules building awareness of your time, your money, and your academic direction. This module turns the focus inward: not what you're doing, but who you are.",
-       "Your strengths and values shape how you learn, how you work with others, what drains you, and what energizes you. Understanding them is one of the most useful things you can do for the rest of this term, and beyond."],
+       "Your strengths and values shape how you learn, how you work with others, what drains you, and what energizes you. Understanding them is one of the most useful things you can do for the rest of this semester, and beyond."],
   objectives=[("identify my Top 5 HIGH5 strengths and explain what they mean for how I learn and work.", 'Mile Marker #7'),
               ("identify my Top 5 personal values and describe how they shape my decisions and priorities.", 'the Values Journal (online) or class discussion (in person)'),
               ("connect my strengths and values to my academic habits, career direction, and how I work with others.", 'Mile Marker #7'),
@@ -293,7 +294,7 @@ CHAPTERS = [
   desc="Research one career in depth, then honestly evaluate whether it fits your strengths, values, work style, and life.",
   tagline="Not the career you're supposed to want. The one that actually fits who you are.",
   why=["A good career fit isn't just about choosing something that \"sounds cool\" or \"pays well.\" It's about finding work that lines up with who you are, what you value, what you're good at, and how you actually want to live.",
-       "In this module you'll use real research tools to explore one career in depth, and honestly assess whether it fits. You'll also set up your Handshake profile and get ready to register for next term."],
+       "In this module you'll use real research tools to explore one career in depth, and honestly assess whether it fits. You'll also set up your Handshake profile and get ready to register for next semester."],
   objectives=[("research one career using Career Coach and O*NET, including regional salary, job outlook, education requirements, and typical work environment.", 'Mile Marker #8'),
               ("evaluate a career for personal fit by connecting my research findings to my strengths, values, work style, and pressure tolerance.", 'Mile Marker #8'),
               ("articulate one clear question I still have about this career direction.", 'Mile Marker #8')],
@@ -307,7 +308,7 @@ CHAPTERS = [
      [('fit','What career fit means'),('directions','Directions, not titles'),('before','Start with the life you want'),('tools','Two research tools'),('how','Step by step'),('ai-research','AI and career research')]),
    ('trail-tip-handshake.html','Trail Tip','Set Up Your Handshake Profile',"Your professional home base, starting now.",5,
      [('setup','Set up your profile'),('explore','Worth exploring')]),
-   ('trail-tip-register.html','Trail Tip','Register Early for Next Term',"Early gets the classes you need. Late gets what's left.",4,
+   ('trail-tip-register.html','Trail Tip','Register Early for Next Semester',"Early gets the classes you need. Late gets what's left.",4,
      [('when','When registration opens'),('coach','Meet your Success Coach'),('why','Why early matters')]),
    ('mile-marker.html','Mile Marker','Mile Marker #8: My Career Snapshot',"The assignment, with support, and a form you can fill in and save.",10,
      [('part1','Part 1: Research Guide'),('questions','Part 2: The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
@@ -379,7 +380,7 @@ CHAPTERS = [
   desc="See how communities work, connect your strengths and values to how you want to show up in them, and choose your four STAR(T) Stories.",
   tagline="Your community is closer than you think, and so is your next step on this trail.",
   why=["\"Civic engagement\" can sound like something for other people: politicians, organizers, people with way more free time than you. This module starts somewhere different, with the communities you're already part of and the everyday skill of seeing how they actually work.",
-       "It's also your working time for your STAR(T) Stories. Everything you've learned about yourself this term (strengths, values, interests, and now community) is exactly what those stories are made of."],
+       "It's also your working time for your STAR(T) Stories. Everything you've learned about yourself this semester (strengths, values, interests, and now community) is exactly what those stories are made of."],
   objectives=[("define community broadly and identify at least one community I already belong to and contribute to.", 'Mile Marker #11'),
               ("describe specific ways my everyday actions make a positive impact on the people around me.", 'Mile Marker #11'),
               ("connect my strengths and values to one intentional way I want to grow my community impact going forward.", 'Mile Marker #11'),
@@ -405,7 +406,7 @@ CHAPTERS = [
  dict(n=12, title='Reflecting Back, Moving Forward',
   desc="Look back at how far you've come, finish and submit your STAR(T) Stories, and decide what you're taking with you.",
   tagline="The last mile marker on the trail, and a look at everything you've built along the way.",
-  why=["This is the last module of new content. From here, it's about finishing strong: completing your STAR(T) Stories, taking stock of how far you've come, and getting ready for the rest of the term.",
+  why=["This is the last module of new content. From here, it's about finishing strong: completing your STAR(T) Stories, taking stock of how far you've come, and getting ready for the rest of the semester.",
        "Your STAR(T) Stories are your capstone: four true stories that show what you've built, in your own voice. Mile Marker #12 is short on purpose, so you can spend most of your time on them."],
   objectives=[("record four STAR(T) responses, one per selected Essential Skill, that are specific, honest, and clearly structured.", 'your STAR(T) Stories (capstone)'),
               ("articulate how each skill connects to my future in college, my career, and my life: the Transfer step.", 'your STAR(T) Stories (capstone)'),
@@ -417,7 +418,7 @@ CHAPTERS = [
      [('trail','Your Mile Markers'),('form','Fill in your look back')]),
    ('12-1.html','12.1','Finish Your STAR(T) Stories',"Final review, and how to submit your capstone.",8,
      [('where','Where you are'),('review','Final review'),('submit','Submitting your stories')]),
-   ('trail-tip-finish.html','Trail Tip','Finishing Strong',"FYE 100 may end before your other classes do. Here's how to finish the term.",3,
+   ('trail-tip-finish.html','Trail Tip','Finishing Strong',"FYE 100 may end before your other classes do. Here's how to finish the semester.",3,
      [('finals','Heading into finals')]),
    ('mile-marker.html','Mile Marker','Mile Marker #12: My Story to Share',"Your final reflection, with support, and a form you can fill in and save.",20,
      [('before','A quick look back'),('questions','The questions'),('scoring',"How it's scored"),('form','Fill in and save')]),
@@ -458,7 +459,11 @@ def bookbar(depth, where):
         <span class="book">{BOOK}<span class="long"> · FYE 100</span></span>{w}
       </span>
     </a>
-    <a class="contents-btn" href="{up}index.html#contents">{ICON['menu']}<span><span class="long">Book </span>Contents</span></a>
+    <nav class="bar-nav" aria-label="Book">
+      <a class="bar-btn" href="{up}index.html">{ICON['home']}<span class="bar-lbl">Home</span></a>
+      <a class="bar-btn" href="{up}chapters/help/index.html">{ICON['help']}<span class="bar-lbl">How to use</span></a>
+      <a class="contents-btn" href="{up}index.html#contents">{ICON['menu']}<span><span class="long">Book </span>Contents</span></a>
+    </nav>
   </div>
 </header>
 '''
@@ -755,7 +760,7 @@ GUIDES = [
      [('why-merit','What Merit does for you'),('setup','Set up your page'),('links','Helpful links')]),
    ('find-activity.html','3','Find Your Activity',"On campus, online, or in your community.",5,
      [('paths','Three paths'),('approval','Getting approval'),('proof','Proof at a glance')]),
-   ('on-demand.html','4','On-Demand Options',"Approved options you can do from anywhere. Updated each term.",3,
+   ('on-demand.html','4','On-Demand Options',"Approved options you can do from anywhere. Updated each semester.",3,
      [('now',"What's available"),('how','Making it count')]),
    ('reflection.html','5','Write Your Reflection',"Going is the requirement. The reflection is where the learning happens.",5,
      [('format','Choose a format'),('prompts','Three prompts'),('example','An example'),('scoring',"How it's scored"),('submit','Before you submit')]),
@@ -1063,6 +1068,33 @@ def build_guide(g):
 """ + pagenav(g, 'index.html', wide=True) + '  </main>\n</div>\n' + FOOT
     write(d/'index.html', opener)
 
+
+# ------------------------------------------------------------------ help page
+HELP_SECS=[('split','The book and Blackboard'),('module','How each module is laid out'),('save','Keep your work safe'),('ai','AI use labels'),('around','Getting around'),('guides','The guides'),('access','Reading your way')]
+def build_help():
+    d = ROOT/'chapters/help'; d.mkdir(parents=True, exist_ok=True)
+    body = tokens((HERE/'bodies/help/how-to-use.html').read_text())
+    toc = ''.join(f'<li><a href="#{i}">{t}</a></li>' for i,t in HELP_SECS)
+    page = head(f'How to Use This Book | {BOOK}', 2) + bookbar(2, 'How to Use This Book') + f"""
+<div class="shell solo">
+  <main id="main" class="reading">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../../index.html">Home</a></li>
+        <li><span aria-current="page">How to Use This Book</span></li>
+      </ol>
+    </nav>
+    <div class="row">
+      <div class="main">
+        <span class="lesson-kicker">Start here</span>
+        <h1>How to Use This Book</h1>
+        <p class="lesson-sub">How the book and Blackboard fit together, and how to keep your work safe.</p>
+      </div>
+    </div>
+    <div class="row gap-sm"><div class="main"><nav class="page-toc" aria-label="On this page"><span class="pt-label">On this page</span><ul>{toc}</ul></nav></div></div>
+""" + body + '  </main>\n</div>\n' + FOOT
+    write(d/'index.html', page)
+
 # ------------------------------------------------------------------ home
 def build_home():
     toc = []
@@ -1105,12 +1137,13 @@ def build_home():
     <h1>{BOOK}</h1>
     <p class="tagline">Your guide to college, from your first week to the skills you'll carry with you.</p>
     <a class="start-btn" href="chapters/ch01/index.html">Start reading {TOK['next']}</a>
+    <p class="hero-sub"><a href="chapters/help/index.html">New here? How to use this book</a></p>
   </div>
   {banner_svg('START HERE')}
 </div>
 
 <main id="main" class="home">
-  <p class="home-intro">This guidebook holds the readings for FYE 100. Your course in Blackboard tells you what's due and when. This is where you read, think, and get ready.</p>
+  <p class="home-intro">This guidebook holds the readings for FYE 100. Your course in Blackboard tells you what's due and when. This is where you read, think, and get ready. New to the book? Start with <a href="chapters/help/index.html">How to Use This Book</a>.</p>
 
   <section aria-labelledby="contents" class="gap-md">
     <div class="h2wrap"><h2 id="contents">Contents</h2></div>
@@ -1134,5 +1167,6 @@ import instructor
 INSTR = instructor.pages(CHAPTERS, LATER, ESSENTIAL, HERE)
 for ch in CHAPTERS: build_chapter(ch)
 for g in GUIDES: build_guide(g)
+build_help()
 build_home()
 print('built', [c['n'] for c in CHAPTERS])
