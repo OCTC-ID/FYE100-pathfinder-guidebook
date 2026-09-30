@@ -1324,3 +1324,53 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
   .es-cards { grid-template-columns: 1fr 1fr; gap: 10px; }
   .map-mod { break-inside: auto; }
 }
+
+/* ---------- Module 10: collaboration ---------- */
+.trap-grid.roles li { border-top-color: var(--gold); }
+.trap-grid.roles li:last-child { grid-column: span 1; }
+.messy { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
+.messy li { border: 1px solid var(--border); border-left: 5px solid var(--blue); border-radius: 10px; padding: 10px 14px; background: #fff; }
+.messy strong { color: var(--navy); }
+.aspects { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.aspects > li { border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; background: #fff; }
+.aspects > li:last-child { grid-column: 1 / -1; }
+.aspects h3 { font-size: 1.08rem; margin-bottom: 8px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
+.asp-sub { font-size: .85rem; font-weight: 600; color: var(--muted); }
+.aspects dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.aspects dl > div { background: var(--soft-blue); border-radius: 8px; padding: 8px 12px; }
+.aspects dt { font-weight: 800; color: var(--blue); font-size: .92rem; }
+.aspects dd { margin: 2px 0 0; font-size: .93rem; }
+.table-wrap { overflow-x: auto; position: relative; }
+.ss-table th[scope="row"] { white-space: nowrap; }
+.strat-list > li { padding-bottom: 16px; }
+.strat-list .dots { margin-top: 6px; }
+.gap-xs { margin-top: 8px !important; }
+.scripts { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.scripts li { font-style: italic; color: var(--dark-blue); background: var(--soft-blue); border: 1px solid #c8dcec; border-radius: 8px; padding: 6px 12px; font-size: .96rem; }
+.signal-pills { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.signal-pills li { background: var(--soft-gold); border: 1px solid var(--gold); color: #5e4100; border-radius: 999px; padding: 3px 12px; font-size: .9rem; font-weight: 600; }
+.plan-ex { margin: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: #fff; }
+.plan-ex figcaption { background: var(--navy); color: #fff; font-weight: 700; padding: 10px 16px; }
+.plan-body { padding: 6px 18px 16px; }
+.plan-body h3 { font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; color: var(--blue); margin: 14px 0 4px; }
+.plan-body p { margin: 0; }
+.chk-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px 14px; margin: 8px 0 12px; }
+.chk { display: flex; align-items: flex-start; gap: 8px; font-size: .96rem; line-height: 1.4; cursor: pointer; padding: 4px 0; }
+.mm-form .chk input[type="checkbox"] { width: 18px; height: 18px; margin: 1px 0 0; flex-shrink: 0; accent-color: var(--blue); }
+.chk-h { margin: 10px 0 0; font-weight: 800; font-size: .9rem; color: var(--navy); }
+@media (max-width: 900px) { .chk-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 700px) { .aspects, .aspects dl { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .chk-grid { grid-template-columns: 1fr; } }
+@media print {
+  .mm-form input[type="checkbox"] { display: inline-block !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .chk:not(:has(input:checked)) { color: #999; }
+  .chk-grid { grid-template-columns: repeat(3, 1fr); }
+  .aspects > li, .messy li, .plan-ex, .strat-list > li { break-inside: avoid; }
+}
+.word-bank { font-size: .9rem; color: var(--muted); background: #f7f9fb; border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; margin: 8px 0 0; }
+.word-bank strong { color: var(--navy); }
+.strat-list li li { counter-increment: none; }
+.strat-list li li::before { content: none; }
+.strat-list .dots li { padding: 0; border: 0; border-radius: 0; }
+.strat-list .scripts li { padding: 6px 12px; border: 1px solid #c8dcec; border-radius: 8px; }
+.strat-list .signal-pills li { padding: 3px 12px; border: 1px solid var(--gold); border-radius: 999px; }

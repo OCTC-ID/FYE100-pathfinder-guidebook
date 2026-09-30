@@ -53,13 +53,14 @@
 
   function save() {
     var o = {};
-    for (var i = 0; i < fields.length; i++) o[fields[i].id] = fields[i].value;
+    for (var i = 0; i < fields.length; i++) o[fields[i].id] = fields[i].type === 'checkbox' ? fields[i].checked : fields[i].value;
     try { localStorage.setItem(key, JSON.stringify(o)); } catch (e) {}
   }
   for (var i = 0; i < fields.length; i++) {
     var f = fields[i];
-    if (data[f.id] != null) f.value = data[f.id];
+    if (data[f.id] != null) { if (f.type === 'checkbox') f.checked = !!data[f.id]; else f.value = data[f.id]; }
     f.addEventListener('input', save);
+    f.addEventListener('change', save);
   }
   var dateEl = form.querySelector('input[type="date"]');
   if (dateEl && !dateEl.value) {
@@ -73,7 +74,9 @@
   // Copy typed answers into plain text blocks so they print in full
   function mirror() {
     for (var i = 0; i < fields.length; i++) {
-      var f = fields[i], out = f.nextElementSibling;
+      var f = fields[i];
+      if (f.type === 'checkbox') continue;
+      var out = f.nextElementSibling;
       if (!out || !out.classList.contains('mm-out')) {
         out = document.createElement('div');
         out.className = 'mm-out';
@@ -107,7 +110,7 @@
 
   form.querySelector('.mm-clear').addEventListener('click', function () {
     if (!window.confirm('Clear all of your answers on this page? This cannot be undone.')) return;
-    for (var i = 0; i < fields.length; i++) if (fields[i].type !== 'date') fields[i].value = '';
+    for (var i = 0; i < fields.length; i++) { if (fields[i].type === 'checkbox') fields[i].checked = false; else if (fields[i].type !== 'date') fields[i].value = ''; }
     try { localStorage.removeItem(key); } catch (e) {}
   });
 })();

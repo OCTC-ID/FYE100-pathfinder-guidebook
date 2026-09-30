@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 43
+V = 44
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -344,9 +344,39 @@ CHAPTERS = [
      [('takeaways','Key takeaways')]),
   ],
   builds={'four-c-check.html':'B','9-3.html':'A','9-4.html':'B','9-5.html':'C, D','mile-marker.html':'A, C, D'}),
+ dict(n=10, title='Team Up — Collaboration &amp; People Skills', merit=3,
+  desc="Explore how you work with others, name your collaboration strengths and challenges, and figure out what you need from a team.",
+  tagline="How you work with others, and how to make it easier on everyone, including you.",
+  why=["Let's be honest: group work has a reputation, and not always a great one. This module isn't about pretending it's easy. It's about figuring out how <em>you</em> work best, so you can say so, instead of just hoping things go okay.",
+       "You'll take the 16Personalities assessment, look at your collaboration strengths and struggles, and pick up strategies that fit how you operate. All of it feeds straight into Mile Marker #10."],
+  objectives=[("identify my natural collaboration tendencies using my 16Personalities results and explain how they show up in group work.", 'Mile Marker #10'),
+              ("name two collaboration strengths and one or two challenges and explain why those challenges happen.", 'Mile Marker #10'),
+              ("describe three specific strategies that help me work more effectively with others.", 'Mile Marker #10'),
+              ("articulate in one clear sentence what I need from teammates to do my best work.", 'Mile Marker #10')],
+  es=[1,4,8], be=['Honest','Responsible'], be_note='',
+  lessons=[
+   ('collaboration-snapshot.html','Trail Tool','Collaboration Snapshot',"Your roles, type, strengths, struggles, and strategies in one place.",15,
+     [('form','Fill in your snapshot')]),
+   ('10-1.html','10.1','Skill Spotlight: Collaboration &amp; Teamwork',"Yes, the group work skill. Stay with us. This one's worth it.",7,
+     [('what','What this skill is'),('headed',"Where you're headed"),('behaviors','Four behaviors'),('module','Where it shows up'),('life','In your own life'),('later','How it shows up later')]),
+   ('10-2.html','10.2','Who Are You in a Group?',"Before you can work well with others, you have to understand how you naturally show up.",5,
+     [('roles','Seven group roles'),('messy','Where it gets messy'),('tools','Why personality tools help'),('reflect','Start your snapshot')]),
+   ('10-3.html','10.3','Exploring Your Personality Type',"Take the 16Personalities assessment and make sense of your results.",15,
+     [('take','Take the assessment'),('letters','Understand your letters'),('groups','Your type in groups'),('map','A map, not a rulebook'),('impressions','First impressions')]),
+   ('10-4.html','10.4','Strengths &amp; Struggles in Collaboration',"Every style has strengths and challenges. Knowing yours is power.",6,
+     [('traits','Your type and collaboration'),('brains','Different brains'),('yours','Name your strengths')]),
+   ('10-5.html','10.5','Collaborative Strategies That Actually Work',"Choose strategies that match how you work.",8,
+     [('strategies','Nine strategies'),('choose','Choose your three')]),
+   ('trail-tip-ai-plan.html','Trail Tip','Divide &amp; Conquer, AI-Style',"Use AI to turn a group assignment into tasks, roles, and a timeline.",5,
+     [('how','How to do it'),('example','What you get back'),('ai','The plan is the easy part')]),
+   ('mile-marker.html','Mile Marker','Mile Marker #10: My Collaboration Profile',"The assignment, with support, and a form you can fill in and save.",15,
+     [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
+   ('wrap-up.html','Wrap Up','Module 10 Wrap Up',"Pull it together before you head back to your course.",2,
+     [('takeaways','Key takeaways')]),
+  ],
+  builds={'collaboration-snapshot.html':'A, B, C, D','10-2.html':'A','10-3.html':'A','10-4.html':'B','10-5.html':'C, D','trail-tip-ai-plan.html':'C','mile-marker.html':'A, B, C, D'}),
 ]
 LATER = [
- (10,"Team Up — Collaboration &amp; People Skills","Explore how you work with others, name your collaboration strengths and challenges, and figure out what you need from a team."),
  (11,"Making an Impact — Community, Values &amp; Your Pathfinder Journey","See how communities work, and connect your strengths and values to how you want to show up in them."),
  (12,"Reflecting Back, Moving Forward","Look back at how far you've come, gather your evidence, and decide what you're taking with you."),
 ]

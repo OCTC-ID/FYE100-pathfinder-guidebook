@@ -439,7 +439,7 @@ def ai_map(C):
     out.append(f'''    <section id="chats" aria-labelledby="ch-h">
       <div class="row"><div class="main">
         <div class="h2wrap"><h2 id="ch-h">Blackboard AI Chats</h2></div>
-        <p>{['No','One','Two','Three','Four','Five','Six','Seven','Eight'][len(AI_CHATS)]} modules include an AI Chat with Coach Pathfinder in Blackboard. Socratic chats ask questions instead of giving answers, so the thinking stays with the student. Role-play chats put students in a realistic situation.</p>
+        <p>{['No','One','Two','Three','Four','Five','Six','Seven','Eight'][len(AI_CHATS)]} modules include an AI Chat with Coach Pathfinder in Blackboard. Each one is Socratic: Coach Pathfinder asks questions instead of giving answers, so the thinking stays with the student.</p>
       </div></div>
       <div class="row wide gap-sm"><div class="main">
         <div class="table-scroll" role="region" aria-label="AI Chats" tabindex="0">

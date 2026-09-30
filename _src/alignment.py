@@ -57,8 +57,8 @@ TAGS = {
  '9.4': dict(clo=[1, 3], es=[9, 2], be=['Reflective']),
  # planned (not yet in the book): wording from the Competency Framework
  '10.1': dict(clo=[3], es=[8]),
- '10.2': dict(clo=[3], es=[8, 4]),
- '10.3': dict(clo=[3], es=[8]),
+ '10.2': dict(clo=[3], es=[8, 4], note='Mile Marker #10 updated to ask for two strengths (was one or two).'),
+ '10.3': dict(clo=[3], es=[8], note='Mile Marker #10 updated to ask for three strategies, one tied to a real experience (was two).'),
  '10.4': dict(clo=[3], es=[1, 8], be=['Honest']),
  '11.1': dict(clo=[3], es=[7]),
  '11.2': dict(clo=[3], es=[7, 4]),
@@ -122,5 +122,4 @@ AI_CHATS = [
  (4, 'Socratic', 'SIFT: evaluating AI-generated information', ['Critical'], 'Is This Legit?'),
  (8, 'Socratic', 'Career fit exploration', ['Critical', 'Responsible'], 'What Future Do You Want Your Career to Make Possible?'),
  (9, 'Socratic', 'The 4C Check applied to a real decision', ['Critical'], 'Think It Through'),
- (10, 'Role-play', 'A group work situation involving AI use', ['Responsible'], None),
 ]
