@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 44
+V = 45
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -375,9 +375,35 @@ CHAPTERS = [
      [('takeaways','Key takeaways')]),
   ],
   builds={'collaboration-snapshot.html':'A, B, C, D','10-2.html':'A','10-3.html':'A','10-4.html':'B','10-5.html':'C, D','trail-tip-ai-plan.html':'C','mile-marker.html':'A, B, C, D'}),
+ dict(n=11, title='Making an Impact — Community, Values &amp; Your Pathfinder Journey',
+  desc="See how communities work, connect your strengths and values to how you want to show up in them, and choose your four STAR(T) Stories.",
+  tagline="Your community is closer than you think, and so is your next step on this trail.",
+  why=["\"Civic engagement\" can sound like something for other people: politicians, organizers, people with way more free time than you. This module starts somewhere different, with the communities you're already part of and the everyday skill of seeing how they actually work.",
+       "It's also your working time for your STAR(T) Stories. Everything you've learned about yourself this term (strengths, values, interests, and now community) is exactly what those stories are made of."],
+  objectives=[("define community broadly and identify at least one community I already belong to and contribute to.", 'Mile Marker #11'),
+              ("describe specific ways my everyday actions make a positive impact on the people around me.", 'Mile Marker #11'),
+              ("connect my strengths and values to one intentional way I want to grow my community impact going forward.", 'Mile Marker #11'),
+              ("select four experiences from my semester and match each one to an Essential Skill for my STAR(T) Story.", 'Mile Marker #11')],
+  es=[4,5,7,9], be=['Responsible','Reflective'], be_note='',
+  lessons=[
+   ('community-snapshot.html','Trail Tool','Community Snapshot',"One community: how it works, what you bring, and where you're headed.",15,
+     [('form','Fill in your snapshot')]),
+   ('11-1.html','11.1','Skill Spotlight: Civic Engagement',"Starting with the parts of \"society\" you're already standing in.",7,
+     [('what','What this skill is'),('headed',"Where you're headed"),('behaviors','Three behaviors'),('module','Where it shows up'),('life','In your own life'),('later','How it shows up later')]),
+   ('11-2.html','11.2','What Is Community, Really?',"You're already in more communities than you think, and already shaping how they work.",9,
+     [('already',"You're already in community"),('system','Every community runs on a system'),('example','The shared kitchen'),('civic','Why this counts'),('try','Your turn'),('more','Systems thinking')]),
+   ('11-3.html','11.3','Your Strengths, Your Community',"Putting what you know about yourself to work.",8,
+     [('know',"What you've figured out"),('time','"I don\'t have time"'),('offer','Your offer and your boundary'),('example','Jordan and the garden'),('try','Your turn'),('next','Your stories are here')]),
+   ('trail-tip-start.html','Trail Tip','Start Your STAR(T) Stories',"This module is your working time. Here's the short path.",3,
+     [('path','Three steps to start')]),
+   ('mile-marker.html','Mile Marker','Mile Marker #11: My Community Impact',"The assignment, with support, and a form you can fill in and save.",20,
+     [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
+   ('wrap-up.html','Wrap Up','Module 11 Wrap Up',"Pull it together before you head back to your course.",2,
+     [('takeaways','Key takeaways')]),
+  ],
+  builds={'community-snapshot.html':'A, B, C','11-2.html':'A, B','11-3.html':'C','trail-tip-start.html':'D','mile-marker.html':'A, B, C, D'}),
 ]
 LATER = [
- (11,"Making an Impact — Community, Values &amp; Your Pathfinder Journey","See how communities work, and connect your strengths and values to how you want to show up in them."),
  (12,"Reflecting Back, Moving Forward","Look back at how far you've come, gather your evidence, and decide what you're taking with you."),
 ]
 
@@ -738,8 +764,8 @@ GUIDES = [
   lessons=[
    ('the-framework.html','1','The STAR(T) Framework',"Five steps for telling the story of a skill you've actually built.",6,
      [('steps','The five steps'),('example','What it looks like')]),
-   ('find-your-stories.html','2','Find Your Stories',"Four skills, four true stories. Here's how to pick them.",5,
-     [('four','Your four skills'),('mine','Mine your own work'),('good','Is it a good story?')]),
+   ('find-your-stories.html','2','Find Your Stories',"Four skills, four true stories. Here's how to pick them.",10,
+     [('four','Your four skills'),('prompts','Prompts for every skill'),('mine','Mine your own work'),('good','Is it a good story?')]),
    ('tell-it-out-loud.html','3','Tell It Out Loud',"Why recording is worth it, and how to do it in 2 to 4 minutes.",6,
      [('not-speech','Not a speech class'),('ramble','The rambling problem'),('options','Your options'),('record','Recording in Blackboard')]),
    ('strong-story.html','4','What Makes a Strong Story',"How stories are scored, and three fixes that move a story up.",5,

@@ -1374,3 +1374,21 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
 .strat-list .dots li { padding: 0; border: 0; border-radius: 0; }
 .strat-list .scripts li { padding: 6px 12px; border: 1px solid #c8dcec; border-radius: 8px; }
 .strat-list .signal-pills li { padding: 3px 12px; border: 1px solid var(--gold); border-radius: 999px; }
+
+/* ---------- Module 11: community ---------- */
+.trap-grid.sys-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.trap-grid.sys-grid li { border-top-color: var(--gold); }
+.sys-ex { --c: var(--blue); }
+@media (max-width: 900px) { .trap-grid.sys-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .trap-grid.sys-grid { grid-template-columns: 1fr; } }
+.skill-prompts { list-style: none; margin: 8px 0 20px; padding: 0; display: grid; gap: 12px; }
+.skill-prompts > li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 16px; border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; background: #fff; }
+.skill-prompts h3 { font-size: 1.08rem; margin-bottom: 4px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.skill-prompts p { margin: 0 0 8px; font-size: .97rem; }
+.sp-def { color: var(--muted); }
+.sp-prompt { font-style: italic; background: var(--soft-blue); border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0; padding: 8px 12px; margin: 4px 0 0 !important; }
+.sp-group { font-size: .8rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 18px 0 4px; }
+.req-tag { font-size: .7rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; background: var(--gold); color: #3a2800; border-radius: 999px; padding: 2px 9px; }
+.req-tag.choice { background: #00695c; color: #fff; }
+@media (max-width: 560px) { .skill-prompts > li { grid-template-columns: 1fr; } }
+@media print { .skill-prompts > li { break-inside: avoid; } }
