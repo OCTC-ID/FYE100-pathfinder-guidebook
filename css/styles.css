@@ -1150,7 +1150,7 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
 .mm-form select { max-width: 100%; min-width: 0; }
 
 /* ---------- STAR(T) Stories Guide ---------- */
-:root { --ss-s: #1565c0; --ss-t: #1976d2; --ss-a: #0277bd; --ss-r: #00707a; --ss-tr: #b04a00; }
+:root { --ss-s: #1565c0; --ss-t: #00796b; --ss-a: #4a7c22; --ss-r: #6a3fb5; --ss-tr: #bf360c; }
 .coin-md { position: relative; width: 64px; height: 64px; flex-shrink: 0; display: block; }
 .coin-md img { width: 64px; height: 64px; display: block; }
 .coin-md .sn { position: absolute; right: -5px; bottom: -5px; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 800; font-size: .85rem; display: grid; place-items: center; border: 3px solid #fff; }
