@@ -1,0 +1,88 @@
+    <div class="row gap-md">
+      <div class="main">
+        <p class="lede">Stuck on a decision? Walk through it one C at a time.</p>
+        <p>Use this for anything: a class, a job, a message you're not sure how to send, something AI told you. Fill in what you can. You don't have to use every box every time.</p>
+      </div>
+      <div class="note-col">
+        <div class="note note-see">
+          <div class="label">[[see]] Look ahead</div>
+          <p><a href="9-4.html">Lesson 9.4: The 4C Check</a> explains each C with examples.</p>
+        </div>
+      </div>
+    </div>
+
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="form" aria-labelledby="form-h">
+      <div class="row">
+        <div class="main">
+          <div class="h2wrap"><h2 id="form-h">Work through your decision</h2></div>
+          <p>Your answers save in this browser as you go. Select <strong>Save as PDF</strong> to keep a copy. Use <strong>Clear my answers</strong> to start a new decision.</p>
+        </div>
+        <div class="note-col">
+          <div class="note note-tip">
+            <div class="label">[[tip]] Pathfinder Tip</div>
+            <p>Nothing here is sent anywhere. It stays on this device.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row gap-sm">
+        <div class="main">
+          <form class="mm-form tool-form fourc-form" id="mm-form" data-title="4C Check" novalidate>
+            <p class="mm-print-title">My 4C Check</p>
+            <div class="mm-id">
+              <div class="mm-field">
+                <label for="fc-name">Your name <span class="req">(required)</span></label>
+                <input type="text" id="fc-name" data-save autocomplete="name" required aria-describedby="fc-name-err">
+                <p class="mm-err" id="fc-name-err" hidden>Enter your name before saving.</p>
+              </div>
+              <div class="mm-field">
+                <label for="fc-date">Date</label>
+                <input type="date" id="fc-date" data-save>
+              </div>
+            </div>
+            <div class="mm-field">
+              <label for="fc-decision">The decision or situation</label>
+              <textarea id="fc-decision" data-save rows="2" placeholder="For example: Should I drop this class?"></textarea>
+            </div>
+            <fieldset class="mm-field fc-step c-clarity">
+              <legend><span class="c-badge" aria-hidden="true">C1</span>Clarity: What am I really deciding?</legend>
+              <label class="mm-sub" for="fc-feel">What feelings or quick assumptions are clouding this?</label>
+              <textarea id="fc-feel" data-save rows="2"></textarea>
+              <label class="mm-sub" for="fc-question">The exact question I'm deciding</label>
+              <textarea id="fc-question" data-save rows="2"></textarea>
+            </fieldset>
+            <fieldset class="mm-field fc-step c-context">
+              <legend><span class="c-badge" aria-hidden="true">C2</span>Context: What matters most here?</legend>
+              <label class="mm-sub" for="fc-matters">My priorities, values, and limits</label>
+              <textarea id="fc-matters" data-save rows="3"></textarea>
+              <label class="mm-sub" for="fc-view">How might someone else see this?</label>
+              <textarea id="fc-view" data-save rows="2"></textarea>
+            </fieldset>
+            <fieldset class="mm-field fc-step c-credibility">
+              <legend><span class="c-badge" aria-hidden="true">C3</span>Credibility: What do I know, and what am I assuming?</legend>
+              <div class="mm-id even">
+                <div><label class="mm-sub" for="fc-know">What I know for sure</label><textarea id="fc-know" data-save rows="3"></textarea></div>
+                <div><label class="mm-sub" for="fc-assume">What I'm assuming or have only heard</label><textarea id="fc-assume" data-save rows="3"></textarea></div>
+              </div>
+              <label class="mm-sub" for="fc-check">What I need to check, and where</label>
+              <textarea id="fc-check" data-save rows="2"></textarea>
+            </fieldset>
+            <fieldset class="mm-field fc-step c-consequences">
+              <legend><span class="c-badge" aria-hidden="true">C4</span>Consequences: What might happen next?</legend>
+              <div class="mm-id even">
+                <div><label class="mm-sub" for="fc-opt1">Option 1, and what's likely to happen</label><textarea id="fc-opt1" data-save rows="3"></textarea></div>
+                <div><label class="mm-sub" for="fc-opt2">Option 2, and what's likely to happen</label><textarea id="fc-opt2" data-save rows="3"></textarea></div>
+              </div>
+              <label class="mm-sub" for="fc-next">My next step</label>
+              <textarea id="fc-next" data-save rows="2"></textarea>
+            </fieldset>
+            <div class="mm-actions">
+              <button type="button" class="start-btn mm-save">Save as PDF [[download]]</button>
+              <button type="button" class="mm-clear">Clear my answers</button>
+            </div>
+            <p class="mm-how">In the print window, choose <strong>Save as PDF</strong> (or <strong>Microsoft Print to PDF</strong>) as the printer. The file name will start with "4C Check".</p>
+          </form>
+        </div>
+      </div>
+    </section>

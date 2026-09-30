@@ -1212,3 +1212,38 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
   .pace-guide li { grid-template-columns: 1fr; gap: 2px; }
 }
 @media print { .star-steps li, .star-example, .pace-guide, .fix, .skill-stories li { break-inside: avoid; } body.mm-printing .st-coach, body.mm-printing .st-watch { display: none; } }
+
+/* ---------- Module 9: critical thinking, 4C Check ---------- */
+:root { --c1: #1565c0; --c2: #00796b; --c3: #8a5a00; --c4: #a13d3d; }
+.signs.two { grid-template-columns: 1fr 1fr; }
+.trap-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.trap-grid li { border: 1px solid var(--border); border-top: 4px solid var(--blue); border-radius: 12px; padding: 14px 16px; background: #fff; }
+.trap-grid h3 { font-size: 1.02rem; margin-bottom: 4px; }
+.trap-grid p { margin: 0 0 6px; font-size: .96rem; }
+.trap-q { font-style: italic; color: var(--muted); border-left: 3px solid var(--gold); padding-left: 10px; margin: 0 !important; }
+.c-clarity { --c: var(--c1); } .c-context { --c: var(--c2); } .c-credibility { --c: var(--c3); } .c-consequences { --c: var(--c4); }
+.fourc { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.fourc > li { display: grid; grid-template-columns: 52px 1fr; gap: 14px; border: 1px solid var(--border); border-left: 6px solid var(--c); border-radius: 12px; padding: 14px 18px; background: #fff; }
+.fourc h3 { font-size: 1.06rem; margin-bottom: 4px; color: var(--c); }
+.fourc p { margin: 0 0 6px; }
+.c-badge { width: 44px; height: 44px; border-radius: 50%; background: var(--c); color: #fff; font-weight: 900; font-size: 1rem; display: grid; place-items: center; }
+.c-ask { font-weight: 700; font-style: italic; color: var(--c); margin-top: 8px !important; }
+.c-ai { font-size: .95rem; background: #f5f0fa; border-left: 3px solid #6b3fa0; padding: 6px 10px; border-radius: 0 8px 8px 0; color: #4a2a78; }
+.fourc-ex { margin: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: #fff; }
+.fourc-ex figcaption { background: var(--navy); color: #fff; font-weight: 700; padding: 10px 16px; }
+.fourc-ex dl { margin: 0; padding: 6px 18px 4px; }
+.fourc-ex dt { font-weight: 800; color: var(--c); margin-top: 10px; font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; }
+.fourc-ex dd { margin: 2px 0 0; }
+.fourc-result { margin: 12px 18px 16px; padding: 10px 14px; border-left: 4px solid var(--gold); background: var(--soft-gold); border-radius: 0 8px 8px 0; font-weight: 700; }
+.fourc-scenario { background: var(--soft-blue); border-radius: 10px; padding: 10px 14px; }
+.star-mini { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 8px; }
+.star-mini li { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center; border: 1px solid var(--border); border-left: 5px solid var(--c); border-radius: 10px; padding: 8px 14px; background: #fff; }
+.star-mini .ss-letter { width: 36px; height: 36px; font-size: 1.1rem; }
+.fix-list.two { grid-template-columns: 1fr 1fr; }
+.fc-step legend { display: flex; align-items: center; gap: 10px; color: var(--c) !important; }
+.fc-step .c-badge { width: 34px; height: 34px; font-size: .85rem; }
+.fc-step { border-left: 5px solid var(--c) !important; }
+@media (max-width: 900px) { .trap-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 700px) { .trap-grid, .signs.two, .fix-list.two { grid-template-columns: 1fr; } .fourc > li { grid-template-columns: 1fr; } }
+@media print { .trap-grid li, .fourc > li, .fourc-ex, .star-mini { break-inside: avoid; } }
+.trap-grid.two { grid-template-columns: 1fr 1fr; } @media (max-width: 700px) { .trap-grid.two { grid-template-columns: 1fr; } }

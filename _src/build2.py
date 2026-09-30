@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 35
+V = 36
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -315,9 +315,37 @@ CHAPTERS = [
      [('takeaways','Key takeaways')]),
   ],
   builds={'career-research-guide.html':'A, B, C','8-2.html':'A, B','mile-marker.html':'A, B, C'}),
+ dict(n=9, title='Think It Through — Critical Thinking + STAR(T) Introduction',
+  desc="Build your critical thinking toolkit with the 4C Check, and meet the STAR(T) framework for telling your story.",
+  tagline="The 4C Check, your thinking patterns, and your first STAR(T) draft.",
+  why=["This module is about thinking on purpose: noticing the assumptions and thought traps that get in your way, and using a simple tool, the 4C Check, to think more clearly.",
+       "The second half connects straight to your capstone. You'll write your first STAR(T) draft and use the same 4C Check to make it clearer, more honest, and more specific."],
+  objectives=[("identify one thinking habit that sometimes gets in my way and name a strategy for interrupting it.", 'Mile Marker #9'),
+              ("apply the 4C Check (Clarity, Context, Credibility, Consequences) to evaluate a real situation or decision.", 'the AI Chat: Think It Through'),
+              ("explain the STAR(T) framework and describe how each of the five steps works.", True),
+              ("draft one practice STAR(T) response using a real experience and apply the 4C Check to strengthen it.", 'Mile Marker #9')],
+  es=[2,9], be=['Critical','Reflective'], be_note='',
+  lessons=[
+   ('four-c-check.html','Trail Tool','4C Check',"Walk through any decision, one C at a time.",10,
+     [('form','Work through your decision')]),
+   ('9-1.html','9.1','Skill Spotlight: Critical &amp; Creative Thinking',"Pausing on purpose before you react, decide, or assume.",6,
+     [('what','What this skill is'),('headed',"Where you're headed"),('behaviors','Three behaviors'),('module','Where it shows up'),('life','In your own life'),('later','How it shows up later')]),
+   ('9-2.html','9.2','What Is Critical Thinking, Really?',"It's not overthinking. It's thinking with intention.",5,
+     [('is',"What it is, and isn't"),('habits','Four habits'),('examples','In real life')]),
+   ('9-3.html','9.3','Spotting Assumptions, Biases &amp; Thought Traps',"Everyone falls into these patterns. The trick is noticing them.",8,
+     [('assumptions','Assumptions'),('biases','Biases'),('traps','Thought traps'),('why','Why it matters'),('practice','Spot the trap')]),
+   ('9-4.html','9.4','The 4C Check: A Simple Tool for Better Decisions',"Pause, get clear, and choose wisely.",8,
+     [('four','The four Cs'),('example','Putting it together'),('try','Try it'),('practice','Practice with Coach Pathfinder')]),
+   ('9-5.html','9.5','Think It Through: Using Critical Thinking to Build Your STAR(T) Story',"The thinking behind a good decision also makes a story worth telling.",9,
+     [('refresher','STAR(T) in five steps'),('traps','Traps in STAR(T) drafts'),('check','The 4C Check on a draft'),('interview','Your interview answer')]),
+   ('mile-marker.html','Mile Marker','Mile Marker #9: Think It Through',"The assignment, with support, and a form you can fill in and save.",15,
+     [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
+   ('wrap-up.html','Wrap Up','Module 9 Wrap Up',"Pull it together before you head back to your course.",2,
+     [('takeaways','Key takeaways')]),
+  ],
+  builds={'four-c-check.html':'B','9-3.html':'A','9-4.html':'B','9-5.html':'C, D','mile-marker.html':'A, D'}),
 ]
 LATER = [
- (9,"Think It Through — Critical Thinking + STAR(T) Introduction","Build your critical thinking toolkit with the 4C Check, and meet the STAR(T) framework for telling your story."),
  (10,"Team Up — Collaboration &amp; People Skills","Explore how you work with others, name your collaboration strengths and challenges, and figure out what you need from a team."),
  (11,"Making an Impact — Community, Values &amp; Your Pathfinder Journey","See how communities work, and connect your strengths and values to how you want to show up in them."),
  (12,"Reflecting Back, Moving Forward","Look back at how far you've come, gather your evidence, and decide what you're taking with you."),
