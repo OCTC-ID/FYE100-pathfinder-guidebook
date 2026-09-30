@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 39
+V = 40
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -91,7 +91,7 @@ CHAPTERS = [
   why=["Most students who struggle in college don't struggle because they aren't capable. They struggle because the rules changed and nobody told them: about expectations, about how to ask for help, about what it means to own your own learning.",
        "This module puts those things on the table early, while there's still time to build the right habits. What you set up here, including your goal, your sense of what college expects, and your first look at the skills and tools you'll use all semester, becomes the foundation for everything that follows."],
   objectives=[("describe my personal reasons for attending college and define what success means to me right now.", 'Mile Marker #1'),
-              ("navigate Blackboard and locate key course information, assignments, and instructor contact details.", False),
+              ("navigate Blackboard and locate key course information, assignments, and instructor contact details.", 'the Syllabus &amp; Blackboard Scavenger Hunt (optional practice)'),
               ("set one personal or academic goal for this semester and describe how I plan to reach it.", 'Mile Marker #1'),
               ("explain what artificial intelligence is and identify where it already shows up in my daily life.", 'Mile Marker #1')],
   es=[1,5,6,10], be=['Safe'], be_note='This module also introduces all five BE behaviors you\'ll use throughout the book.',

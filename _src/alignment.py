@@ -18,7 +18,7 @@ ANCHORS = [
 
 TAGS = {
  '1.1': dict(clo=[3], es=[1, 6]),
- '1.2': dict(clo=[2], es=[10]),
+ '1.2': dict(clo=[2], es=[10], note='Evidence is optional practice and does not count in the grade.'),
  '1.3': dict(clo=[1, 3], es=[5]),
  '1.4': dict(clo=[3], es=[10], be=['Safe'], note='Introduces all five BE behaviors.'),
  '2.1': dict(clo=[2, 3], es=[4]),
