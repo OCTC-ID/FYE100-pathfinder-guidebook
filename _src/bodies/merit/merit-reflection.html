@@ -1,0 +1,76 @@
+    <div class="row gap-md">
+      <div class="main">
+        <p class="lede">Draft your Merit reflection here, check your word count, then copy it into Blackboard.</p>
+        <p>Use this tool for all three Merit activities. When you finish one, copy or save it, then select <strong>Clear my answers</strong> to start the next.</p>
+      </div>
+      <div class="note-col">
+        <div class="note note-see">
+          <div class="label">[[see]] Look back at</div>
+          <p><a href="reflection.html">Write Your Reflection</a> for the prompts and an example.</p>
+        </div>
+      </div>
+    </div>
+
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="form" aria-labelledby="form-h">
+      <div class="row">
+        <div class="main">
+          <div class="h2wrap"><h2 id="form-h">Draft your reflection</h2></div>
+          <p>Your draft saves in this browser as you go. It isn't sent anywhere until you paste it into Blackboard.</p>
+        </div>
+        <div class="note-col">
+          <div class="note note-tip">
+            <div class="label">[[tip]] Recording instead?</div>
+            <p>Use these boxes as talking points, then record 1 to 2 minutes in Blackboard.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row gap-sm">
+        <div class="main">
+          <form class="mm-form tool-form" id="mm-form" data-title="Merit Reflection" novalidate>
+            <p class="mm-print-title">Merit Reflection</p>
+            <div class="mm-id">
+              <div class="mm-field">
+                <label for="mr-name">Your name <span class="req">(required)</span></label>
+                <input type="text" id="mr-name" data-save autocomplete="name" required aria-describedby="mr-name-err">
+                <p class="mm-err" id="mr-name-err" hidden>Enter your name before saving.</p>
+              </div>
+              <div class="mm-field">
+                <label for="mr-which">Which activity?</label>
+                <select id="mr-which" data-save><option value="">Choose one</option><option>Merit Activity #1</option><option>Merit Activity #2</option><option>Merit Activity #3</option></select>
+              </div>
+            </div>
+            <fieldset class="mm-field">
+              <legend><span class="mm-num">The activity</span>What and when</legend>
+              <div class="mm-id even">
+                <div><label class="mm-sub" for="mr-event">Event or session name</label><input type="text" id="mr-event" data-save></div>
+                <div><label class="mm-sub" for="mr-date">Date</label><input type="text" id="mr-date" data-save placeholder="The date you attended or finished it"></div>
+              </div>
+              <label class="mm-sub" for="mr-type">Type of activity</label>
+              <select id="mr-type" data-save aria-describedby="mr-type-hint"><option value="">Choose one</option><option>Campus Merit event (no proof file needed)</option><option>Virtual or on-demand (attach proof)</option><option>Community event, approved first (attach proof)</option></select>
+              <p class="mm-help" id="mr-type-hint">Proof, if you need it, is attached separately in Blackboard.</p>
+            </fieldset>
+            <fieldset class="mm-field">
+              <legend><span class="mm-num">Your reflection</span>Answer all three</legend>
+              <label class="mm-sub" for="mr-q1">1. What did you attend, and what did you do or experience?</label>
+              <textarea id="mr-q1" data-save data-wc="r" rows="3"></textarea>
+              <label class="mm-sub" for="mr-q2">2. What did you learn, or how did it make you think differently?</label>
+              <textarea id="mr-q2" data-save data-wc="r" rows="3"></textarea>
+              <label class="mm-sub" for="mr-q3">3. How does this connect to your personal, academic, or career goals?</label>
+              <textarea id="mr-q3" data-save data-wc="r" rows="3"></textarea>
+              <div class="wc-box">
+                <p class="wc-line">Words: <output data-wc-total="r" data-min="50" data-max="100" aria-live="polite">0</output> <span class="wc-range">(aim for 50 to 100)</span></p>
+                <p class="wc-msg" data-wc-msg aria-live="polite"></p>
+              </div>
+            </fieldset>
+            <div class="mm-actions">
+              <button type="button" class="start-btn" data-copy="r" data-copy-pre="#mr-event, #mr-date" aria-describedby="mr-copy-status">Copy my reflection</button>
+              <button type="button" class="mm-save">Save as PDF [[download]]</button>
+              <button type="button" class="mm-clear">Clear my answers</button>
+            </div>
+            <p class="mm-how" id="mr-copy-status" aria-live="polite">"Copy my reflection" copies the event name, date, and your three answers, ready to paste into the Merit submission box.</p>
+          </form>
+        </div>
+      </div>
+    </section>

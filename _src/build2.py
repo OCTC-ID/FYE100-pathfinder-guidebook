@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 31
+V = 32
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -385,12 +385,12 @@ def banner_svg(label=''):
   </svg>'''
 
 def pages_of(ch):
-    return [('index.html','Module overview')] + [(l[0], l[2] if l[1] in SPECIAL else f'{l[1]} {l[2]}') for l in ch['lessons']]
+    return [('index.html',ch.get('overview','Module overview'))] + [(l[0], l[2] if l[1] in SPECIAL else f'{l[1]} {l[2]}') for l in ch['lessons']]
 
 def sidebar(ch, current):
-    n = ch['n']; items = []
+    n = ch['n']; items = []; lab = ch.get('label', f'Module {n}')
     cur = ' aria-current="page"' if current=='index.html' else ''
-    items.append(f'          <li><a class="les" href="index.html"{cur}><span class="n" aria-hidden="true">{ICON["flag"]}</span><span>Module overview</span></a></li>')
+    items.append(f'          <li><a class="les" href="index.html"{cur}><span class="n" aria-hidden="true">{ICON["flag"]}</span><span>{ch.get("overview","Module overview")}</span></a></li>')
     for f,num,t,sub,mins,secs in ch['lessons']:
         cur = ' aria-current="page"' if f==current else ''
         ncls = 'n tip-n' if num in SPECIAL else 'n'
@@ -400,11 +400,11 @@ def sidebar(ch, current):
                   '\n'.join(f'              <a href="#{i}">{s}</a>' for i,s in secs) + '\n            </div>'
         items.append(li + '\n          </li>')
     return f'''
-  <nav class="chapnav" aria-label="Module {n} lessons">
+  <nav class="chapnav" aria-label="{lab} pages">
     <details id="chapdetails" open>
       <summary>
         <span>
-          <span class="chap-label">Module {n}</span>
+          <span class="chap-label">{lab}</span>
           <span class="chap-title">{ch['title']}</span>
         </span>
         <span class="summary-toggle" aria-hidden="true"><span class="when-closed">Lessons</span><span class="when-open">Close</span></span>
@@ -420,7 +420,7 @@ def sidebar(ch, current):
 '''
 
 def pagenav(ch, cur, wide=False):
-    P = pages_of(ch); names = [p[0] for p in P]; i = names.index(cur)
+    P = pages_of(ch); names = [p[0] for p in P]; i = names.index(cur); lab = ch.get('label', f'Module {ch["n"]}')
     out = '    <div class="row{}"><div class="main">\n      <nav class="pagenav" aria-label="Page navigation">\n'.format(' wide' if wide else '')
     if i == 0:
         out += f'        <a href="../../index.html" aria-label="Book home" title="Book home">{ICON["home"]}<span><small>Back to</small>Book home</span></a>\n'
@@ -431,14 +431,14 @@ def pagenav(ch, cur, wide=False):
         nf, nt = P[i+1]
         out += f'        <a class="next" href="{nf}" aria-label="Next: {nt}" title="Next: {nt}"><span><small>Next</small>{nt}</span>{ICON["next"]}</a>\n'
     else:
-        out += f'        <a class="next" href="../../index.html#contents" aria-label="End of Module {ch["n"]}: back to book contents" title="End of Module {ch["n"]}: back to book contents"><span><small>End of Module {ch["n"]}</small>Book contents</span>{ICON["home"]}</a>\n'
+        out += f'        <a class="next" href="../../index.html#contents" aria-label="End of {lab}: back to book contents" title="End of {lab}: back to book contents"><span><small>End of {lab}</small>Book contents</span>{ICON["home"]}</a>\n'
     return out + '      </nav>\n    </div></div>\n'
 
 def crumbs(ch, label):
     return f'''    <nav class="crumbs" aria-label="Breadcrumb">
       <ol>
         <li><a href="../../index.html">Home</a></li>
-        <li><a href="index.html">Module {ch['n']}</a></li>
+        <li><a href="index.html">{ch.get('label', 'Module ' + str(ch['n']))}</a></li>
         <li><span aria-current="page">{label}</span></li>
       </ol>
     </nav>
@@ -446,7 +446,7 @@ def crumbs(ch, label):
 
 def lesson_header(ch, idx):
     f,num,t,sub,mins,secs = ch['lessons'][idx]; total = len(ch['lessons'])
-    kicker = num if num in SPECIAL else f'Lesson {num}'
+    kicker = num if num in SPECIAL else f"{ch.get('kicker','Lesson')} {num}"
     subp = f'\n        <p class="lesson-sub">{sub}</p>' if sub else ''
     m = f'<span>{ICON["clock"]} About {mins} minutes</span>' if mins else ''
     pct = round(100*(idx+1)/total)
@@ -456,7 +456,7 @@ def lesson_header(ch, idx):
         <h1>{t}</h1>{subp}
         <div class="lesson-meta">
           {m}
-          <span>{idx+1} of {total} in this module</span>
+          <span>{idx+1} of {total} in this {ch.get('unit','module')}</span>
           <span class="progress" aria-hidden="true"><i style="width:{pct}%"></i></span>
         </div>
       </div>
@@ -499,15 +499,15 @@ def merit_note(ch):
     """Reminder on the overview of each module that a Merit activity is due with (Modules 4, 7, 10)."""
     m = ch.get('merit')
     if not m: return ''
-    up = '' if ch['n'] == 2 else '../ch02/'
+
     return f'''
     <div class="row wide gap-sm">
       <div class="main">
         <div class="merit-note" role="note">
-          <span class="merit-badge" aria-hidden="true">M</span>
+          <img class="merit-badge" src="../../images/shared/merit-badge.png" alt="" width="44" height="44">
           <div>
             <p class="merit-h">Merit reminder: Merit Activity #{m} is due with this module</p>
-            <p>Submit it on the Merit platform. Check Blackboard for the due date and the activity options. Need to set up your page first? See <a href="{up}trail-tip-merit.html">Setting Up Your Merit Page</a>.</p>
+            <p>Find an activity, then submit your reflection to the Merit Activity #{m} link in Blackboard. Check Blackboard for the due date. The <a href="../merit/index.html">Merit Guide</a> has your options, what proof to include, and how to write your reflection.</p>
           </div>
         </div>
       </div>
@@ -632,6 +632,116 @@ def build_chapter(ch):
 ''' + pagenav(ch, 'index.html', wide=True) + '  </main>\n</div>\n' + FOOT
     write(d/'index.html', opener)
 
+# ------------------------------------------------------------------ guides (appendix)
+from merit_options import OPTIONS as MERIT_OPTIONS
+
+GUIDES = [
+ dict(n='M', slug='merit', label='Merit Guide', unit='guide', overview='Guide overview', kicker='Part',
+  title='Merit Guide', icon='images/shared/merit-badge.png',
+  desc="Everything you need for your three Merit activities: setting up your page, finding an activity, what proof to include, and writing your reflection.",
+  tagline="Learning that happens outside class counts. Here's how to find it, and how to make it count for you.",
+  intro=["Merit activities run through the whole course, from setting up your Merit page early on to your third activity near the end. This guide keeps everything about them in one place, so you can come back to it whenever you need it.",
+         "Whether you take classes on campus or online, you'll find a path that works for you."],
+  lessons=[
+   ('how-it-works.html','1','How Merit Works in FYE 100',"Three activities, paced across the course.",4,
+     [('three','Three activities'),('steps','Start to finish'),('counts','What counts'),('why','Why it matters')]),
+   ('setup.html','2','Setting Up Your Merit Page',"Your Merit page is your official record of involvement and achievement at OCTC.",5,
+     [('why-merit','What Merit does for you'),('setup','Set up your page'),('links','Helpful links')]),
+   ('find-activity.html','3','Find Your Activity',"On campus, online, or in your community.",5,
+     [('paths','Three paths'),('approval','Getting approval'),('proof','Proof at a glance')]),
+   ('on-demand.html','4','On-Demand Options',"Approved options you can do from anywhere. Updated each term.",3,
+     [('now',"What's available"),('how','Making it count')]),
+   ('reflection.html','5','Write Your Reflection',"Going is the requirement. The reflection is where the learning happens.",5,
+     [('format','Choose a format'),('prompts','Three prompts'),('example','An example'),('scoring',"How it's scored"),('submit','Before you submit')]),
+   ('merit-reflection.html','Trail Tool','Merit Reflection',"Draft it, count your words, and copy it into Blackboard.",10,
+     [('form','Draft your reflection')]),
+  ],
+  source={'setup.html':'ch02/trail-tip-merit.html'}),
+]
+
+def ondemand_html():
+    out=['          <div class="od-list">']
+    for o in MERIT_OPTIONS:
+        link = f'\n              <p><a href="{o["link"]}">{o.get("linktext", "Learn more")}</a></p>' if o.get('link') else ''
+        out.append(f"""            <article class="od-card">
+              <h3>{o['title']}</h3>
+              <p class="od-who">{o['who']}</p>
+              <p>{o['what']}</p>
+              <p><strong>How to find it:</strong> {o['how']}</p>
+              <p><strong>Proof:</strong> {o['proof']}</p>{link}
+            </article>""")
+    out.append('          </div>')
+    return '\n'.join(out)
+
+def build_guide(g):
+    d = ROOT/f'chapters/{g["slug"]}'; d.mkdir(parents=True, exist_ok=True)
+    where = g['title']
+    for i,(f,num,t,sub,mins,secs) in enumerate(g['lessons']):
+        src = g.get('source',{}).get(f, f'{g["slug"]}/{f}')
+        bp = HERE/f'bodies/{src}'
+        raw = re.sub(r'<!--ch-only-->.*?<!--/ch-only-->', '', bp.read_text(), flags=re.S) if bp.exists() else ''
+        body = tokens(raw.replace('[[ondemand]]', ondemand_html())) if bp.exists() else STUB
+        label = num if num in SPECIAL else t
+        page = head(f'{t} | {g["title"]} | {BOOK}', 2) + bookbar(2, where) + \
+          '\n<div class="shell">\n' + sidebar(g, f) + '\n  <main id="main" class="reading">\n' + crumbs(g, label) + \
+          lesson_header(g, i) + '\n' + body + pagenav(g, f) + '  </main>\n</div>\n' + FOOT
+        write(d/f, page)
+    intro = '\n'.join(f'          <p>{p}</p>' for p in g['intro'])
+    cards = []
+    for f,num,t,sub,mins,secs in g['lessons']:
+        cls = 'lesson-card tip' if num in SPECIAL else 'lesson-card'
+        meta = f'<span class="lesson-meta"><span>{ICON["clock"]}About {mins} minutes</span></span>' if mins else ''
+        cards.append(f"""          <li>
+            <a class="{cls}" href="{f}">
+              <span class="lesson-num">{num}</span>
+              <div>
+                <h3>{t}</h3>
+                <p>{sub}</p>
+                {meta}
+              </div>
+            </a>
+          </li>""")
+    first = g['lessons'][0][0]
+    opener = head(f'{g["title"]} | {BOOK}', 2) + bookbar(2, where) + f"""
+<div class="banner guide-banner">
+  <div class="inner">
+    <p class="chapter-kicker"><img class="guide-icon" src="../../{g['icon']}" alt="" width="40" height="40">Guide</p>
+    <h1>{g['title']}</h1>
+    <p class="tagline">{g['tagline']}</p>
+  </div>
+  {banner_svg(g['n'])}
+</div>
+
+<div class="shell">
+""" + sidebar(g, 'index.html') + f"""
+  <main id="main" class="reading opener">
+
+    <section aria-labelledby="why" class="row wide gap-sm">
+      <div class="main">
+        <div class="sticky">
+          <h2 id="why">About this guide</h2>
+{intro}
+        </div>
+      </div>
+    </section>
+
+    <span class="rest wide" aria-hidden="true"></span>
+
+    <section aria-labelledby="lessons" class="row wide">
+      <div class="main">
+        <div class="h2wrap"><h2 id="lessons">In this guide</h2></div>
+        <ol class="lessons">
+{chr(10).join(cards)}
+        </ol>
+        <div class="start-row">
+          <a class="start-btn" href="{first}">Start the guide {TOK['next']}</a>
+        </div>
+      </div>
+    </section>
+
+""" + pagenav(g, 'index.html', wide=True) + '  </main>\n</div>\n' + FOOT
+    write(d/'index.html', opener)
+
 # ------------------------------------------------------------------ home
 def build_home():
     toc = []
@@ -664,6 +774,9 @@ def build_home():
             </details>
           </div>
         </li>''')
+    gl = []
+    for g in GUIDES:
+        gl.append(f'''      <li><a class="guide-card" href="chapters/{g['slug']}/index.html"><img src="{g['icon']}" alt="" width="56" height="56"><span><span class="gc-title">{g['title']}</span><span class="gc-desc">{g['desc']}</span></span></a></li>''')
     home = head(f'{BOOK} | FYE 100: Strategies for College Success', 0) + bookbar(0, '') + f'''
 <div class="hero">
   <div class="inner">
@@ -684,10 +797,19 @@ def build_home():
 {chr(10).join(toc)}
     </ol>
   </section>
+
+  <section aria-labelledby="guides" class="gap-md">
+    <div class="h2wrap"><h2 id="guides">Guides</h2></div>
+    <p class="home-intro">Reference guides you'll use across the whole course.</p>
+    <ul class="guide-list">
+{chr(10).join(gl)}
+    </ul>
+  </section>
 </main>
 ''' + FOOT
     write(ROOT/'index.html', home)
 
 for ch in CHAPTERS: build_chapter(ch)
+for g in GUIDES: build_guide(g)
 build_home()
 print('built', [c['n'] for c in CHAPTERS])

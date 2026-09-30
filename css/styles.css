@@ -1111,3 +1111,40 @@ details.answer p { margin: 8px 0 0; }
 @media print { .email-ex, .myth, .sources { break-inside: avoid; } body.mm-printing .mm-id.three { grid-template-columns: 1fr 1fr 1fr; } }
 .pills.five { grid-template-columns: repeat(5, 1fr); }
 @media (max-width: 900px) { .pills.five { grid-template-columns: 1fr 1fr; } }
+
+/* ---------- Guides (appendix): Merit Guide ---------- */
+img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none; }
+.guide-icon { width: 40px; height: 40px; margin-right: 10px; vertical-align: middle; }
+.guide-list { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 14px; }
+.guide-card { display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: center; border: 2px solid var(--border); border-radius: var(--radius); padding: 16px 20px; background: #fff; text-decoration: none; color: var(--ink); }
+.guide-card:hover, .guide-card:focus-visible { border-color: var(--blue); }
+.guide-card:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.gc-title { display: block; font-weight: 800; font-size: 1.15rem; color: var(--navy); }
+.gc-desc { display: block; font-size: .97rem; color: var(--muted); margin-top: 2px; }
+.merit-pace { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.merit-pace li { border: 1px solid var(--border); border-top: 5px solid #16687a; border-radius: 12px; padding: 16px 18px; text-align: center; background: #fff; }
+.mp-num { display: inline-block; background: #16687a; color: #fff; font-weight: 800; font-size: .82rem; padding: 3px 12px; border-radius: 999px; }
+.mp-when { display: block; font-weight: 800; color: var(--navy); font-size: 1.15rem; margin-top: 8px; }
+.mp-sub { display: block; font-size: .93rem; color: var(--muted); }
+.merit-paths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.merit-paths .card-head { background: #16687a; }
+.path-for { font-size: .92rem; color: var(--muted); font-style: italic; }
+.path-proof { margin-top: 10px !important; padding-top: 10px; border-top: 1px solid var(--border); font-size: .95rem; }
+.od-list { display: grid; gap: 14px; }
+.od-card { border: 1px solid var(--border); border-left: 6px solid #16687a; border-radius: 12px; padding: 16px 20px; background: #fff; }
+.od-card h3 { font-size: 1.1rem; margin-bottom: 0; }
+.od-who { font-size: .9rem; color: var(--muted); margin: 0 0 8px; }
+.od-card p:last-child { margin-bottom: 0; }
+.wc-box { margin-top: 14px; border: 2px solid var(--border); border-radius: 10px; padding: 10px 14px; background: #f7fafc; }
+.wc-box p { margin: 0; }
+.wc-line { font-weight: 700; color: var(--navy); }
+.wc-line output { font-size: 1.15rem; }
+.wc-range { font-weight: 400; color: var(--muted); font-size: .92rem; }
+.wc-msg { font-size: .95rem; }
+.wc-box.is-in { border-color: #1a6640; background: #edf8f1; }
+.wc-box.is-in .wc-msg { color: #1a6640; }
+.wc-box.is-over { border-color: #b36b00; background: var(--soft-gold); }
+@media (max-width: 900px) { .merit-paths { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .merit-pace { grid-template-columns: 1fr; } }
+@media print { .merit-paths .card, .od-card, .merit-pace { break-inside: avoid; } body.mm-printing .wc-box, body.mm-printing [data-copy] { display: none; } }
+.mm-form select { max-width: 100%; min-width: 0; }

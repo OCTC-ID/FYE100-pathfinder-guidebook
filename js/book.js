@@ -144,3 +144,43 @@
   document.querySelectorAll('.mm-clear').forEach(function (b) { b.addEventListener('click', function () { setTimeout(calc, 50); }); });
   calc();
 })();
+
+/* Word count (Merit Reflection). Textareas with data-wc="g" are counted together into
+   <output data-wc-total="g" data-min data-max>, inside a .wc-box that shows a status message.
+   A button with data-copy="g" copies the text of the group, one paragraph per box. */
+(function () {
+  var outs = document.querySelectorAll('[data-wc-total]');
+  if (!outs.length) return;
+  function words(s) { var m = String(s || '').trim().match(/\S+/g); return m ? m.length : 0; }
+  function boxes(g) { return document.querySelectorAll('[data-wc="' + g + '"]'); }
+  function calc() {
+    outs.forEach(function (o) {
+      var g = o.getAttribute('data-wc-total'), n = 0;
+      boxes(g).forEach(function (b) { n += words(b.value); });
+      var min = +o.getAttribute('data-min') || 0, max = +o.getAttribute('data-max') || 0;
+      o.value = String(n);
+      var box = o.closest('.wc-box'), msg = box && box.querySelector('[data-wc-msg]');
+      if (box) { box.classList.toggle('is-in', n >= min && (!max || n <= max) && n > 0); box.classList.toggle('is-over', !!max && n > max); }
+      if (msg) {
+        if (n === 0) msg.textContent = 'Aim for ' + min + ' to ' + max + ' words in all.';
+        else if (n < min) msg.textContent = (min - n) + ' more words to reach ' + min + '.';
+        else if (max && n > max) msg.textContent = 'A little long. Trim about ' + (n - max) + ' words.';
+        else msg.textContent = 'Right in range.';
+      }
+    });
+  }
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var parts = []; boxes(btn.getAttribute('data-copy')).forEach(function (b) { if (b.value.trim()) parts.push(b.value.trim()); });
+      var pre = btn.getAttribute('data-copy-pre'); if (pre) { var p = document.querySelectorAll(pre), head = [];
+        p.forEach(function (f) { if (f.value) head.push(f.value); }); if (head.length) parts.unshift(head.join(', ')); }
+      var text = parts.join('\n\n'), status = document.getElementById(btn.getAttribute('aria-describedby'));
+      function done(ok) { if (status) status.textContent = ok ? 'Copied. Paste it into the Merit submission box in Blackboard.' : 'Copy did not work here. Select the text and copy it yourself.'; }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+      else done(false);
+    });
+  });
+  document.addEventListener('input', calc);
+  document.querySelectorAll('.mm-clear').forEach(function (b) { b.addEventListener('click', function () { setTimeout(calc, 50); }); });
+  calc();
+})();
