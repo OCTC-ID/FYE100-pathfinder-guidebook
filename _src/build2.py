@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 29
+V = 30
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -264,9 +264,33 @@ CHAPTERS = [
      [('takeaways','Key takeaways')]),
   ],
   builds={'academic-planner.html':'C, D','6-2.html':'A, E','6-3.html':'A, B','6-4.html':'C, D, E','mile-marker.html':'A, B, C, D'}),
+ dict(n=7, title='Knowing Your Strengths &amp; Values',
+  desc="Discover your top strengths and personal values, and connect them to your academic habits and career direction.",
+  tagline="Not what you're doing. Who you are, and what you bring to everything you do.",
+  why=["You've spent the last several modules building awareness of your time, your money, and your academic direction. This module turns the focus inward: not what you're doing, but who you are.",
+       "Your strengths and values shape how you learn, how you work with others, what drains you, and what energizes you. Understanding them is one of the most useful things you can do for the rest of this term, and beyond."],
+  objectives=[("identify my Top 5 HIGH5 strengths and explain what they mean for how I learn and work.", 'Mile Marker #7'),
+              ("identify my Top 5 personal values and describe how they shape my decisions and priorities.", 'the Values Journal (online) or class discussion (in person)'),
+              ("connect my strengths and values to my academic habits, career direction, and how I work with others.", 'Mile Marker #7'),
+              ("recognize one blind spot that comes with my strengths and describe what to watch for.", 'Mile Marker #7')],
+  es=[5,9], be=['Reflective'], be_note='', merit=2,
+  lessons=[
+   ('my-values-snapshot.html','Trail Tool','My Values Snapshot',"Your Top 5 values, why they matter, and where they show up.",10,
+     [('form','Fill in your snapshot')]),
+   ('7-1.html','7.1','Skill Spotlight: Adaptability &amp; Leadership',"Not a title. How you show up, especially when things change.",5,
+     [('what','What this skill is'),('headed',"Where you're headed"),('looks-like','What it looks like'),('module','Where it shows up'),('life','In your own life'),('later','How it shows up later')]),
+   ('7-2.html','7.2','Why Your Personal Values Matter',"Interests tell you what you enjoy. Values tell you who you are.",8,
+     [('shape','What values shape'),('vs','Interests and values'),('shifting','If interests keep shifting'),('sort','The Values Card Sort'),('use','Use your results')]),
+   ('7-3.html','7.3','What Are Strengths, and Why Do They Matter?',"Not just what you're good at. What feels like you at your best.",9,
+     [('real-life','In real life'),('baseline','A quick baseline'),('take','Take HIGH5'),('mean','What results mean'),('blind','Blind spots'),('ai-strengths','AI and your results')]),
+   ('mile-marker.html','Mile Marker','Mile Marker #7: My Strengths Snapshot',"The assignment, with support, and a form you can fill in and save.",10,
+     [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
+   ('wrap-up.html','Wrap Up','Module 7 Wrap Up',"Pull it together before you head back to your course.",2,
+     [('takeaways','Key takeaways')]),
+  ],
+  builds={'my-values-snapshot.html':'B','7-1.html':'C','7-2.html':'B, C','7-3.html':'A, C, D','mile-marker.html':'A, C, D'}),
 ]
 LATER = [
- (7,"Knowing Your Strengths &amp; Values","Discover your top strengths and personal values, and connect them to your academic habits and career direction."),
  (8,"Explore Your Career Options","Research a career, then honestly evaluate whether it fits your strengths, values, and work style."),
  (9,"Think It Through — Critical Thinking + STAR(T) Introduction","Build your critical thinking toolkit with the 4C Check, and meet the STAR(T) framework for telling your story."),
  (10,"Team Up — Collaboration &amp; People Skills","Explore how you work with others, name your collaboration strengths and challenges, and figure out what you need from a team."),

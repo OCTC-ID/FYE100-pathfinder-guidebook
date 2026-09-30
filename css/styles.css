@@ -1061,3 +1061,32 @@ details.answer p { margin: 8px 0 0; }
   details.answer:not([open]) > *:not(summary) { display: block; }
   .riasec li, .ladder, .grade-scale, .plain-table, .checklist-card { break-inside: avoid; }
 }
+
+/* ---------- Module 7: values, strengths ---------- */
+.research { border-left: 5px solid var(--blue); background: var(--soft-blue); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; }
+.research-label { font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); margin: 0 0 6px; }
+.research p { margin: 0 0 8px; }
+.research-cite { font-size: .85rem; color: var(--muted); font-style: italic; margin: 0 !important; }
+.pills { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.pills li { background: var(--soft-blue); border: 1px solid #c8dcec; border-radius: 10px; padding: 10px 14px; font-size: .96rem; text-align: center; display: grid; place-items: center; }
+.mini-ex { font-size: .93rem; color: var(--muted); border-left: 3px solid var(--gold); padding-left: 10px; font-style: italic; }
+.blind-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.blind-grid li { border: 1px solid #f0c8c0; background: #fdf8f7; border-radius: 12px; padding: 14px 16px; }
+.blind-grid h3 { font-size: 1rem; color: var(--navy); margin-bottom: 4px; }
+.blind-grid p { margin: 0; font-size: .95rem; }
+.mm-help { font-size: .95rem; color: var(--muted); margin: 4px 0 8px; }
+.value-rows { display: grid; gap: 14px; }
+.value-row { display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; }
+.v-num { width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: var(--gold); font-weight: 800; display: grid; place-items: center; margin-top: 10px; }
+.top5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.top5 .mm-sub { margin-top: 4px !important; }
+@media (max-width: 900px) { .blind-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 700px) {
+  .pills { grid-template-columns: 1fr 1fr; }
+  .blind-grid { grid-template-columns: 1fr; }
+  .top5 { grid-template-columns: 1fr 1fr; }
+}
+@media print {
+  .blind-grid li, .pills, .research, .value-row { break-inside: avoid; }
+  body.mm-printing .top5 { grid-template-columns: repeat(5, 1fr); }
+}
