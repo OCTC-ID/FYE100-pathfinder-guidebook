@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 37
+V = 38
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -723,6 +723,22 @@ GUIDES = [
    ('practice-choice.html','Trail Tool','Practice Guide: Your Choice',"Choose your skill, then draft your story.",20,
      [('find','Choose your skill'),('form','Draft it')]),
   ]),
+ dict(n='I', slug='instructor', label='Instructor Guide', navlabel='Guide', unit='guide', overview='Guide overview', kicker='Part',
+  title='Instructor Guide', icon='images/shared/instructor-badge.svg',
+  desc="For FYE 100 instructors and reviewers: how the book works, the course map, and how the course aligns to the 10 Essential Skills and AI literacy.",
+  tagline="How the book works, and how every piece of the course lines up.",
+  intro=["This guide is for FYE 100 instructors, peer reviewers, and anyone reporting on the course. It explains how the book and Blackboard work together and maps every I Can statement to the course learning outcomes, the Kentucky Graduate Profile's 10 Essential Skills, and the BE framework for AI literacy.",
+         "The maps are built from the same source as the book, so they grow as modules are completed. Like the rest of the book, this guide is public. It contains no answer keys, scoring guidance, or points. Those stay in Blackboard."],
+  lessons=[
+   ('how-the-book-works.html','1','How the Book Works',"The book, Blackboard, and how a module is put together.",8,
+     [('split','The book and Blackboard'),('anatomy','How a module is built'),('design','Design commitments'),('teaching','Teaching with the book'),('current','Keeping the book current'),('reporting','Using the maps')]),
+   ('course-map.html','2','Course Map',"Every I Can statement, the outcome it serves, and where students show it.",10,
+     [('outcomes','Learning outcomes'),('glance','At a glance'),('modules','Module by module')]),
+   ('essential-skills-map.html','3','10 Essential Skills Map',"Kentucky Graduate Profile coverage, by module and by skill.",8,
+     [('matrix','Skills by module'),('anchors','Focus skills and anchors'),('skills','Skill by skill')]),
+   ('ai-literacy-map.html','4','AI Literacy Map',"The five BE behaviors: where they're taught, practiced, and labeled.",8,
+     [('be','The five behaviors'),('matrix','Behaviors by module'),('ican','I Can statements'),('boxes','AI Literacy boxes'),('chats','AI Chats'),('labels','AI use labels')]),
+  ]),
 ]
 
 
@@ -901,7 +917,9 @@ def build_guide(g):
         src = g.get('source',{}).get(f, f'{g["slug"]}/{f}')
         bp = HERE/f'bodies/{src}'
         gen = [s for s in STAR_SKILLS if s['file']==f] if g['slug']=='start' else []
-        if gen:
+        if g['slug']=='instructor' and f in INSTR:
+            body = tokens(INSTR[f])
+        elif gen:
             body = tokens(star_practice(gen[0]))
         else:
             raw = re.sub(r'<!--ch-only-->.*?<!--/ch-only-->', '', bp.read_text(), flags=re.S) if bp.exists() else ''
@@ -1025,7 +1043,7 @@ def build_home():
 
   <section aria-labelledby="guides" class="gap-md">
     <div class="h2wrap"><h2 id="guides">Guides</h2></div>
-    <p class="home-intro">Reference guides you'll use across the whole course.</p>
+    <p class="home-intro">Reference guides you'll use across the whole course. The Instructor Guide is for faculty and course reviewers.</p>
     <ul class="guide-list">
 {chr(10).join(gl)}
     </ul>
@@ -1034,6 +1052,8 @@ def build_home():
 ''' + FOOT
     write(ROOT/'index.html', home)
 
+import instructor
+INSTR = instructor.pages(CHAPTERS, LATER, ESSENTIAL, HERE)
 for ch in CHAPTERS: build_chapter(ch)
 for g in GUIDES: build_guide(g)
 build_home()

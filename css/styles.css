@@ -1247,3 +1247,80 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
 @media print { .trap-grid li, .fourc > li, .fourc-ex, .star-mini { break-inside: avoid; } }
 .trap-grid.two { grid-template-columns: 1fr 1fr; } @media (max-width: 700px) { .trap-grid.two { grid-template-columns: 1fr; } }
 .fc-step { border-top: 1px solid var(--border) !important; padding-top: 18px !important; margin-top: 22px !important; }
+
+/* ---------- Instructor Guide: maps and tables ---------- */
+.table-scroll { position: relative; overflow-x: auto; margin: 14px 0 0; border-radius: var(--radius); }
+.table-scroll:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.map-table { width: 100%; border-collapse: collapse; font-size: .92rem; line-height: 1.5; background: #fff; }
+.map-table th, .map-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+.map-table thead th { background: var(--navy); color: #fff; font-size: .8rem; letter-spacing: .03em; }
+.map-table tbody th { color: var(--navy); font-weight: 800; white-space: nowrap; }
+.map-table tbody th a, .map-table td a { color: var(--blue); }
+.map-table tfoot th, .map-table tfoot td { font-weight: 800; border-top: 2px solid var(--navy); border-bottom: 0; color: var(--navy); }
+.map-table .num { text-align: right; }
+.map-table .nowrap { white-space: nowrap; }
+.map-table tr.planned td, .map-table tr.planned th { background: #f7f9fb; color: var(--muted); }
+.map-table .be-chip { display: inline-block; margin: 2px 2px 2px 0; white-space: nowrap; }
+.split-table td { width: 50%; }
+.es-tag { display: inline-flex; align-items: center; gap: 5px; margin: 2px 4px 2px 0; padding: 1px 9px 1px 2px; border: 1px solid var(--border); border-radius: 999px; font-size: .8rem; font-weight: 700; color: var(--navy); background: var(--soft-blue); white-space: nowrap; }
+.es-tag .es-n { display: inline-grid; place-items: center; min-width: 20px; height: 20px; border-radius: 50%; background: var(--navy); color: #fff; font-size: .7rem; }
+.es-tag.es-all { padding-left: 9px; background: var(--soft-gold); }
+.anchor-star { color: #b27c00; font-weight: 800; margin-left: 4px; }
+.map-note { display: block; margin-top: 4px; font-size: .82rem; color: var(--muted); font-style: italic; }
+.planned-tag { display: inline-block; margin-left: 6px; padding: 0 8px; border-radius: 999px; border: 1px dashed var(--muted); font-size: .72rem; font-weight: 700; color: var(--muted); letter-spacing: .03em; vertical-align: middle; font-style: normal; }
+.muted { color: var(--muted); }
+.map-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 0; font-size: .9rem; color: var(--muted); }
+.print-btn { font: inherit; font-weight: 800; color: #fff; background: var(--blue); border: 0; border-radius: 999px; padding: 8px 18px; cursor: pointer; }
+.print-btn:hover { background: var(--navy); }
+.print-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.anchors li { margin-bottom: 6px; }
+.map-mod { margin: 0 0 34px; }
+.map-mod h3 { margin: 0 0 6px; font-size: 1.15rem; }
+.map-mod h3 a { color: var(--navy); }
+.map-mod.planned h3 { color: var(--muted); }
+.map-extras { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: .88rem; color: var(--muted); }
+.map-extras a { color: var(--blue); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: .9rem; color: var(--muted); }
+.matrix th.mx-h { text-align: center; padding: 8px 4px; vertical-align: bottom; }
+.be-matrix th.mx-h { font-size: .78rem; }
+.coin-xs { display: block; width: 30px; height: 30px; margin: 0 auto 2px; }
+.coin-xs img { width: 30px; height: 30px; display: block; }
+.mx-num { display: block; font-size: .75rem; }
+.matrix td.mx-c { text-align: center; padding: 8px 4px; white-space: nowrap; }
+.matrix tbody th { min-width: 150px; }
+.mx-title { display: block; font-weight: 600; font-size: .8rem; color: var(--muted); white-space: normal; max-width: 22ch; line-height: 1.35; }
+.mx { display: inline-block; margin: 0 1px; font-size: 1rem; line-height: 1; }
+.mx.on { color: var(--blue); }
+.mx.spot { color: var(--sky); }
+.mx.star { color: #b27c00; }
+.legend .mx { margin-right: 4px; }
+.es-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.es-card { border: 2px solid var(--border); border-radius: var(--radius); padding: 18px 20px; background: #fff; }
+.es-card-head { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+.es-card-head h3 { margin: 0; font-size: 1.1rem; }
+.es-def { font-size: .9rem; color: #34414d; margin: 0 0 10px; }
+.es-meta { list-style: none; padding: 0; margin: 0 0 10px; font-size: .88rem; }
+.es-meta a { color: var(--blue); }
+.es-sub { margin: 0 0 4px; font-size: .78rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.es-ican { margin: 0; padding: 0; list-style: none; font-size: .88rem; line-height: 1.5; }
+.es-ican li { padding: 5px 0; border-top: 1px solid var(--border); }
+.ic-key { display: inline-block; min-width: 36px; font-weight: 800; color: var(--navy); }
+.source-note { font-size: .82rem; color: var(--muted); margin-top: 12px; }
+.anatomy { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.anatomy li { border: 2px solid var(--border); border-radius: var(--radius); padding: 14px 18px; background: #fff; }
+.anatomy h3 { margin: 0 0 4px; font-size: 1.02rem; }
+.anatomy p { margin: 0; font-size: .95rem; }
+@media (max-width: 900px) {
+  .es-cards, .anatomy { grid-template-columns: 1fr; }
+  .map-table { font-size: .86rem; }
+}
+@media print {
+  .map-actions { display: none; }
+  .table-scroll { overflow: visible; }
+  .map-table { font-size: 8.5pt; }
+  .map-table thead { display: table-header-group; }
+  .map-table tr, .es-card, .anatomy li { break-inside: avoid; }
+  .map-table thead th, .es-tag, .es-tag .es-n, .map-table tr.planned td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .es-cards { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .map-mod { break-inside: auto; }
+}
