@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 34
+V = 35
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -404,7 +404,7 @@ def sidebar(ch, current):
     <details id="chapdetails" open>
       <summary>
         <span>
-          <span class="chap-label">{lab}</span>
+          <span class="chap-label">{ch.get('navlabel', lab)}</span>
           <span class="chap-title">{ch['title']}</span>
         </span>
         <span class="summary-toggle" aria-hidden="true"><span class="when-closed">Lessons</span><span class="when-open">Close</span></span>
@@ -636,7 +636,7 @@ def build_chapter(ch):
 from merit_options import OPTIONS as MERIT_OPTIONS
 
 GUIDES = [
- dict(n='M', slug='merit', label='Merit Guide', unit='guide', overview='Guide overview', kicker='Part',
+ dict(n='M', slug='merit', label='Merit Guide', navlabel='Guide', unit='guide', overview='Guide overview', kicker='Part',
   title='Merit Guide', icon='images/shared/merit-badge.png',
   desc="Everything you need for your three Merit activities: setting up your page, finding an activity, what proof to include, and writing your reflection.",
   tagline="Learning that happens outside class counts. Here's how to find it, and how to make it count for you.",
@@ -657,7 +657,7 @@ GUIDES = [
      [('form','Draft your reflection')]),
   ],
   source={'setup.html':'ch02/trail-tip-merit.html'}),
- dict(n='S', slug='start', label='STAR(T) Stories Guide', unit='guide', overview='Guide overview', kicker='Part',
+ dict(n='S', slug='start', label='STAR(T) Stories Guide', navlabel='Guide', unit='guide', overview='Guide overview', kicker='Part',
   title='STAR(T) Stories Guide', icon='images/shared/start-badge.svg',
   desc="Your capstone: four true stories that show four Essential Skills. The framework, how to find your stories, how to record them, and a practice guide for each.",
   tagline="Anyone can claim a skill. Your stories show it.",
