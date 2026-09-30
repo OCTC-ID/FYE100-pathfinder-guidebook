@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 38
+V = 39
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -93,7 +93,7 @@ CHAPTERS = [
   objectives=[("describe my personal reasons for attending college and define what success means to me right now.", 'Mile Marker #1'),
               ("navigate Blackboard and locate key course information, assignments, and instructor contact details.", False),
               ("set one personal or academic goal for this semester and describe how I plan to reach it.", 'Mile Marker #1'),
-              ("explain what artificial intelligence is and identify where it already shows up in my daily life.", False)],
+              ("explain what artificial intelligence is and identify where it already shows up in my daily life.", 'Mile Marker #1')],
   es=[1,5,6,10], be=['Safe'], be_note='This module also introduces all five BE behaviors you\'ll use throughout the book.',
   lessons=[
    ('1-1.html','1.1','College-Level Expectations',"The rules changed. Here's what nobody told you.",7,
@@ -113,7 +113,7 @@ CHAPTERS = [
    ('wrap-up.html','Wrap Up','Module 1 Wrap Up',"Pull it together before you head back to your course.",2,
      [('takeaways','Key takeaways')]),
   ],
-  builds={'1-3.html':'D','1-4.html':'D','1-5.html':'B','trail-tip.html':'B','mile-marker.html':'A, C'}),
+  builds={'1-3.html':'D','1-4.html':'D','1-5.html':'B','trail-tip.html':'B','mile-marker.html':'A, C, D'}),
 
  dict(n=2, title='Building Your Support System',
   desc='Map the people and resources around you, meet your Success Coach, and practice asking for help.',
