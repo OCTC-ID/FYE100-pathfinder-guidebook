@@ -1242,8 +1242,8 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
 .fix-list.two { grid-template-columns: 1fr 1fr; }
 .fc-step legend { display: flex; align-items: center; gap: 10px; color: var(--c) !important; }
 .fc-step .c-badge { width: 34px; height: 34px; font-size: .85rem; }
-.fc-step { border-left: 5px solid var(--c) !important; }
 @media (max-width: 900px) { .trap-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 700px) { .trap-grid, .signs.two, .fix-list.two { grid-template-columns: 1fr; } .fourc > li { grid-template-columns: 1fr; } }
 @media print { .trap-grid li, .fourc > li, .fourc-ex, .star-mini { break-inside: avoid; } }
 .trap-grid.two { grid-template-columns: 1fr 1fr; } @media (max-width: 700px) { .trap-grid.two { grid-template-columns: 1fr; } }
+.fc-step { border-top: 1px solid var(--border) !important; padding-top: 18px !important; margin-top: 22px !important; }
