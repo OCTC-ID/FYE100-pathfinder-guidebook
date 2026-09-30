@@ -1,0 +1,155 @@
+    <div class="row gap-md">
+      <div class="main">
+        <p class="lede">One career, researched well. Then an honest look at whether it fits you.</p>
+        <p>Work through the five sections in order. The first three are research: what the job is, what the numbers say, and what the work is really like. The last two are where it gets personal. When you're done, save it as a PDF and upload it with Mile Marker #8.</p>
+      </div>
+      <div class="note-col">
+        <div class="note note-see">
+          <div class="label">[[see]] Look ahead</div>
+          <p><a href="8-2.html">Lesson 8.2: Research Your Career</a> shows you how to use Career Coach and O*NET for each section.</p>
+        </div>
+      </div>
+    </div>
+
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="form" aria-labelledby="form-h">
+      <div class="row">
+        <div class="main">
+          <div class="h2wrap"><h2 id="form-h">Fill in your research</h2></div>
+          <p>Your answers save in this browser as you go. Select <strong>Save as PDF</strong> when you're finished, then upload the PDF to the Mile Marker #8 assignment in Blackboard.</p>
+          <div class="sources">
+            <p class="sources-label">Research sources</p>
+            <ul class="dots">
+              <li><a href="https://owensboro.lightcastcc.com/">Career Coach</a>: regional salary, job outlook, and OCTC programs</li>
+              <li><a href="https://www.onetonline.org/">O*NET OnLine</a>: tasks, skills, work styles, and work context</li>
+              <li><a href="https://www.bls.gov/ooh/">Occupational Outlook Handbook</a>: national pay and outlook</li>
+              <li>Job postings on Handshake, Indeed, or Glassdoor: what employers are actually asking for</li>
+            </ul>
+          </div>
+        </div>
+        <div class="note-col">
+          <div class="note note-tip">
+            <div class="label">[[tip]] Pathfinder Tip</div>
+            <p>Prefer paper? A printable version of this guide is in Blackboard. Fill it in by hand, then upload a photo or scan.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row wide gap-sm">
+        <div class="main">
+          <form class="mm-form tool-form" id="mm-form" data-title="Career Research Guide" novalidate>
+            <p class="mm-print-title">Career Research Guide</p>
+            <div class="mm-id">
+              <div class="mm-field">
+                <label for="cr-name">Your name <span class="req">(required)</span></label>
+                <input type="text" id="cr-name" data-save autocomplete="name" required aria-describedby="cr-name-err">
+                <p class="mm-err" id="cr-name-err" hidden>Enter your name before saving.</p>
+              </div>
+              <div class="mm-field">
+                <label for="cr-date">Date</label>
+                <input type="date" id="cr-date" data-save>
+              </div>
+            </div>
+
+            <fieldset class="mm-field">
+              <legend><span class="mm-num">Section 1</span>The basics</legend>
+              <p class="mm-help">Be specific. "Health care" isn't a career. "Registered Nurse" is.</p>
+              <div class="mm-id even">
+                <div><label class="mm-sub" for="cr-title">Job title</label><input type="text" id="cr-title" data-save></div>
+                <div><label class="mm-sub" for="cr-field">Industry or field</label><input type="text" id="cr-field" data-save></div>
+              </div>
+              <label class="mm-sub" for="cr-edu">Education and training required. Which program at OCTC, or elsewhere, gets you there?</label>
+              <textarea id="cr-edu" data-save rows="3"></textarea>
+              <label class="mm-sub" for="cr-skills">Specific skills needed: technical skills, software, certifications, or licenses</label>
+              <textarea id="cr-skills" data-save rows="3"></textarea>
+              <label class="mm-sub" for="cr-src1">Sources I used</label>
+              <input type="text" id="cr-src1" data-save>
+            </fieldset>
+
+            <fieldset class="mm-field">
+              <legend><span class="mm-num">Section 2</span>The numbers</legend>
+              <p class="mm-help">Use Career Coach for regional numbers and the Occupational Outlook Handbook for national ones.</p>
+              <div class="mm-id three">
+                <div><label class="mm-sub" for="cr-pay-reg">Salary range in our region</label><input type="text" id="cr-pay-reg" data-save></div>
+                <div><label class="mm-sub" for="cr-pay-nat">National median salary</label><input type="text" id="cr-pay-nat" data-save></div>
+                <div><label class="mm-sub" for="cr-outlook">Job outlook</label>
+                  <select id="cr-outlook" data-save><option value="">Choose one</option><option>Growing</option><option>Stable</option><option>Declining</option></select></div>
+              </div>
+              <label class="mm-sub" for="cr-driver">What's driving the outlook? (For example: technology, an aging population, policy, automation)</label>
+              <textarea id="cr-driver" data-save rows="3"></textarea>
+            </fieldset>
+
+            <fieldset class="mm-field">
+              <legend><span class="mm-num">Section 3</span>The reality of the work</legend>
+              <p class="mm-help">This is what most career research skips: what the work actually looks and feels like day to day.</p>
+              <label class="mm-sub" for="cr-env">Typical work environment. Office, outdoors, clinical, remote, school, warehouse, lab, traveling?</label>
+              <textarea id="cr-env" data-save rows="3"></textarea>
+              <div class="mm-id even">
+                <div><label class="mm-sub" for="cr-hours">Typical schedule and hours (days, nights, weekends, on call, flexible?)</label><textarea id="cr-hours" data-save rows="2"></textarea></div>
+                <div><label class="mm-sub" for="cr-dress">Dress code (scrubs, uniform, business casual, casual?)</label><textarea id="cr-dress" data-save rows="2"></textarea></div>
+              </div>
+              <div class="mm-id even">
+                <div><label class="mm-sub" for="cr-people">People load</label>
+                  <select id="cr-people" data-save><option value="">Choose one</option><option>Mostly solo work</option><option>Small team or colleagues</option><option>Heavy public, patient, or client contact</option><option>Varies</option></select></div>
+                <div><label class="mm-sub" for="cr-pace">Pace and pressure</label>
+                  <select id="cr-pace" data-save><option value="">Choose one</option><option>High pressure, fast-paced</option><option>Steady and predictable</option><option>Highly variable</option></select></div>
+              </div>
+              <label class="mm-sub" for="cr-body">Physical demands. Sitting, on your feet, lifting, driving, traveling?</label>
+              <textarea id="cr-body" data-save rows="2"></textarea>
+            </fieldset>
+
+            <fieldset class="mm-field">
+              <legend><span class="mm-num">Section 4</span>The fit analysis</legend>
+              <p class="mm-help">Connect what you found to what you know about yourself from Modules 3, 6, and 7.</p>
+              <label class="mm-sub" for="cr-strengths">Strengths: where do your HIGH5 strengths show up in the demands of this career? Be specific. Don't just list your strengths.</label>
+              <textarea id="cr-strengths" data-save rows="3"></textarea>
+              <div class="mm-id even">
+                <div><label class="mm-sub" for="cr-val-yes">Values: where my values are honored</label><textarea id="cr-val-yes" data-save rows="3"></textarea></div>
+                <div><label class="mm-sub" for="cr-val-no">Values: where there may be friction</label><textarea id="cr-val-no" data-save rows="3"></textarea></div>
+              </div>
+              <label class="mm-sub" for="cr-workstyle">Work environment: how does the setting fit how you work best?</label>
+              <textarea id="cr-workstyle" data-save rows="3"></textarea>
+              <label class="mm-sub" for="cr-pressure">Pressure: how does this career's pace and pressure compare with how much pressure you handle well?</label>
+              <textarea id="cr-pressure" data-save rows="3"></textarea>
+              <label class="mm-sub" for="cr-academic">Academic path: how does the education this career requires connect to the direction you explored in Module 6?</label>
+              <textarea id="cr-academic" data-save rows="3"></textarea>
+              <label class="mm-sub" for="cr-life">Life management: how do the schedule, pace, and physical demands fit how you manage your time and energy now?</label>
+              <textarea id="cr-life" data-save rows="3"></textarea>
+              <label class="mm-sub" for="cr-overall">Overall fit</label>
+              <select id="cr-overall" data-save><option value="">Choose one</option><option>Strong fit</option><option>Mostly fits, with some friction</option><option>Mixed, needs more exploration</option><option>Probably not right for me</option></select>
+            </fieldset>
+
+            <fieldset class="mm-field">
+              <legend><span class="mm-num">Section 5</span>Your honest assessment</legend>
+              <p class="mm-help">This section feeds straight into Mile Marker #8.</p>
+              <label class="mm-sub" for="cr-why1">Three reasons this career interests you. Go deeper than "it pays well." Reason 1</label>
+              <textarea id="cr-why1" data-save rows="2"></textarea>
+              <label class="mm-sub" for="cr-why2">Reason 2</label>
+              <textarea id="cr-why2" data-save rows="2"></textarea>
+              <label class="mm-sub" for="cr-why3">Reason 3</label>
+              <textarea id="cr-why3" data-save rows="2"></textarea>
+              <div class="mm-id even">
+                <div><label class="mm-sub" for="cr-align">One area of alignment</label><textarea id="cr-align" data-save rows="3"></textarea></div>
+                <div><label class="mm-sub" for="cr-friction">One area of friction or uncertainty</label><textarea id="cr-friction" data-save rows="3"></textarea></div>
+              </div>
+              <div class="mm-id even">
+                <div><label class="mm-sub" for="cr-question">One question I still have</label><textarea id="cr-question" data-save rows="3"></textarea></div>
+                <div><label class="mm-sub" for="cr-who">Who or what could help me answer it?</label><textarea id="cr-who" data-save rows="3"></textarea></div>
+              </div>
+            </fieldset>
+
+            <fieldset class="mm-field">
+              <legend><span class="mm-num">Before you write</span>Synthesis</legend>
+              <label class="mm-sub" for="cr-synth">In two or three sentences: what do you know now that you didn't before, and what does it change about how you're thinking about your direction?</label>
+              <textarea id="cr-synth" data-save rows="4"></textarea>
+            </fieldset>
+
+            <div class="mm-actions">
+              <button type="button" class="start-btn mm-save">Save as PDF [[download]]</button>
+              <button type="button" class="mm-clear">Clear my answers</button>
+            </div>
+            <p class="mm-how">In the print window, choose <strong>Save as PDF</strong> (or <strong>Microsoft Print to PDF</strong>) as the printer. The file name will start with "Career Research Guide".</p>
+          </form>
+        </div>
+      </div>
+    </section>

@@ -1090,3 +1090,24 @@ details.answer p { margin: 8px 0 0; }
   .blind-grid li, .pills, .research, .value-row { break-inside: avoid; }
   body.mm-printing .top5 { grid-template-columns: repeat(5, 1fr); }
 }
+
+/* ---------- Module 8: career research ---------- */
+.mm-id.three, .tool-form .mm-id.three { grid-template-columns: 1fr 1fr 1fr; }
+.sources { margin-top: 16px; border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; background: #fafcfe; }
+.sources-label { font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); margin: 0 0 6px; }
+.sources ul { margin: 0; }
+.fit-six .fit-ref { margin-top: 8px !important; padding-top: 8px; border-top: 1px solid var(--border); font-size: .9rem; }
+.myth { border-left: 5px solid var(--gold); background: var(--soft-gold); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; }
+.myth-label { font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #6b4a00; margin: 0 0 6px; }
+.myth p:last-child { margin-bottom: 0; }
+.email-ex { margin: 16px 0 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: #fff; }
+.email-ex figcaption { background: var(--blue); color: #fff; font-weight: 700; padding: 10px 18px; }
+.em-meta { margin: 0; padding: 12px 18px; border-bottom: 1px solid var(--border); background: #f7fafc; font-size: .96rem; }
+.em-body { padding: 14px 18px; font-size: .98rem; }
+.em-body p:last-child { margin-bottom: 0; }
+.mm-parts { margin: 4px 0 10px 20px; padding: 0; }
+.mm-parts li { margin-bottom: 4px; }
+@media (max-width: 700px) { .mm-id.three, .tool-form .mm-id.three { grid-template-columns: 1fr; } }
+@media print { .email-ex, .myth, .sources { break-inside: avoid; } body.mm-printing .mm-id.three { grid-template-columns: 1fr 1fr 1fr; } }
+.pills.five { grid-template-columns: repeat(5, 1fr); }
+@media (max-width: 900px) { .pills.five { grid-template-columns: 1fr 1fr; } }

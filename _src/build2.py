@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 30
+V = 31
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -289,9 +289,34 @@ CHAPTERS = [
      [('takeaways','Key takeaways')]),
   ],
   builds={'my-values-snapshot.html':'B','7-1.html':'C','7-2.html':'B, C','7-3.html':'A, C, D','mile-marker.html':'A, C, D'}),
+ dict(n=8, title='Explore Your Career Options',
+  desc="Research one career in depth, then honestly evaluate whether it fits your strengths, values, work style, and life.",
+  tagline="Not the career you're supposed to want. The one that actually fits who you are.",
+  why=["A good career fit isn't just about choosing something that \"sounds cool\" or \"pays well.\" It's about finding work that lines up with who you are, what you value, what you're good at, and how you actually want to live.",
+       "In this module you'll use real research tools to explore one career in depth, and honestly assess whether it fits. You'll also set up your Handshake profile and get ready to register for next term."],
+  objectives=[("research one career using Career Coach and O*NET, including regional salary, job outlook, education requirements, and typical work environment.", 'Mile Marker #8'),
+              ("evaluate a career for personal fit by connecting my research findings to my strengths, values, work style, and pressure tolerance.", 'Mile Marker #8'),
+              ("articulate one clear question I still have about this career direction.", 'Mile Marker #8')],
+  es=[1,2,6,10], be=['Critical','Responsible'], be_note='',
+  lessons=[
+   ('career-research-guide.html','Trail Tool','Career Research Guide',"One career, researched well, and an honest look at the fit.",30,
+     [('form','Fill in your research')]),
+   ('8-1.html','8.1','Skill Spotlight: Communication',"Showing up in the conversation as someone worth listening to.",7,
+     [('what','What this skill is'),('headed',"Where you're headed"),('behaviors','Three behaviors'),('module','Where it shows up'),('email','A Milestone email'),('life','In your own life'),('later','How it shows up later')]),
+   ('8-2.html','8.2','Research Your Career',"What fits, what doesn't, and how to find out.",10,
+     [('fit','What career fit means'),('directions','Directions, not titles'),('before','Start with the life you want'),('tools','Two research tools'),('how','Step by step'),('ai-research','AI and career research')]),
+   ('trail-tip-handshake.html','Trail Tip','Set Up Your Handshake Profile',"Your professional home base, starting now.",5,
+     [('setup','Set up your profile'),('explore','Worth exploring')]),
+   ('trail-tip-register.html','Trail Tip','Register Early for Next Term',"Early gets the classes you need. Late gets what's left.",4,
+     [('when','When registration opens'),('coach','Meet your Success Coach'),('why','Why early matters')]),
+   ('mile-marker.html','Mile Marker','Mile Marker #8: My Career Snapshot',"The assignment, with support, and a form you can fill in and save.",10,
+     [('part1','Part 1: Research Guide'),('questions','Part 2: The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
+   ('wrap-up.html','Wrap Up','Module 8 Wrap Up',"Pull it together before you head back to your course.",2,
+     [('takeaways','Key takeaways')]),
+  ],
+  builds={'career-research-guide.html':'A, B, C','8-2.html':'A, B','mile-marker.html':'A, B, C'}),
 ]
 LATER = [
- (8,"Explore Your Career Options","Research a career, then honestly evaluate whether it fits your strengths, values, and work style."),
  (9,"Think It Through — Critical Thinking + STAR(T) Introduction","Build your critical thinking toolkit with the 4C Check, and meet the STAR(T) framework for telling your story."),
  (10,"Team Up — Collaboration &amp; People Skills","Explore how you work with others, name your collaboration strengths and challenges, and figure out what you need from a team."),
  (11,"Making an Impact — Community, Values &amp; Your Pathfinder Journey","See how communities work, and connect your strengths and values to how you want to show up in them."),
