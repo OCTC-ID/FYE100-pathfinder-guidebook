@@ -161,6 +161,19 @@
       o.value = String(n);
       var box = o.closest('.wc-box'), msg = box && box.querySelector('[data-wc-msg]');
       if (box) { box.classList.toggle('is-in', n >= min && (!max || n <= max) && n > 0); box.classList.toggle('is-over', !!max && n > max); }
+      var wpm = +o.getAttribute('data-wpm') || 0;
+      if (wpm) {
+        var mins = n / wpm, tEl = document.querySelector('[data-wc-time="' + g + '"]');
+        var shown = n === 0 ? '0 minutes' : (mins < 1 ? 'less than a minute' : (Math.round(mins * 2) / 2) + ' minutes');
+        if (tEl) tEl.textContent = shown.replace(/^1 minutes$/, '1 minute');
+        if (msg) {
+          if (n === 0) msg.textContent = 'Most people speak about ' + wpm + ' words a minute. Aim for 2 to 4 minutes.';
+          else if (n < min) msg.textContent = 'A little short. More detail in your Action step usually helps most.';
+          else if (max && n > max) msg.textContent = 'Probably over 4 minutes out loud. Trim the Situation first.';
+          else msg.textContent = 'Right in the 2 to 4 minute range.';
+        }
+        return;
+      }
       if (msg) {
         if (n === 0) msg.textContent = 'Aim for ' + min + ' to ' + max + ' words in all.';
         else if (n < min) msg.textContent = (min - n) + ' more words to reach ' + min + '.';
@@ -171,9 +184,10 @@
   }
   document.querySelectorAll('[data-copy]').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var parts = []; boxes(btn.getAttribute('data-copy')).forEach(function (b) { if (b.value.trim()) parts.push(b.value.trim()); });
+      var parts = [], lab = btn.hasAttribute('data-copy-labels');
+      boxes(btn.getAttribute('data-copy')).forEach(function (b) { if (b.value.trim()) parts.push((lab && b.getAttribute('data-label') ? b.getAttribute('data-label') + ': ' : '') + b.value.trim()); });
       var pre = btn.getAttribute('data-copy-pre'); if (pre) { var p = document.querySelectorAll(pre), head = [];
-        p.forEach(function (f) { if (f.value) head.push(f.value); }); if (head.length) parts.unshift(head.join(', ')); }
+        p.forEach(function (f) { if (f.value) head.push(f.value); }); if (head.length) parts.unshift(head.join('\n')); }
       var text = parts.join('\n\n'), status = document.getElementById(btn.getAttribute('aria-describedby'));
       function done(ok) { if (status) status.textContent = ok ? 'Copied. Paste it into the Merit submission box in Blackboard.' : 'Copy did not work here. Select the text and copy it yourself.'; }
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });

@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 32
+V = 33
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -657,7 +657,46 @@ GUIDES = [
      [('form','Draft your reflection')]),
   ],
   source={'setup.html':'ch02/trail-tip-merit.html'}),
+ dict(n='S', slug='start', label='STAR(T) Stories Guide', unit='guide', overview='Guide overview', kicker='Part',
+  title='STAR(T) Stories Guide', icon='images/shared/start-badge.svg',
+  desc="Your capstone: four true stories that show four Essential Skills. The framework, how to find your stories, how to record them, and a practice guide for each.",
+  tagline="Anyone can claim a skill. Your stories show it.",
+  intro=["Your capstone for FYE 100 is four STAR(T) Stories: short, true stories about times you showed four of the 10 Essential Skills. Each one follows the same five steps: Situation, Task, Action, Result, and Transfer.",
+         "You can record your stories or type them. Recording is strongly encouraged, because \"Tell me about a time when...\" is exactly what you'll hear in job interviews, and telling your story out loud now is the best practice you can get. Recordings are never scored on delivery, only on the story and its structure."],
+  extra='''    <section aria-labelledby="four-h" class="row wide">
+      <div class="main">
+        <div class="h2wrap"><h2 id="four-h">Your four stories</h2></div>
+        <ul class="four-stories">
+          <li><a href="practice-adaptability.html"><span class="coin coin-md"><img src="../../images/shared/10es/10es-05.png" alt="" width="160" height="160"><span class="sn">5</span></span><span class="fs-name">Adaptability &amp; Leadership</span></a></li>
+          <li><a href="practice-professionalism.html"><span class="coin coin-md"><img src="../../images/shared/10es/10es-06.png" alt="" width="160" height="160"><span class="sn">6</span></span><span class="fs-name">Professionalism</span></a></li>
+          <li><a href="practice-knowledge.html"><span class="coin coin-md"><img src="../../images/shared/10es/10es-09.png" alt="" width="160" height="160"><span class="sn">9</span></span><span class="fs-name">Knowledge Application</span></a></li>
+          <li><a href="practice-choice.html"><span class="coin coin-md coin-choice"><span class="choice-mark" aria-hidden="true">?</span></span><span class="fs-name">Your choice</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <span class="rest wide" aria-hidden="true"></span>
+''',
+  lessons=[
+   ('the-framework.html','1','The STAR(T) Framework',"Five steps for telling the story of a skill you've actually built.",6,
+     [('steps','The five steps'),('example','What it looks like')]),
+   ('find-your-stories.html','2','Find Your Stories',"Four skills, four true stories. Here's how to pick them.",5,
+     [('four','Your four skills'),('mine','Mine your own work'),('good','Is it a good story?')]),
+   ('tell-it-out-loud.html','3','Tell It Out Loud',"Why recording is worth it, and how to do it in 2 to 4 minutes.",6,
+     [('not-speech','Not a speech class'),('ramble','The rambling problem'),('options','Your options'),('record','Recording in Blackboard')]),
+   ('strong-story.html','4','What Makes a Strong Story',"How stories are scored, and three fixes that move a story up.",5,
+     [('levels','How stories are scored'),('upgrade','Three fixes'),('submit','Submitting')]),
+   ('practice-adaptability.html','Trail Tool','Practice Guide: Adaptability &amp; Leadership',"Find your story and draft it, one step at a time.",20,
+     [('find','Find your story'),('form','Draft it')]),
+   ('practice-professionalism.html','Trail Tool','Practice Guide: Professionalism',"Find your story and draft it, one step at a time.",20,
+     [('find','Find your story'),('form','Draft it')]),
+   ('practice-knowledge.html','Trail Tool','Practice Guide: Knowledge Application',"Find your story and draft it, one step at a time.",20,
+     [('find','Find your story'),('form','Draft it')]),
+   ('practice-choice.html','Trail Tool','Practice Guide: Your Choice',"Choose your skill, then draft your story.",20,
+     [('find','Choose your skill'),('form','Draft it')]),
+  ]),
 ]
+
 
 def ondemand_html():
     out=['          <div class="od-list">']
@@ -673,14 +712,172 @@ def ondemand_html():
     out.append('          </div>')
     return '\n'.join(out)
 
+from star_skills import SKILLS as STAR_SKILLS, CHOICE_OPTIONS
+
+def star_practice(s):
+    k = s['key']; pre = f'st-{k}'
+    def box(step, letter, name, q, coach, watch, rows, label, tr=False):
+        cls = ('st-step st-transfer ss-tr' if tr else f'st-step ss-{step}')
+        return f"""            <fieldset class="mm-field {cls}">
+              <legend><span class="st-letter" aria-hidden="true">{letter}</span><span class="st-name">{name}</span><span class="st-q">{q}</span></legend>
+              <p class="st-coach">{coach}</p>
+              <label class="sr-only" for="{pre}-{step}">{label}</label>
+              <textarea id="{pre}-{step}" data-save data-wc="{k}" data-label="{label}" rows="{rows}"></textarea>
+              <p class="st-watch"><strong>Watch out:</strong> {watch}</p>
+            </fieldset>"""
+    if k == 'choice':
+        grid = '\n'.join(f"""              <li><span class="coin-sm"><img src="../../images/shared/10es/10es-{n:02d}.png" alt="" width="160" height="160"><span class="n">{n}</span></span><span><strong>{ESSENTIAL[n]}</strong><span class="cg-desc">{d}</span></span></li>""" for n,d in CHOICE_OPTIONS)
+        opts = ''.join(f'<option>#{n} {ESSENTIAL[n]}</option>' for n,_ in CHOICE_OPTIONS)
+        find = f"""      <div class="row wide gap-sm">
+        <div class="main">
+          <ul class="choice-grid">
+{grid}
+          </ul>
+        </div>
+      </div>"""
+        step0 = f"""            <fieldset class="mm-field">
+              <legend><span class="mm-num">Step 0</span>Choose your skill</legend>
+              <label class="mm-sub" for="{pre}-skill">My chosen skill</label>
+              <select id="{pre}-skill" data-save><option value="">Choose one</option>{opts}</select>
+              <label class="mm-sub" for="{pre}-why">Why I chose it, in one or two sentences. Your submission starts with this.</label>
+              <textarea id="{pre}-why" data-save rows="2"></textarea>
+              <label class="mm-sub" for="{pre}-story">The experience I'm going to use</label>
+              <textarea id="{pre}-story" data-save rows="2"></textarea>
+            </fieldset>"""
+        copypre = f' data-copy-pre="#{pre}-skill, #{pre}-why"'
+        head_coin = ''
+    else:
+        plist = '\n'.join(f'            <li>{x}</li>' for x in s['prompts'])
+        find = f"""      <div class="row gap-sm">
+        <div class="main">
+          <p><strong>Questions to help you find it:</strong></p>
+          <ul class="reflect-list st-prompts">
+{plist}
+          </ul>
+        </div>
+      </div>"""
+        step0 = f"""            <fieldset class="mm-field">
+              <legend><span class="mm-num">Step 0</span>Find your story first</legend>
+              <label class="mm-sub" for="{pre}-story">The experience I'm going to use</label>
+              <textarea id="{pre}-story" data-save rows="2" placeholder="{s['eg']}"></textarea>
+            </fieldset>"""
+        copypre = ''
+        head_coin = f"""          <div class="spotlight st-spot">
+            <span class="coin coin-lg"><img src="../../images/shared/10es/10es-{s['n']:02d}.png" alt="" width="160" height="160"><span class="sn">{s['n']}</span></span>
+            <div>
+              <span class="spot-label">10 Essential Skills · #{s['n']}</span>
+              <p class="spot-name">{ESSENTIAL[s['n']]}</p>
+            </div>
+          </div>
+"""
+    mm = ''.join(f'<p><a href="{h}">{txt}</a></p>' for h,txt in s['mm'])
+    steps = '\n'.join([
+      box('s','S','Situation','Set the scene. What was going on?',"Give just enough context for someone who wasn't there. Two or three sentences is usually plenty.","The Situation is the setup, not the story. Get to the Task quickly.",3,'Situation'),
+      box('t','T','Task','Define your role. What was yours to do?',s['task'],'Your Task is what you were responsible for, not the group&#39;s general goal.',3,'Task'),
+      box('a','A','Action','Show what you did, step by step.',"This is the most important step. Use &quot;I&quot;: I decided, I reached out, I chose. "+s['action'],'"We figured it out" hides your part. Describe what you did, even inside a group effort.',6,'Action'),
+      box('r','R','Result','Name the outcome. What happened because of what you did?',s['result'],'"It went well" isn&#39;t a result. Name what specifically happened.',3,'Result'),
+      box('tr','T','Transfer','Connect it forward. What does this mean for what comes next?',s['transfer'],'"This will help me in the future" isn&#39;t a Transfer. Name a specific place, role, or situation.',4,'Transfer',True),
+    ])
+    return f"""    <div class="row gap-md">
+      <div class="main">
+{head_coin}        <p class="lede">{s['sub']}</p>
+        <p>{s['what']}</p>
+        <p>This is practice, and it isn't graded. Draft your story here, see how long it runs out loud, then record it or copy it into the matching STAR(T) Stories portal in Blackboard.</p>
+      </div>
+      <div class="note-col">
+        <div class="note note-see">
+          <div class="label">[[see]] Look back at</div>
+          <p><a href="the-framework.html">The STAR(T) Framework</a></p>
+          <p><a href="find-your-stories.html">Find Your Stories</a></p>
+        </div>
+      </div>
+    </div>
+
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="find" aria-labelledby="find-h">
+      <div class="row">
+        <div class="main">
+          <div class="h2wrap"><h2 id="find-h">{'Choose your skill' if k=='choice' else 'Find your story'}</h2></div>
+          <p>{'Read through the options and pick the one you can tell the most specific, honest story about.' if k=='choice' else 'Your story can come from school, work, family, or your community. It doesn&#39;t have to be dramatic. It has to be real, and yours.'}</p>
+        </div>
+        <div class="note-col">
+          <div class="note note-tip">
+            <div class="label">[[tip]] Mine your own work</div>
+            <p>Your Mile Markers may already hold a story worth telling.</p>{mm}
+          </div>
+        </div>
+      </div>
+{find}
+    </section>
+
+    <span class="rest" aria-hidden="true"></span>
+
+    <section id="form" aria-labelledby="form-h">
+      <div class="row">
+        <div class="main">
+          <div class="h2wrap"><h2 id="form-h">Draft it, one step at a time</h2></div>
+          <p>Your draft saves in this browser as you go. Nothing is sent anywhere.</p>
+        </div>
+        <div class="note-col">
+          <div class="note note-tip">
+            <div class="label">[[tip]] Using AI?</div>
+            <p>Ask it to help you find your story, not to write it: "Don't write my response for me. Help me find it." Your story has to sound like you.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row gap-sm">
+        <div class="main">
+          <form class="mm-form tool-form st-form" id="mm-form" data-title="{s['pdf']}" novalidate>
+            <p class="mm-print-title">{s['pdf'].replace(' - ',': ',1)}</p>
+            <div class="mm-id">
+              <div class="mm-field">
+                <label for="{pre}-name">Your name <span class="req">(required)</span></label>
+                <input type="text" id="{pre}-name" data-save autocomplete="name" required aria-describedby="{pre}-name-err">
+                <p class="mm-err" id="{pre}-name-err" hidden>Enter your name before saving.</p>
+              </div>
+              <div class="mm-field">
+                <label for="{pre}-date">Date</label>
+                <input type="date" id="{pre}-date" data-save>
+              </div>
+            </div>
+{step0}
+{steps}
+            <div class="wc-box">
+              <p class="wc-line">About <span data-wc-time="{k}">0</span> out loud <span class="wc-range">(<output data-wc-total="{k}" data-min="280" data-max="560" data-wpm="140" aria-live="polite">0</output> words; aim for 2 to 4 minutes)</span></p>
+              <p class="wc-msg" data-wc-msg aria-live="polite"></p>
+            </div>
+            <fieldset class="mm-field st-after">
+              <legend><span class="mm-num">After you draft it</span>Quick reflection</legend>
+              <label class="mm-sub" for="{pre}-hard">Which step was hardest to write, and why do you think that is?</label>
+              <textarea id="{pre}-hard" data-save rows="2"></textarea>
+              <label class="mm-sub" for="{pre}-generic">Does anything sound generic, like anyone could have written it? Where could you be more specific?</label>
+              <textarea id="{pre}-generic" data-save rows="2"></textarea>
+            </fieldset>
+            <div class="mm-actions">
+              <button type="button" class="start-btn" data-copy="{k}" data-copy-labels{copypre} aria-describedby="{pre}-copy-status">Copy my story</button>
+              <button type="button" class="mm-save">Save as PDF [[download]]</button>
+              <button type="button" class="mm-clear">Clear my answers</button>
+            </div>
+            <p class="mm-how" id="{pre}-copy-status" aria-live="polite">"Copy my story" copies your five steps, labeled, ready to paste into the STAR(T) Stories portal if you're submitting in writing.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+"""
+
 def build_guide(g):
     d = ROOT/f'chapters/{g["slug"]}'; d.mkdir(parents=True, exist_ok=True)
     where = g['title']
     for i,(f,num,t,sub,mins,secs) in enumerate(g['lessons']):
         src = g.get('source',{}).get(f, f'{g["slug"]}/{f}')
         bp = HERE/f'bodies/{src}'
-        raw = re.sub(r'<!--ch-only-->.*?<!--/ch-only-->', '', bp.read_text(), flags=re.S) if bp.exists() else ''
-        body = tokens(raw.replace('[[ondemand]]', ondemand_html())) if bp.exists() else STUB
+        gen = [s for s in STAR_SKILLS if s['file']==f] if g['slug']=='start' else []
+        if gen:
+            body = tokens(star_practice(gen[0]))
+        else:
+            raw = re.sub(r'<!--ch-only-->.*?<!--/ch-only-->', '', bp.read_text(), flags=re.S) if bp.exists() else ''
+            body = tokens(raw.replace('[[ondemand]]', ondemand_html())) if bp.exists() else STUB
         label = num if num in SPECIAL else t
         page = head(f'{t} | {g["title"]} | {BOOK}', 2) + bookbar(2, where) + \
           '\n<div class="shell">\n' + sidebar(g, f) + '\n  <main id="main" class="reading">\n' + crumbs(g, label) + \
@@ -726,7 +923,7 @@ def build_guide(g):
     </section>
 
     <span class="rest wide" aria-hidden="true"></span>
-
+{g.get('extra','')}
     <section aria-labelledby="lessons" class="row wide">
       <div class="main">
         <div class="h2wrap"><h2 id="lessons">In this guide</h2></div>
