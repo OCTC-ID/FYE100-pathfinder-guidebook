@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 40
+V = 41
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -94,7 +94,7 @@ CHAPTERS = [
               ("navigate Blackboard and locate key course information, assignments, and instructor contact details.", 'the Syllabus &amp; Blackboard Scavenger Hunt (optional practice)'),
               ("set one personal or academic goal for this semester and describe how I plan to reach it.", 'Mile Marker #1'),
               ("explain what artificial intelligence is and identify where it already shows up in my daily life.", 'Mile Marker #1')],
-  es=[1,5,6,10], be=['Safe'], be_note='This module also introduces all five BE behaviors you\'ll use throughout the book.',
+  es=[1,5,6,10], be=['Safe','Honest'], be_note='This module also introduces all five BE behaviors you\'ll use throughout the book.',
   lessons=[
    ('1-1.html','1.1','College-Level Expectations',"The rules changed. Here's what nobody told you.",7,
      [('room',"Who's in this room"),('shift','The big shift'),('syllabus','The syllabus is a contract'),('expect','What instructors expect'),('own','Owning your learning')]),
@@ -123,7 +123,7 @@ CHAPTERS = [
   objectives=[("identify people and OCTC resources that can support my success and explain how each one helps.", 'Mile Marker #2'),
               ("describe how I will use my support system intentionally this semester.", 'Mile Marker #2'),
               ("identify one new campus resource I want to explore and explain why it matters for my goals.", 'Mile Marker #2'),
-              ("practice asking for help clearly and specifically in a realistic college scenario.", True)],
+              ("practice asking for help clearly and specifically in a realistic college scenario.", 'the AI Chat: Who Has Your Back?')],
   es=[1,4,9], be=['Honest','Responsible'], be_note='',
   lessons=[
    ('2-1.html','2.1','Skill Spotlight: Interpersonal Relations',"Interacting effectively with people, and understanding what you bring to every relationship.",5,
@@ -215,7 +215,7 @@ CHAPTERS = [
   objectives=[("build a realistic zero-based budget that assigns all available income to specific categories.", 'Mile Marker #5'),
               ("identify at least one pattern in my spending habits and describe one small change I want to make.", 'Mile Marker #5'),
               ("explain what financial wellness means and describe how it connects to my overall wellbeing.", 'Mile Marker #5'),
-              ("use AI tools safely for budgeting exploration without sharing personal financial information.", True)],
+              ("use AI tools safely for budgeting exploration without sharing personal financial information.", 'Mile Marker #5')],
   es=[3,6], be=['Safe','Responsible'], be_note='',
   lessons=[
    ('dollar-tracker.html','Trail Tool','Dollar Tracker',"Look back: where your money actually goes.",5,
@@ -233,7 +233,7 @@ CHAPTERS = [
    ('wrap-up.html','Wrap Up','Module 5 Wrap Up',"Pull it together before you head back to your course.",2,
      [('takeaways','Key takeaways')]),
   ],
-  builds={'dollar-tracker.html':'B','budget-builder.html':'A','5-2.html':'C','5-3.html':'A, B, D','mile-marker.html':'A, B, C'}),
+  builds={'dollar-tracker.html':'B','budget-builder.html':'A','5-2.html':'C','5-3.html':'A, B, D','mile-marker.html':'A, B, C, D'}),
  dict(n=6, title='Map Your Path — Academic Planning',
   desc="Explore your interests, learn the difference between certificates, diplomas, and degrees, and prepare the questions you'll bring to your Success Coach.",
   tagline="Your plan doesn't have to be final. It has to be specific enough to start a real conversation.",
@@ -322,9 +322,9 @@ CHAPTERS = [
        "The second half connects straight to your capstone. You'll write your first STAR(T) draft and use the same 4C Check to make it clearer, more honest, and more specific."],
   objectives=[("identify one thinking habit that sometimes gets in my way and name a strategy for interrupting it.", 'Mile Marker #9'),
               ("apply the 4C Check (Clarity, Context, Credibility, Consequences) to evaluate a real situation or decision.", 'the AI Chat: Think It Through'),
-              ("explain the STAR(T) framework and describe how each of the five steps works.", True),
+              ("explain the STAR(T) framework and describe how each of the five steps works.", 'Mile Marker #9'),
               ("draft one practice STAR(T) response using a real experience and apply the 4C Check to strengthen it.", 'Mile Marker #9')],
-  es=[2,9], be=['Critical','Reflective'], be_note='',
+  es=[1,2,9], be=['Critical','Reflective'], be_note='',
   lessons=[
    ('four-c-check.html','Trail Tool','4C Check',"Walk through any decision, one C at a time.",10,
      [('form','Work through your decision')]),
@@ -343,7 +343,7 @@ CHAPTERS = [
    ('wrap-up.html','Wrap Up','Module 9 Wrap Up',"Pull it together before you head back to your course.",2,
      [('takeaways','Key takeaways')]),
   ],
-  builds={'four-c-check.html':'B','9-3.html':'A','9-4.html':'B','9-5.html':'C, D','mile-marker.html':'A, D'}),
+  builds={'four-c-check.html':'B','9-3.html':'A','9-4.html':'B','9-5.html':'C, D','mile-marker.html':'A, C, D'}),
 ]
 LATER = [
  (10,"Team Up — Collaboration &amp; People Skills","Explore how you work with others, name your collaboration strengths and challenges, and figure out what you need from a team."),

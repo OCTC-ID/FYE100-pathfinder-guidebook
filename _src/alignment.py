@@ -20,7 +20,7 @@ TAGS = {
  '1.1': dict(clo=[3], es=[1, 6]),
  '1.2': dict(clo=[2], es=[10], note='Evidence is optional practice and does not count in the grade.'),
  '1.3': dict(clo=[1, 3], es=[5]),
- '1.4': dict(clo=[3], es=[10], be=['Safe'], note='Introduces all five BE behaviors.'),
+ '1.4': dict(clo=[3], es=[10], be=['Safe'], note='Introduces all five BE behaviors. 1.4d (naming the five behaviors) is shown in the BE Check matching quiz in Blackboard.'),
  '2.1': dict(clo=[2, 3], es=[4]),
  '2.2': dict(clo=[2, 3], es=[4, 1]),
  '2.3': dict(clo=[2], es=[4, 9]),
@@ -43,7 +43,7 @@ TAGS = {
  '6.2': dict(clo=[1], es=[9, 10]),
  '6.3': dict(clo=[1, 3], es=[9, 6]),
  '6.4': dict(clo=[1, 2], es=[1, 9]),
- '6.5': dict(clo=[1], es=[9], be=['Responsible', 'Reflective']),
+ '6.5': dict(clo=[1], es=[9], be=['Responsible', 'Reflective'], note='Practiced through the optional AI prompt on Mile Marker #6. No AI Chat in this module.'),
  '7.1': dict(clo=[3], es=[5]),
  '7.2': dict(clo=[3], es=[5]),
  '7.3': dict(clo=[1, 3], es=[5, 9]),
@@ -118,9 +118,8 @@ BE_ANCHOR = {'Critical': [4, 9], 'Reflective': [12]}
 
 # Blackboard AI Chat scenarios (Coach Pathfinder). title=None when the book does not name it.
 AI_CHATS = [
- (2, 'Role-play', 'Navigating campus resources', ['Responsible'], None),
+ (2, 'Socratic', 'Asking for help and finding campus support', ['Honest', 'Responsible'], 'Who Has Your Back?'),
  (4, 'Socratic', 'SIFT: evaluating AI-generated information', ['Critical'], 'Is This Legit?'),
- (6, 'Socratic', 'Academic planning decisions', ['Responsible', 'Reflective'], None),
  (8, 'Socratic', 'Career fit exploration', ['Critical', 'Responsible'], 'What Future Do You Want Your Career to Make Possible?'),
  (9, 'Socratic', 'The 4C Check applied to a real decision', ['Critical'], 'Think It Through'),
  (10, 'Role-play', 'A group work situation involving AI use', ['Responsible'], None),
