@@ -1411,6 +1411,19 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
 .bar-btn:focus-visible, .contents-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .bar-btn svg { width: 18px; height: 18px; }
 @media (max-width: 760px) { .bar-lbl { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } .bar-btn { padding: 6px; } .bar-nav { gap: 4px; } }
+/* Top bar: let the logo scale down instead of sliding under the buttons */
+.brand-text .book { white-space: nowrap; }
+@media (max-width: 1100px) { .brand-text .long { display: none; } }
+@media (max-width: 900px) { .brand-text { display: none; } }
+@media (max-width: 760px) {
+  .brand { flex: 1 1 auto; }
+  .brand img, .brand .logo-full { flex-shrink: 1; min-width: 0; max-width: 100%; height: auto; max-height: 30px; }
+  .bookbar .inner { gap: 8px; }
+}
+@media (max-width: 400px) {
+  .contents-btn { padding: 6px 8px; }
+  .contents-btn > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
 .shell.solo { grid-template-columns: minmax(0, 1fr); max-width: 1100px; }
 .page-toc { border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; background: var(--soft-blue); }
 .pt-label { display: block; font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
