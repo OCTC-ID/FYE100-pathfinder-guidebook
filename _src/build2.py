@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 48
+V = 49
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -808,9 +808,10 @@ GUIDES = [
   ]),
  dict(n='I', slug='instructor', label='Instructor Guide', navlabel='Guide', unit='guide', overview='Guide overview', kicker='Part',
   title='Instructor Guide', icon='images/shared/instructor-badge.svg',
-  desc="For FYE 100 instructors and reviewers: how the book works, the course map, and how the course aligns to the 10 Essential Skills and AI literacy.",
+  desc="For FYE 100 instructors and reviewers: how the book works, the course map, and how the course aligns to the 10 Essential Skills, AI literacy, and Appreciative Advising.",
   tagline="How the book works, and how every piece of the course lines up.",
   intro=["This guide is for FYE 100 instructors, peer reviewers, and anyone reporting on the course. It explains how the book and Blackboard work together and maps every I Can statement to the course learning outcomes, the Kentucky Graduate Profile's 10 Essential Skills, and the BE framework for AI literacy.",
+         "The last part introduces Appreciative Advising and shows how the course moves students through its six phases.",
          "The maps are built from the same source as the book, so they grow as modules are completed. Like the rest of the book, this guide is public. It contains no answer keys, scoring guidance, or points. Those stay in Blackboard."],
   lessons=[
    ('how-the-book-works.html','1','How the Book Works',"The book, Blackboard, and how a module is put together.",8,
@@ -821,6 +822,8 @@ GUIDES = [
      [('matrix','Skills by module'),('anchors','Focus skills and anchors'),('skills','Skill by skill')]),
    ('ai-literacy-map.html','4','AI Literacy Map',"The five BE behaviors: where they're taught, practiced, and labeled.",8,
      [('be','The five behaviors'),('matrix','Behaviors by module'),('ican','I Can statements'),('boxes','AI Literacy boxes'),('chats','AI Chats'),('labels','AI use labels')]),
+   ('appreciative-advising.html','5','Appreciative Advising in FYE 100',"The six phases, where each one lives in the course, and your part in it.",10,
+     [('mindset','The appreciative mindset'),('phases','The six phases'),('journey','A six-phase journey'),('glance','Module by module'),('inventory','The Inventory'),('more','Learn more')]),
   ]),
 ]
 

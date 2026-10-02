@@ -1440,3 +1440,31 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
 .hero-sub a { color: #d6eefa; font-weight: 700; }
 @media (max-width: 560px) { .parts > li { grid-template-columns: 1fr; gap: 6px; } .part-tag { justify-self: start; } }
 @media print { .bar-nav, .page-toc { display: none; } .parts > li { break-inside: avoid; } }
+
+/* Instructor Guide: Appreciative Advising */
+.d-intro { display: grid; grid-template-columns: minmax(240px, 370px) 1fr; gap: 28px; align-items: center; }
+.d-fig { margin: 0; }
+.d-wheel { width: 100%; height: auto; display: block; font-family: inherit; }
+.d-fig figcaption { font-size: .82rem; color: var(--muted); text-align: center; margin-top: 8px; }
+.d-list { margin: 0; padding-left: 22px; display: grid; gap: 10px; }
+.d-list li::marker { font-weight: 800; color: var(--accent-ink); }
+.d-phases { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+.d-phase { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: #fff; }
+.d-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; padding: 12px 18px; background: var(--navy); color: #fff; }
+.d-head h3 { margin: 0; color: inherit; font-size: 1.15rem; }
+.d-n { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #fff; color: var(--navy); font-weight: 800; }
+.d-mods { margin-left: auto; font-size: .82rem; font-weight: 700; letter-spacing: .03em; }
+.d-discover .d-head { background: var(--blue); }
+.d-dream .d-head { background: var(--accent-ink); }
+.d-design .d-head { background: #bfe6f7; color: var(--navy); }
+.d-deliver .d-head { background: var(--gold); color: var(--navy); }
+.d-dontsettle .d-head { background: var(--dark-blue); }
+.d-design .d-n, .d-deliver .d-n { background: var(--navy); color: #fff; }
+.d-body { padding: 16px 20px 18px; }
+.d-body > p { margin: 0 0 10px; }
+.d-body h4 { margin: 14px 0 4px; font-size: .8rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); }
+.d-body .dots { margin-top: 4px; }
+.d-say { margin: 14px 0 0 !important; padding: 12px 16px; background: var(--accent-soft); border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; }
+.d-say-l { display: block; font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); }
+@media (max-width: 720px) { .d-intro { grid-template-columns: 1fr; } .d-fig { max-width: 300px; margin: 0 auto; } .d-mods { margin-left: 0; flex-basis: 100%; } }
+@media print { .d-phase { break-inside: avoid; } .d-intro { grid-template-columns: 220px 1fr; } .d-head, .d-say, .d-wheel path { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
