@@ -17,7 +17,7 @@ def clean(t):
 
 def print_btn():
     return '''    <div class="row wide"><div class="main">
-      <p class="map-actions"><button type="button" class="print-btn" onclick="window.print()">Print this map</button> <span>Or save it as a PDF from the print window.</span></p>
+      <div class="page-tools" role="group" aria-label="Page tools"><span class="pt-label">Page tools</span><button type="button" class="print-btn" onclick="window.print()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 9V3h10v6"/><path d="M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><path d="M7 14h10v7H7z"/></svg>Print this map</button><span class="pt-hint">To save a PDF, choose "Save as PDF" in the print window.</span></div>
     </div></div>
 '''
 

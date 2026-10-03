@@ -1269,10 +1269,13 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
 .map-note { display: block; margin-top: 4px; font-size: .82rem; color: var(--muted); font-style: italic; }
 .planned-tag { display: inline-block; margin-left: 6px; padding: 0 8px; border-radius: 999px; border: 1px dashed var(--muted); font-size: .72rem; font-weight: 700; color: var(--muted); letter-spacing: .03em; vertical-align: middle; font-style: normal; }
 .muted { color: var(--muted); }
-.map-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 0; font-size: .9rem; color: var(--muted); }
-.print-btn { font: inherit; font-weight: 800; color: #fff; background: var(--blue); border: 0; border-radius: 999px; padding: 8px 18px; cursor: pointer; }
-.print-btn:hover { background: var(--navy); }
-.print-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.page-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 18px 0 0; padding: 9px 14px; background: #f6f8fa; border: 1px dashed #b9c4d0; border-radius: 10px; font-size: .85rem; color: var(--muted); }
+.pt-label { font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding-right: 14px; border-right: 1px solid #c9d2dc; }
+.print-btn { display: inline-flex; align-items: center; gap: 7px; font: inherit; font-weight: 700; color: var(--blue); background: #fff; border: 1px solid #9fb0c2; border-radius: 6px; padding: 5px 12px; cursor: pointer; }
+.print-btn svg { width: 16px; height: 16px; }
+.print-btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+.print-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+@media (max-width: 520px) { .pt-label { border-right: 0; padding-right: 0; flex-basis: 100%; } }
 .anchors li { margin-bottom: 6px; }
 .map-mod { margin: 0 0 34px; }
 .map-mod h3 { margin: 0 0 6px; font-size: 1.15rem; }
@@ -1315,7 +1318,7 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
   .map-table { font-size: .86rem; }
 }
 @media print {
-  .map-actions { display: none; }
+  .page-tools { display: none; }
   .table-scroll { overflow: visible; }
   .map-table { font-size: 8.5pt; }
   .map-table thead { display: table-header-group; }
