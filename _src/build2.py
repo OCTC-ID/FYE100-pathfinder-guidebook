@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 50
+V = 51
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -229,6 +229,8 @@ CHAPTERS = [
      [('is',"What it is, and isn't"),('dimensions','Eight dimensions'),('stress','Money stress and school')]),
    ('5-3.html','5.3','Where Does My Money Go?',"You can't manage what you can't see. Awareness comes first.",10,
      [('steps','Three steps'),('every-dollar','Give every dollar a job'),('tools','Tools'),('ai-money','AI and money')]),
+   ('trail-tip-financial-aid.html','Trail Tip','Financial Aid at OCTC',"The presentation, the steps to get and keep your aid, and who to ask.",6,
+     [('presentation','The presentation'),('steps','Getting and keeping your aid'),('ask-first','Ask before you change'),('links','Where to find more')]),
    ('mile-marker.html','Mile Marker','Mile Marker #5: Understanding My Money',"The assignment, with support, and a form you can fill in and save.",10,
      [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
    ('wrap-up.html','Wrap Up','Module 5 Wrap Up',"Pull it together before you head back to your course.",2,
