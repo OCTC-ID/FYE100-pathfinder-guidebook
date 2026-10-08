@@ -441,6 +441,8 @@ def head(title, depth):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
+<link rel="icon" type="image/png" sizes="48x48" href="{up}images/shared/icon-48.png">
+<link rel="apple-touch-icon" href="{up}images/shared/icon-180.png">
 <link rel="stylesheet" href="{up}css/styles.css?v={V}">
 <script src="{up}js/book.js?v={V}" defer></script>
 </head>
