@@ -1471,3 +1471,6 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
 .d-say-l { display: block; font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); }
 @media (max-width: 720px) { .d-intro { grid-template-columns: 1fr; } .d-fig { max-width: 300px; margin: 0 auto; } .d-mods { margin-left: 0; flex-basis: 100%; } }
 @media print { .d-phase { break-inside: avoid; } .d-intro { grid-template-columns: 220px 1fr; } .d-head, .d-say, .d-wheel path { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+
+/* Footer: equal opportunity statement (required on KCTCS websites) */
+footer .eeo { margin: 12px 0 0; font-size: .8rem; line-height: 1.55; max-width: 110ch; }
