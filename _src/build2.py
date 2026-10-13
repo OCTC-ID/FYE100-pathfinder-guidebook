@@ -139,6 +139,8 @@ CHAPTERS = [
      [('email','Email on your phone'),('photo','Add a profile photo')]),
    ('trail-tip-merit.html','Trail Tip','Setting Up Your Merit Page',"Your Merit page is your official record of involvement and achievement at OCTC.",5,
      [('why-merit','What Merit does for you'),('setup','Set up your page'),('links','Helpful links')]),
+   ('trail-tip-ai-chat.html','Trail Tip',"What's Actually Happening in That AI Chat?","Pull back the curtain on how the course AI Chats work.",6,
+     [('llm','What is a large language model?'),('setup','The setup'),('same','Same AI, different behavior'),('types','Two kinds of AI Chats'),('you','What this means for you')]),
    ('mile-marker.html','Mile Marker','Mile Marker #2: My Support Team',"The assignment, with support, and a form you can fill in and save.",10,
      [('questions','The questions'),('ai-partner','AI thinking partner'),('scoring',"How it's scored"),('form','Fill in and save')]),
    ('wrap-up.html','Wrap Up','Module 2 Wrap Up',"Pull it together before you head back to your course.",2,
