@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 52
+V = 53
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -965,7 +965,7 @@ def star_practice(s):
       </div>
       <div class="row gap-sm">
         <div class="main">
-          <form class="mm-form tool-form st-form" id="mm-form" data-title="{s['pdf']}" novalidate>
+          <form class="mm-form tool-form st-form pad" id="mm-form" data-title="{s['pdf']}" novalidate>
             <p class="mm-print-title">{s['pdf'].replace(' - ',': ',1)}</p>
             <div class="mm-id">
               <div class="mm-field">

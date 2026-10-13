@@ -1474,3 +1474,31 @@ img.merit-badge { width: 44px; height: 44px; border-radius: 0; background: none;
 
 /* Footer: equal opportunity statement (required on KCTCS websites) */
 footer .eeo { margin: 12px 0 0; font-size: .8rem; line-height: 1.55; max-width: 110ch; }
+
+/* Legal pad: writing forms only (Mile Markers, snapshots, Look Back, Merit reflection, STAR(T) practice,
+   4C Check, Career Research Guide). Number and grid tools keep the plain .mm-form box. Screen only. */
+@media screen {
+  .mm-form.pad {
+    --pad-sheet: #fffae3; --pad-rule: rgba(0,70,127,0.16); --pad-margin: rgba(214,92,112,0.6); --pad-gap: 1.75rem;
+    padding: 26px 28px 28px 78px;
+    background-color: var(--pad-sheet);
+    background-image:
+      linear-gradient(90deg, transparent 52px, var(--pad-margin) 52px, var(--pad-margin) 53px, transparent 53px, transparent 56px, var(--pad-margin) 56px, var(--pad-margin) 57px, transparent 57px),
+      repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--pad-gap) - 1px), var(--pad-rule) calc(var(--pad-gap) - 1px), var(--pad-rule) var(--pad-gap));
+    border: 1px solid #ecdca0; border-top: 16px solid var(--navy); border-radius: 6px;
+    box-shadow: 0 10px 24px rgba(1,29,65,0.12);
+  }
+  .mm-form.pad textarea {
+    background-color: #fff;
+    background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.6em - 1px), rgba(0,70,127,0.16) calc(1.6em - 1px), rgba(0,70,127,0.16) 1.6em);
+    background-attachment: local; background-position: 0 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .mm-form.pad {
+    padding: 20px 16px 22px 40px;
+    background-image:
+      linear-gradient(90deg, transparent 22px, var(--pad-margin) 22px, var(--pad-margin) 23px, transparent 23px, transparent 26px, var(--pad-margin) 26px, var(--pad-margin) 27px, transparent 27px),
+      repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--pad-gap) - 1px), var(--pad-rule) calc(var(--pad-gap) - 1px), var(--pad-rule) var(--pad-gap));
+  }
+}

@@ -56,6 +56,7 @@ faculty/alignment.html  Objective → lesson → 10ES → BE map (planned)
 - **AI Literacy BE behaviors** use the capsule style ("BE Honest") and stay visually separate from the 10ES coins.
 - **"Course focus" (assessed skill) labels** appear only on the assessment where that skill is assessed.
 - **Mile Marker pages** (`mile-marker.html`) present the assignment with support, then a fill-in form. `js/book.js` saves typing in the student's browser, requires a name, and saves the PDF with the title "Mile Marker #N - Name".
+- **Legal-pad forms** (`.mm-form.pad`): writing forms get a ruled yellow pad on screen (Mile Markers, the Values, Collaboration, and Community Snapshots, Look Back, Merit Reflection, STAR(T) practice guides, 4C Check, Career Research Guide). Number and grid tools (Budget Builder, Dollar Tracker, Where My Time Goes, My Week at a Glance, Academic Planner) keep the plain box. The pad means "write here," so keep it off sticky notes and anything students don't type in. Print is unchanged.
 - The **last page of each module** ends the reading path with a link back to the book contents.
 
 ## Source files and build (`_src/`)
