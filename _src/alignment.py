@@ -119,7 +119,7 @@ BE_ANCHOR = {'Critical': [4, 9], 'Reflective': [12]}
 # Blackboard AI Chat scenarios (Coach Pathfinder). title=None when the book does not name it.
 AI_CHATS = [
  (2, 'Socratic', 'Asking for help and finding campus support', ['Honest', 'Responsible'], 'Who Has Your Back?'),
- (4, 'Socratic', 'SIFT: evaluating AI-generated information', ['Critical'], 'Is This Legit?'),
+ (4, 'Role-play', 'SIFT: evaluating AI-generated information', ['Critical'], 'Is This Legit?'),
  (8, 'Socratic', 'Career fit exploration', ['Critical', 'Responsible'], 'What Future Do You Want Your Career to Make Possible?'),
  (9, 'Socratic', 'The 4C Check applied to a real decision', ['Critical'], 'Think It Through'),
 ]

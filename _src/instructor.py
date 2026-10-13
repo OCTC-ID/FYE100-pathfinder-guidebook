@@ -434,13 +434,24 @@ def ai_map(C):
     <span class="rest" aria-hidden="true"></span>
 ''')
     # AI chats
+    W = ['No','One','Two','Three','Four','Five','Six','Seven','Eight']
+    def chat_note():
+        soc = [c[0] for c in AI_CHATS if c[1] == 'Socratic']
+        rp = [c[0] for c in AI_CHATS if c[1] == 'Role-play']
+        def mods(ns): return ('Module ' + str(ns[0])) if len(ns) == 1 else ('Modules ' + ', '.join(map(str, ns[:-1])) + (',' if len(ns) > 2 else '') + ' and ' + str(ns[-1]))
+        t = f'{W[len(AI_CHATS)]} modules include an AI Chat with Coach Pathfinder in Blackboard. '
+        if soc and not rp:
+            return t + 'Each one is Socratic: Coach Pathfinder asks questions instead of giving answers, so the thinking stays with the student.'
+        t += f'The chats in {mods(soc)} are Socratic: Coach Pathfinder asks questions instead of giving answers, so the thinking stays with the student. '
+        t += f'The {mods(rp)} chat {"is a role-play" if len(rp)==1 else "are role-plays"}: the student works through a scenario with Coach Pathfinder and does the evaluation themselves.'
+        return t
     built = {m['n'] for m in C.mods if m['built']}
     rows = [f'<tr{"" if n in built else " class=planned"}><th scope="row">{n}</th><td>{typ}</td><td>{topic}{f"<span class=map-note>&ldquo;{title}&rdquo;</span>" if title else ""}</td><td>{C.be_cell(bes)}</td></tr>'
             for n, typ, topic, bes, title in AI_CHATS]
     out.append(f'''    <section id="chats" aria-labelledby="ch-h">
       <div class="row"><div class="main">
         <div class="h2wrap"><h2 id="ch-h">Blackboard AI Chats</h2></div>
-        <p>{['No','One','Two','Three','Four','Five','Six','Seven','Eight'][len(AI_CHATS)]} modules include an AI Chat with Coach Pathfinder in Blackboard. Each one is Socratic: Coach Pathfinder asks questions instead of giving answers, so the thinking stays with the student.</p>
+        <p>{chat_note()}</p>
       </div></div>
       <div class="row wide gap-sm"><div class="main">
         <div class="table-scroll" role="region" aria-label="AI Chats" tabindex="0">
