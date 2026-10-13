@@ -340,7 +340,7 @@ def ai_map(C):
       <div class="main">
         <p class="lede">How FYE 100 builds AI literacy: five observable behaviors, taught in the lessons, practiced in AI Chats, and labeled on every assignment.</p>
         <p>The course uses the BE framework, a student-facing, behavioral translation of the Digital Education Council (DEC) AI Literacy Framework used at the KCTCS system level. FYE 100 covers Tier 1 (Benchmark), which maps to DEC Level 1. The framing question across the course: <em>How do students make intentional decisions about using AI while maintaining ownership of their learning?</em></p>
-        <p>AI use is never required. Every behavior is framed around judgment, including the decision not to use AI.</p>
+        <p>No Mile Marker requires AI. The AI Chats are the course\'s graded AI practice, done in Blackboard\'s AI Conversation tool. Every behavior is framed around judgment, including the decision not to use AI.</p>
       </div>
     </div>
 ''' + print_btn() + f'''
@@ -452,6 +452,7 @@ def ai_map(C):
       <div class="row"><div class="main">
         <div class="h2wrap"><h2 id="ch-h">Blackboard AI Chats</h2></div>
         <p>{chat_note()}</p>
+        <div class="ai-box"><p class="ai-box-label">If a student has a concern about the AI Chats</p><p>Students are told to talk with their instructor if they have a concern about using the AI Chats, such as an accommodation, a privacy objection, or discomfort with AI. Each AI Chat has a backup journal in Blackboard for this. Keep the journal hidden, and release it only to that student with a release condition set to that member. Don\'t open it to the whole class. The journal replaces the AI practice the chat is built for, so it's an exception, not a second option.</p></div>
       </div></div>
       <div class="row wide gap-sm"><div class="main">
         <div class="table-scroll" role="region" aria-label="AI Chats" tabindex="0">
