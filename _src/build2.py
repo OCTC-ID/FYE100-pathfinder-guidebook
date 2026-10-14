@@ -1183,6 +1183,31 @@ def build_home():
  <path d="M214 428 v14 M226 428 v14 M274 428 v14 M286 428 v14" stroke="#f2a71b" stroke-width="7" stroke-linecap="round"/>
 </g>
   </svg>
+  <svg class="hero-branch" viewBox="0 0 220 170" preserveAspectRatio="xMinYMax meet" aria-hidden="true" focusable="false">
+    <path d="M-10 52 L40 60 L100 76 L160 74 L212 60 L214 68 L162 88 L100 96 L40 84 L-10 80 Z" fill="#000b1c"/>
+    <path d="M70 72 L94 42 L101 46 L82 78 Z" fill="#000b1c"/>
+    <path d="M160 78 L192 92 L189 98 L154 86 Z" fill="#000b1c"/>
+    <g transform="translate(128 87) scale(.17) translate(-250 -442)">
+ <polygon points="150,120 190,60 214,128" fill="#0a4c86"/>
+ <polygon points="350,120 310,60 286,128" fill="#0a4c86"/>
+ <polygon points="150,120 250,96 350,120 372,230 250,262 128,230" fill="#00467f"/>
+ <polygon points="160,150 250,128 340,150 352,226 250,250 148,226" fill="#3d7fb8"/>
+ <circle cx="204" cy="190" r="40" fill="#011d41"/><circle cx="296" cy="190" r="40" fill="#011d41"/>
+ <circle cx="204" cy="190" r="32" fill="#f2a71b"/><circle cx="296" cy="190" r="32" fill="#f2a71b"/>
+ <circle cx="208" cy="192" r="14" fill="#011d41"/><circle cx="292" cy="192" r="14" fill="#011d41"/>
+ <circle cx="213" cy="186" r="4.5" fill="#fff"/><circle cx="297" cy="186" r="4.5" fill="#fff"/>
+ <polygon points="238,214 262,214 250,240" fill="#f2a71b" stroke="#011d41" stroke-width="3" stroke-linejoin="round"/>
+ <polygon points="128,230 250,262 372,230 386,330 330,420 250,440 170,420 114,330" fill="#00467f"/>
+ <polygon points="190,280 250,296 310,280 318,380 250,410 182,380" fill="#bfe3f7"/>
+ <path d="M206 318 L 228 330 L 250 318 L 272 330 L 294 318" fill="none" stroke="#3d7fb8" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+ <path d="M210 350 L 230 362 L 250 350 L 270 362 L 290 350" fill="none" stroke="#3d7fb8" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+ <polygon points="128,230 92,300 110,400 170,420 160,320" fill="#0a4c86"/>
+ <polygon points="128,230 160,320 170,420 144,330" fill="#011d41"/>
+ <polygon points="372,230 408,300 390,400 330,420 340,320" fill="#0a4c86"/>
+ <polygon points="372,230 340,320 330,420 356,330" fill="#011d41"/>
+ <path d="M214 428 v14 M226 428 v14 M274 428 v14 M286 428 v14" stroke="#f2a71b" stroke-width="7" stroke-linecap="round"/>
+</g>
+  </svg>
 </div>
 
 <main id="main" class="home">

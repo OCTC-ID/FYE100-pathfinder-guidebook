@@ -1537,3 +1537,8 @@ footer .eeo { margin: 12px 0 0; font-size: .8rem; line-height: 1.55; max-width: 
 .hero-tree { position: absolute; left: 0; bottom: 0; height: 100%; width: auto; z-index: 0; pointer-events: none; }
 @media (max-width: 1359px) { .hero-tree { display: none; } }
 @media print { .hero-tree { display: none !important; } }
+/* Narrower screens: no trunk, just a branch tip and the owl reaching in over the mountains */
+.hero-branch { display: none; position: absolute; left: 0; bottom: 0; height: 170px; width: auto; z-index: 0; pointer-events: none; }
+@media (max-width: 1359px) { .hero-branch { display: block; } }
+@media (max-width: 760px) { .hero-branch { height: 130px; } }
+@media print { .hero-branch { display: none !important; } }
