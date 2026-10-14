@@ -489,6 +489,62 @@ FOOT = '''
 </html>
 '''
 
+HERO_TREE = '''<svg class="hero-tree" viewBox="0 0 320 720" preserveAspectRatio="xMinYMax meet" aria-hidden="true" focusable="false">
+    <path d="M-30 720 L-30 0 L66 0 L60 70 L72 160 L80 250 L74 330 L64 420 L62 500 L72 590 L96 660 L132 720 Z" fill="#000b1c"/>
+    <path d="M68 190 L110 150 L150 118 L162 92 L170 96 L160 124 L118 166 L76 214 Z" fill="#000b1c"/>
+    <path d="M60 492 L118 506 L188 528 L258 526 L316 510 L318 519 L262 542 L190 550 L112 534 L62 538 Z" fill="#000b1c"/>
+    <path d="M150 524 L176 490 L184 494 L162 530 Z" fill="#000b1c"/>
+    <path d="M262 530 L298 546 L295 552 L256 540 Z" fill="#000b1c"/>
+    <path d="M-30 0 L236 0 L196 18 L222 28 L160 40 L182 54 L112 58 L130 74 L66 76 L74 92 L20 88 L-30 96 Z" fill="#000b1c"/>
+    <path d="M44 120 L56 200 L50 260 M30 330 L40 410 M52 600 L72 680" stroke="#0a2649" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M48 300 q10 14 2 30 q-12 -8 -2 -30Z" fill="#0a2649"/>
+    <g transform="translate(212 541) scale(.2) translate(-250 -442)">
+ <polygon points="150,120 190,60 214,128" fill="#0a4c86"/>
+ <polygon points="350,120 310,60 286,128" fill="#0a4c86"/>
+ <polygon points="150,120 250,96 350,120 372,230 250,262 128,230" fill="#00467f"/>
+ <polygon points="160,150 250,128 340,150 352,226 250,250 148,226" fill="#3d7fb8"/>
+ <circle cx="204" cy="190" r="40" fill="#011d41"/><circle cx="296" cy="190" r="40" fill="#011d41"/>
+ <circle cx="204" cy="190" r="32" fill="#f2a71b"/><circle cx="296" cy="190" r="32" fill="#f2a71b"/>
+ <circle cx="208" cy="192" r="14" fill="#011d41"/><circle cx="292" cy="192" r="14" fill="#011d41"/>
+ <circle cx="213" cy="186" r="4.5" fill="#fff"/><circle cx="297" cy="186" r="4.5" fill="#fff"/>
+ <polygon points="238,214 262,214 250,240" fill="#f2a71b" stroke="#011d41" stroke-width="3" stroke-linejoin="round"/>
+ <polygon points="128,230 250,262 372,230 386,330 330,420 250,440 170,420 114,330" fill="#00467f"/>
+ <polygon points="190,280 250,296 310,280 318,380 250,410 182,380" fill="#bfe3f7"/>
+ <path d="M206 318 L 228 330 L 250 318 L 272 330 L 294 318" fill="none" stroke="#3d7fb8" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+ <path d="M210 350 L 230 362 L 250 350 L 270 362 L 290 350" fill="none" stroke="#3d7fb8" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+ <polygon points="128,230 92,300 110,400 170,420 160,320" fill="#0a4c86"/>
+ <polygon points="128,230 160,320 170,420 144,330" fill="#011d41"/>
+ <polygon points="372,230 408,300 390,400 330,420 340,320" fill="#0a4c86"/>
+ <polygon points="372,230 340,320 330,420 356,330" fill="#011d41"/>
+ <path d="M214 428 v14 M226 428 v14 M274 428 v14 M286 428 v14" stroke="#f2a71b" stroke-width="7" stroke-linecap="round"/>
+</g>
+  </svg>'''
+HERO_BRANCH = '''<svg class="hero-branch" viewBox="0 0 220 170" preserveAspectRatio="xMinYMax meet" aria-hidden="true" focusable="false">
+    <path d="M-10 52 L40 60 L100 76 L160 74 L212 60 L214 68 L162 88 L100 96 L40 84 L-10 80 Z" fill="#000b1c"/>
+    <path d="M70 72 L94 42 L101 46 L82 78 Z" fill="#000b1c"/>
+    <path d="M160 78 L192 92 L189 98 L154 86 Z" fill="#000b1c"/>
+    <g transform="translate(128 87) scale(.17) translate(-250 -442)">
+ <polygon points="150,120 190,60 214,128" fill="#0a4c86"/>
+ <polygon points="350,120 310,60 286,128" fill="#0a4c86"/>
+ <polygon points="150,120 250,96 350,120 372,230 250,262 128,230" fill="#00467f"/>
+ <polygon points="160,150 250,128 340,150 352,226 250,250 148,226" fill="#3d7fb8"/>
+ <circle cx="204" cy="190" r="40" fill="#011d41"/><circle cx="296" cy="190" r="40" fill="#011d41"/>
+ <circle cx="204" cy="190" r="32" fill="#f2a71b"/><circle cx="296" cy="190" r="32" fill="#f2a71b"/>
+ <circle cx="208" cy="192" r="14" fill="#011d41"/><circle cx="292" cy="192" r="14" fill="#011d41"/>
+ <circle cx="213" cy="186" r="4.5" fill="#fff"/><circle cx="297" cy="186" r="4.5" fill="#fff"/>
+ <polygon points="238,214 262,214 250,240" fill="#f2a71b" stroke="#011d41" stroke-width="3" stroke-linejoin="round"/>
+ <polygon points="128,230 250,262 372,230 386,330 330,420 250,440 170,420 114,330" fill="#00467f"/>
+ <polygon points="190,280 250,296 310,280 318,380 250,410 182,380" fill="#bfe3f7"/>
+ <path d="M206 318 L 228 330 L 250 318 L 272 330 L 294 318" fill="none" stroke="#3d7fb8" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+ <path d="M210 350 L 230 362 L 250 350 L 270 362 L 290 350" fill="none" stroke="#3d7fb8" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+ <polygon points="128,230 92,300 110,400 170,420 160,320" fill="#0a4c86"/>
+ <polygon points="128,230 160,320 170,420 144,330" fill="#011d41"/>
+ <polygon points="372,230 408,300 390,400 330,420 340,320" fill="#0a4c86"/>
+ <polygon points="372,230 340,320 330,420 356,330" fill="#011d41"/>
+ <path d="M214 428 v14 M226 428 v14 M274 428 v14 M286 428 v14" stroke="#f2a71b" stroke-width="7" stroke-linecap="round"/>
+</g>
+  </svg>'''
+
 def perspective_trail(d='M110 170 C 200 164, 260 152, 330 152 S 430 124, 480 124 S 580 158, 632 158 S 760 120, 800 106'):
     """Dashed trail in perspective: wide, long dashes up close; thin, short ones at the sign."""
     import math
@@ -732,7 +788,9 @@ def build_chapter(ch):
     <h1>{ch['title']}</h1>
     <p class="tagline">{ch['tagline']}</p>
   </div>
-  {banner_svg(str(n))}
+  {banner_svg(str(n), home=True)}
+  {HERO_TREE}
+  {HERO_BRANCH}
 </div>
 {toolbar(ch)}
 
@@ -1183,61 +1241,8 @@ def build_home():
     <p class="hero-sub"><a href="chapters/help/index.html">New here? How to use this book</a></p>
   </div>
   {banner_svg('START HERE', home=True)}
-  <svg class="hero-tree" viewBox="0 0 320 720" preserveAspectRatio="xMinYMax meet" aria-hidden="true" focusable="false">
-    <path d="M-30 720 L-30 0 L66 0 L60 70 L72 160 L80 250 L74 330 L64 420 L62 500 L72 590 L96 660 L132 720 Z" fill="#000b1c"/>
-    <path d="M68 190 L110 150 L150 118 L162 92 L170 96 L160 124 L118 166 L76 214 Z" fill="#000b1c"/>
-    <path d="M60 492 L118 506 L188 528 L258 526 L316 510 L318 519 L262 542 L190 550 L112 534 L62 538 Z" fill="#000b1c"/>
-    <path d="M150 524 L176 490 L184 494 L162 530 Z" fill="#000b1c"/>
-    <path d="M262 530 L298 546 L295 552 L256 540 Z" fill="#000b1c"/>
-    <path d="M-30 0 L236 0 L196 18 L222 28 L160 40 L182 54 L112 58 L130 74 L66 76 L74 92 L20 88 L-30 96 Z" fill="#000b1c"/>
-    <path d="M44 120 L56 200 L50 260 M30 330 L40 410 M52 600 L72 680" stroke="#0a2649" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    <path d="M48 300 q10 14 2 30 q-12 -8 -2 -30Z" fill="#0a2649"/>
-    <g transform="translate(212 541) scale(.2) translate(-250 -442)">
- <polygon points="150,120 190,60 214,128" fill="#0a4c86"/>
- <polygon points="350,120 310,60 286,128" fill="#0a4c86"/>
- <polygon points="150,120 250,96 350,120 372,230 250,262 128,230" fill="#00467f"/>
- <polygon points="160,150 250,128 340,150 352,226 250,250 148,226" fill="#3d7fb8"/>
- <circle cx="204" cy="190" r="40" fill="#011d41"/><circle cx="296" cy="190" r="40" fill="#011d41"/>
- <circle cx="204" cy="190" r="32" fill="#f2a71b"/><circle cx="296" cy="190" r="32" fill="#f2a71b"/>
- <circle cx="208" cy="192" r="14" fill="#011d41"/><circle cx="292" cy="192" r="14" fill="#011d41"/>
- <circle cx="213" cy="186" r="4.5" fill="#fff"/><circle cx="297" cy="186" r="4.5" fill="#fff"/>
- <polygon points="238,214 262,214 250,240" fill="#f2a71b" stroke="#011d41" stroke-width="3" stroke-linejoin="round"/>
- <polygon points="128,230 250,262 372,230 386,330 330,420 250,440 170,420 114,330" fill="#00467f"/>
- <polygon points="190,280 250,296 310,280 318,380 250,410 182,380" fill="#bfe3f7"/>
- <path d="M206 318 L 228 330 L 250 318 L 272 330 L 294 318" fill="none" stroke="#3d7fb8" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
- <path d="M210 350 L 230 362 L 250 350 L 270 362 L 290 350" fill="none" stroke="#3d7fb8" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
- <polygon points="128,230 92,300 110,400 170,420 160,320" fill="#0a4c86"/>
- <polygon points="128,230 160,320 170,420 144,330" fill="#011d41"/>
- <polygon points="372,230 408,300 390,400 330,420 340,320" fill="#0a4c86"/>
- <polygon points="372,230 340,320 330,420 356,330" fill="#011d41"/>
- <path d="M214 428 v14 M226 428 v14 M274 428 v14 M286 428 v14" stroke="#f2a71b" stroke-width="7" stroke-linecap="round"/>
-</g>
-  </svg>
-  <svg class="hero-branch" viewBox="0 0 220 170" preserveAspectRatio="xMinYMax meet" aria-hidden="true" focusable="false">
-    <path d="M-10 52 L40 60 L100 76 L160 74 L212 60 L214 68 L162 88 L100 96 L40 84 L-10 80 Z" fill="#000b1c"/>
-    <path d="M70 72 L94 42 L101 46 L82 78 Z" fill="#000b1c"/>
-    <path d="M160 78 L192 92 L189 98 L154 86 Z" fill="#000b1c"/>
-    <g transform="translate(128 87) scale(.17) translate(-250 -442)">
- <polygon points="150,120 190,60 214,128" fill="#0a4c86"/>
- <polygon points="350,120 310,60 286,128" fill="#0a4c86"/>
- <polygon points="150,120 250,96 350,120 372,230 250,262 128,230" fill="#00467f"/>
- <polygon points="160,150 250,128 340,150 352,226 250,250 148,226" fill="#3d7fb8"/>
- <circle cx="204" cy="190" r="40" fill="#011d41"/><circle cx="296" cy="190" r="40" fill="#011d41"/>
- <circle cx="204" cy="190" r="32" fill="#f2a71b"/><circle cx="296" cy="190" r="32" fill="#f2a71b"/>
- <circle cx="208" cy="192" r="14" fill="#011d41"/><circle cx="292" cy="192" r="14" fill="#011d41"/>
- <circle cx="213" cy="186" r="4.5" fill="#fff"/><circle cx="297" cy="186" r="4.5" fill="#fff"/>
- <polygon points="238,214 262,214 250,240" fill="#f2a71b" stroke="#011d41" stroke-width="3" stroke-linejoin="round"/>
- <polygon points="128,230 250,262 372,230 386,330 330,420 250,440 170,420 114,330" fill="#00467f"/>
- <polygon points="190,280 250,296 310,280 318,380 250,410 182,380" fill="#bfe3f7"/>
- <path d="M206 318 L 228 330 L 250 318 L 272 330 L 294 318" fill="none" stroke="#3d7fb8" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
- <path d="M210 350 L 230 362 L 250 350 L 270 362 L 290 350" fill="none" stroke="#3d7fb8" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
- <polygon points="128,230 92,300 110,400 170,420 160,320" fill="#0a4c86"/>
- <polygon points="128,230 160,320 170,420 144,330" fill="#011d41"/>
- <polygon points="372,230 408,300 390,400 330,420 340,320" fill="#0a4c86"/>
- <polygon points="372,230 340,320 330,420 356,330" fill="#011d41"/>
- <path d="M214 428 v14 M226 428 v14 M274 428 v14 M286 428 v14" stroke="#f2a71b" stroke-width="7" stroke-linecap="round"/>
-</g>
-  </svg>
+  {HERO_TREE}
+  {HERO_BRANCH}
 </div>
 
 <main id="main" class="home">
