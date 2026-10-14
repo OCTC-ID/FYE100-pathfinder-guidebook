@@ -1542,3 +1542,6 @@ footer .eeo { margin: 12px 0 0; font-size: .8rem; line-height: 1.55; max-width: 
 @media (max-width: 1359px) { .hero-branch { display: block; } }
 @media (max-width: 760px) { .hero-branch { height: 130px; } }
 @media print { .hero-branch { display: none !important; } }
+/* Module overview banners: the left column is open from 901px up, so the full tree fits there */
+@media (min-width: 901px) { .banner .hero-tree { display: block; } .banner .hero-branch { display: none; } }
+@media (max-width: 900px) { .banner .hero-tree { display: none; } .banner .hero-branch { display: block; height: 115px; } }
