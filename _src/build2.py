@@ -489,20 +489,22 @@ FOOT = '''
 </html>
 '''
 
-def banner_svg(label=''):
+def banner_svg(label='', home=False):
+    sx, sy, fill = (800, 63, '#ffffff') if home else (930, 72, '#3bb3e5')
+    trail = 'M120 170 C 280 152, 400 150, 520 138 S 720 112, 800 106' if home else 'M120 170 C 300 150, 420 150, 560 140 S 820 120, 930 110'
     w = 52 if len(label) <= 2 else 16 + 10.5 * len(label)
     fs = 16 if len(label) <= 2 else 15
     sign = f'''
-    <g transform="translate(930 72)">
+    <g transform="translate({sx} {sy})">
       <rect x="-3" y="0" width="6" height="42" fill="#eaf4fb"/>
-      <rect x="{-w/2:.0f}" y="-6" width="{w:.0f}" height="26" rx="4" fill="#3bb3e5"/>
+      <rect x="{-w/2:.0f}" y="-6" width="{w:.0f}" height="26" rx="4" fill="{fill}"/>
       <text x="0" y="13" text-anchor="middle" font-family="Aptos, Calibri, Arial, sans-serif" font-weight="800" font-size="{fs}" letter-spacing="1" fill="#011d41">{label}</text>
     </g>'''
     return f'''<svg class="banner-art" viewBox="0 -70 1200 240" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
     <circle cx="985" cy="58" r="80" fill="#e7a614"/>
     <path d="M0 120 L140 60 L250 105 L380 40 L520 110 L640 70 L760 115 L900 50 L1040 105 L1200 65 L1200 170 L0 170 Z" fill="#00467f" opacity=".85"/>
     <path d="M0 150 L180 100 L330 140 L470 95 L620 145 L800 105 L980 150 L1120 110 L1200 130 L1200 170 L0 170 Z" fill="#011d41"/>
-    <path d="M120 170 C 300 150, 420 150, 560 140 S 820 120, 930 110" fill="none" stroke="#3bb3e5" stroke-width="4" stroke-dasharray="10 10" stroke-linecap="round"/>{sign}
+    <path d="{trail}" fill="none" stroke="#3bb3e5" stroke-width="4" stroke-dasharray="10 10" stroke-linecap="round"/>{sign}
   </svg>'''
 
 def pages_of(ch):
@@ -1152,7 +1154,7 @@ def build_home():
     <a class="start-btn" href="chapters/ch01/index.html">Start reading {TOK['next']}</a>
     <p class="hero-sub"><a href="chapters/help/index.html">New here? How to use this book</a></p>
   </div>
-  {banner_svg('START HERE')}
+  {banner_svg('START HERE', home=True)}
   <svg class="hero-tree" viewBox="0 0 320 720" preserveAspectRatio="xMinYMax meet" aria-hidden="true" focusable="false">
     <path d="M-30 720 L-30 0 L66 0 L60 70 L72 160 L80 250 L74 330 L64 420 L62 500 L72 590 L96 660 L132 720 Z" fill="#000b1c"/>
     <path d="M68 190 L110 150 L150 118 L162 92 L170 96 L160 124 L118 166 L76 214 Z" fill="#000b1c"/>
