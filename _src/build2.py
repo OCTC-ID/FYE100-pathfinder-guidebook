@@ -1136,7 +1136,9 @@ def build_guide(g):
     <h1>{g['title']}</h1>
     <p class="tagline">{g['tagline']}</p>
   </div>
-  {banner_svg(g['n'])}
+  {banner_svg(g['n'], home=True)}
+  {HERO_TREE}
+  {HERO_BRANCH}
 </div>
 
 <div class="shell">
