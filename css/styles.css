@@ -595,6 +595,7 @@ a[target="_blank"]::after { content: "\2197"; display: inline-block; margin-left
 .mm-err { margin: 6px 0 0; color: #8b1a14; font-weight: 700; font-size: .92rem; }
 .mm-pairs { display: grid; gap: 8px; }
 .mm-pair { display: grid; grid-template-columns: 1fr 2fr; gap: 8px; }
+.mm-pair.three { grid-template-columns: 1fr 1fr 1.5fr; }
 .mm-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 8px; }
 .mm-save { border: 0; cursor: pointer; font: inherit; font-weight: 800; font-size: 1.05rem; }
 .mm-save svg { width: 20px; height: 20px; }
@@ -603,7 +604,7 @@ a[target="_blank"]::after { content: "\2197"; display: inline-block; margin-left
 .mm-out { display: none; }
 
 @media (max-width: 560px) {
-  .mm-id, .mm-pair { grid-template-columns: 1fr; }
+  .mm-id, .mm-pair, .mm-pair.three { grid-template-columns: 1fr; }
   .mm-form { padding: 16px; }
   .rubric tbody th { white-space: normal; width: 42%; }
   .mm-submit { grid-template-columns: 1fr; }
@@ -615,6 +616,7 @@ a[target="_blank"]::after { content: "\2197"; display: inline-block; margin-left
   .mm-field textarea + .mm-out { min-height: 8em; }
   .mm-form { border: 0; padding: 0; background: none; }
   .mm-pair { grid-template-columns: 1fr 2fr; }
+  .mm-pair.three { grid-template-columns: 1fr 1fr 1.5fr; }
   .mm-q, .mm-submit, .rubric tr { break-inside: avoid; }
   /* Save-as-PDF from the button: print only the form */
   body.mm-printing .bookbar, body.mm-printing .chapnav, body.mm-printing footer,
