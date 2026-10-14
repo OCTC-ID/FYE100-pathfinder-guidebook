@@ -1527,6 +1527,7 @@ footer .eeo { margin: 12px 0 0; font-size: .8rem; line-height: 1.55; max-width: 
 .lookout-body { display: grid; grid-template-columns: 76px 1fr; gap: 18px; align-items: start; padding: 16px 20px 16px 16px; }
 .lookout-owl { width: 76px; height: auto; display: block; }
 .lookout-body p { margin: 0 0 10px; }
+.lookout-body .dots { margin: 0 0 10px; }
 .lookout-foot { display: flex; align-items: flex-start; gap: 6px; margin: 12px 0 0 !important; padding-top: 10px; border-top: 1px dashed var(--border); font-size: .93rem; color: var(--muted); }
 .lookout-foot svg { flex: none; margin-top: 3px; width: 16px; height: 16px; color: var(--blue); }
 @media (max-width: 560px) { .lookout-body { grid-template-columns: 1fr; } .lookout-owl { width: 60px; } }
