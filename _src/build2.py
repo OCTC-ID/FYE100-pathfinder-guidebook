@@ -863,7 +863,7 @@ GUIDES = [
    ('ai-literacy-map.html','4','AI Literacy Map',"The five BE behaviors: where they're taught, practiced, and labeled.",8,
      [('be','The five behaviors'),('matrix','Behaviors by module'),('ican','I Can statements'),('boxes','AI Literacy boxes'),('chats','AI Chats'),('labels','AI use labels')]),
    ('appreciative-advising.html','5','Appreciative Advising in FYE 100',"The six phases, where each one lives in the course, and your part in it.",10,
-     [('mindset','The appreciative mindset'),('phases','The six phases'),('journey','A six-phase journey'),('glance','Module by module'),('inventory','The Inventory'),('more','Learn more')]),
+     [('mindset','The appreciative mindset'),('phases','The six phases'),('journey','A six-phase journey'),('glance','Module by module'),('meetups','Virtual meet-ups'),('inventory','The Inventory'),('more','Learn more')]),
   ]),
 ]
 
