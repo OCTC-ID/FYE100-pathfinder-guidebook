@@ -489,9 +489,37 @@ FOOT = '''
 </html>
 '''
 
+def perspective_trail(d='M110 170 C 200 164, 260 152, 330 152 S 430 124, 480 124 S 580 158, 632 158 S 760 120, 800 106'):
+    """Dashed trail in perspective: wide, long dashes up close; thin, short ones at the sign."""
+    import math
+    n = [float(x) for x in re.findall(r'-?\d+\.?\d*', d)]
+    p0 = (n[0], n[1]); i = 2; prev = None; segs = []
+    for t in re.findall(r'[CS]', d):
+        if t == 'C': c1 = (n[i], n[i+1]); c2 = (n[i+2], n[i+3]); p = (n[i+4], n[i+5]); i += 6
+        else: c1 = (2*p0[0]-prev[0], 2*p0[1]-prev[1]); c2 = (n[i], n[i+1]); p = (n[i+2], n[i+3]); i += 4
+        segs.append((p0, c1, c2, p)); prev = c2; p0 = p
+    pts = []
+    for a, b1, c, e in segs:
+        for k in range(500):
+            t = k / 500; u = 1 - t
+            pts.append((u**3*a[0]+3*u*u*t*b1[0]+3*u*t*t*c[0]+t**3*e[0], u**3*a[1]+3*u*u*t*b1[1]+3*u*t*t*c[1]+t**3*e[1]))
+    pts.append(segs[-1][3]); L = [0]
+    for a, b1 in zip(pts, pts[1:]): L.append(L[-1] + math.dist(a, b1))
+    tot = L[-1]; out = []; s = 0; j = 0
+    def at(x):
+        nonlocal j
+        while j < len(L) - 1 and L[j+1] < x: j += 1
+        return pts[j]
+    while s < tot:
+        f = s / tot; dash = 16 - 10*f; gap = 12 - 7*f; w = 7 - 4.5*f
+        a = at(s); e = at(min(s + dash, tot))
+        out.append(f'<line x1="{a[0]:.1f}" y1="{a[1]:.1f}" x2="{e[0]:.1f}" y2="{e[1]:.1f}" stroke-width="{w:.2f}"/>')
+        s += dash + gap
+    return '<g stroke="#3bb3e5" stroke-linecap="round">' + ''.join(out) + '</g>'
+
 def banner_svg(label='', home=False):
     sx, sy, fill = (800, 63, '#ffffff') if home else (930, 72, '#3bb3e5')
-    trail = 'M120 170 C 280 152, 400 150, 520 138 S 720 112, 800 106' if home else 'M120 170 C 300 150, 420 150, 560 140 S 820 120, 930 110'
+    trail_el = perspective_trail() if home else '<path d="M120 170 C 300 150, 420 150, 560 140 S 820 120, 930 110" fill="none" stroke="#3bb3e5" stroke-width="4" stroke-dasharray="10 10" stroke-linecap="round"/>'
     w = 52 if len(label) <= 2 else 16 + 10.5 * len(label)
     fs = 16 if len(label) <= 2 else 15
     sign = f'''
@@ -504,7 +532,7 @@ def banner_svg(label='', home=False):
     <circle cx="985" cy="58" r="80" fill="#e7a614"/>
     <path d="M0 120 L140 60 L250 105 L380 40 L520 110 L640 70 L760 115 L900 50 L1040 105 L1200 65 L1200 170 L0 170 Z" fill="#00467f" opacity=".85"/>
     <path d="M0 150 L180 100 L330 140 L470 95 L620 145 L800 105 L980 150 L1120 110 L1200 130 L1200 170 L0 170 Z" fill="#011d41"/>
-    <path d="{trail}" fill="none" stroke="#3bb3e5" stroke-width="4" stroke-dasharray="10 10" stroke-linecap="round"/>{sign}
+    {trail_el}{sign}
   </svg>'''
 
 def pages_of(ch):
