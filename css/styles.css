@@ -1532,3 +1532,8 @@ footer .eeo { margin: 12px 0 0; font-size: .8rem; line-height: 1.55; max-width: 
 .lookout-foot svg { flex: none; margin-top: 3px; width: 16px; height: 16px; color: var(--blue); }
 @media (max-width: 560px) { .lookout-body { grid-template-columns: 1fr; } .lookout-owl { width: 60px; } }
 @media print { .lookout { break-inside: avoid; box-shadow: none; } .lookout-head { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+
+/* Home hero: foreground tree with the Lookout owl, framing the left margin */
+.hero-tree { position: absolute; left: 0; bottom: 0; height: 100%; width: auto; z-index: 0; pointer-events: none; }
+@media (max-width: 1359px) { .hero-tree { display: none; } }
+@media print { .hero-tree { display: none !important; } }
