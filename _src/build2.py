@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 55
+V = 56
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -45,6 +45,7 @@ TOK = {
  'alert': svg('<path d="M12 3 2 20h20Z"/><path d="M12 10v4M12 17h.01"/>'),
  'tick': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>',
  'next': svg('<path d="M5 12h14M13 6l6 6-6 6"/>', '2.5', cls=''),
+ 'owl': svg('<path d="M5 4l3 3h8l3-3v9a7 7 0 0 1-14 0Z"/><circle cx="9.2" cy="11" r="2"/><circle cx="14.8" cy="11" r="2"/><path d="m11 14 1 1.5 1-1.5"/>', cls=''),
  'play': '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7Z"/></svg>',
 }
 BE_ICON = {
