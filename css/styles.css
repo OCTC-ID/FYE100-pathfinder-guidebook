@@ -1545,3 +1545,25 @@ footer .eeo { margin: 12px 0 0; font-size: .8rem; line-height: 1.55; max-width: 
 /* Module overview banners: the left column is open from 901px up, so the full tree fits there */
 @media (min-width: 901px) { .banner .hero-tree { display: block; } .banner .hero-branch { display: none; } }
 @media (max-width: 900px) { .banner .hero-tree { display: none; } .banner .hero-branch { display: block; height: 115px; } }
+
+/* Workspace pages (Instructor Guide, Results in Action): a legal-pad sheet marks behind-the-scenes material */
+@media screen {
+  main.workspace {
+    --pad-sheet: #fffae3; --pad-rule: rgba(0,70,127,0.10); --pad-margin: rgba(214,92,112,0.55);
+    background-color: var(--pad-sheet);
+    background-image:
+      linear-gradient(90deg, transparent 34px, var(--pad-margin) 34px, var(--pad-margin) 35px, transparent 35px, transparent 38px, var(--pad-margin) 38px, var(--pad-margin) 39px, transparent 39px),
+      repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.75rem - 1px), var(--pad-rule) calc(1.75rem - 1px), var(--pad-rule) 1.75rem);
+    border-top: 14px solid var(--navy); padding-left: max(52px, 4vw); box-shadow: inset 0 1px 0 #ecdca0;
+  }
+  main.workspace .map-table, main.workspace .results, main.workspace .note { background-color: #fff; }
+}
+.term-stamp { display: inline-block; vertical-align: middle; margin-left: 10px; font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #7a5500; border: 2px solid #7a5500; border-radius: 4px; padding: 2px 8px; transform: rotate(-2deg); }
+details.results > summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 10px; }
+details.results > summary::-webkit-details-marker { display: none; }
+details.results > summary::before { content: "+"; flex: none; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--blue); color: var(--blue); font-weight: 800; }
+details.results[open] > summary::before { content: "−"; }
+details.results > summary h3 { margin: 0; font-size: 1.08rem; color: var(--navy); }
+details.results .results-body { margin-top: 12px; }
+details.results > summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
+@media print { details.results .results-body { display: block; } }
