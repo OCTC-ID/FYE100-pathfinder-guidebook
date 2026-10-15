@@ -298,7 +298,7 @@ CHAPTERS = [
  dict(n=8, title='Explore Your Career Options',
   desc="Research one career in depth, then honestly evaluate whether it fits your strengths, values, work style, and life.",
   tagline="Not the career you're supposed to want. The one that actually fits who you are.",
-  why=["A good career fit isn't just about choosing something that \"sounds cool\" or \"pays well.\" It's about finding work that lines up with who you are, what you value, what you're good at, and how you actually want to live.",
+  why=["A good career fit takes more than choosing something that \"sounds cool\" or \"pays well.\" It means finding work that lines up with who you are, what you value, what you're good at, and how you actually want to live.",
        "In this module you'll use real research tools to explore one career in depth, and honestly assess whether it fits. You'll also set up your Handshake profile and get ready to register for next semester."],
   objectives=[("research one career using Career Coach and O*NET, including regional salary, job outlook, education requirements, and typical work environment.", 'Mile Marker #8'),
               ("evaluate a career for personal fit by connecting my research findings to my strengths, values, work style, and pressure tolerance.", 'Mile Marker #8'),
