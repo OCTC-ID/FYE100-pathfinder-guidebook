@@ -120,7 +120,7 @@ CHAPTERS = [
  dict(n=2, title='Building Your Support System',
   desc='Map the people and resources around you, meet your Success Coach, and practice asking for help.',
   tagline='No one completes a journey alone. Every great Pathfinder relies on maps, tools, and traveling companions.',
-  why=["College success isn't just about willpower. It's about knowing when and where to reach out. The students who struggle most aren't always the ones who don't know things. They're the ones who wait too long to ask.",
+  why=["College success takes more than willpower. It also takes knowing when and where to reach out. The students who struggle most are often the ones who wait too long to ask, not the ones who know the least.",
        "This module helps you build your support map: the people and resources you can actually use when things get hard. That network is one of the smartest investments you can make right now."],
   objectives=[("identify people and OCTC resources that can support my success and explain how each one helps.", 'Mile Marker #2'),
               ("describe how I will use my support system intentionally this semester.", 'Mile Marker #2'),
