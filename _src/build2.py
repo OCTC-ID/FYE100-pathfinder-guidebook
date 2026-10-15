@@ -848,7 +848,7 @@ GUIDES = [
  dict(n='M', slug='merit', label='Merit Guide', navlabel='Guide', unit='guide', overview='Guide overview', kicker='Part',
   title='Merit Guide', icon='images/shared/merit-badge.png',
   desc="Everything you need for your three Merit activities: setting up your page, finding an activity, what proof to include, and writing your reflection.",
-  tagline="Learning that happens outside class counts. Here's how to find it, and how to make it count for you.",
+  tagline="Learning that happens outside class counts. This guide shows how to find it, and how to make it count for you.",
   intro=["Merit activities run through the whole course, from setting up your Merit page early on to your third activity near the end. This guide keeps everything about them in one place, so you can come back to it whenever you need it.",
          "Whether you take classes on campus or online, you'll find a path that works for you."],
   lessons=[
