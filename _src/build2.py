@@ -3,7 +3,7 @@ from chapter config + lesson body fragments in bodies/chNN/."""
 import re, pathlib
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.resolve().parent   # the site root (this folder's parent)
-V = 57
+V = 58
 BOOK = 'Pathfinder Guidebook'
 
 def svg(path, sw='2', extra='', cls='ic'):
@@ -59,7 +59,7 @@ ESSENTIAL = {1:'Communication',2:'Critical &amp; Creative Thinking',3:'Quantitat
              5:'Adaptability &amp; Leadership',6:'Professionalism',7:'Civic Engagement',8:'Collaboration &amp; Teamwork',
              9:'Knowledge Application',10:'Information Literacy'}
 FOCUS = {6, 9}
-SPECIAL = {'Trail Tip', 'Trail Tool', 'Mile Marker', 'Wrap Up'}
+SPECIAL = {'Trail Tip', 'Trail Tool', 'Mile Marker', 'Wrap Up', 'Workspace'}
 
 # HARD RULE: every link that leaves the book opens in a new tab, with a screen-reader cue.
 EXT = re.compile(r'<a\s+([^>]*?)href="(https?://[^"]+)"([^>]*)>(.*?)</a>', re.S)
@@ -922,6 +922,8 @@ GUIDES = [
      [('be','The five behaviors'),('matrix','Behaviors by module'),('ican','I Can statements'),('boxes','AI Literacy boxes'),('chats','AI Chats'),('labels','AI use labels')]),
    ('appreciative-advising.html','5','Appreciative Advising in FYE 100',"The six phases, where each one lives in the course, and your part in it.",10,
      [('mindset','The appreciative mindset'),('phases','The six phases'),('journey','A six-phase journey'),('glance','Module by module'),('meetups','Virtual meet-ups'),('inventory','The Inventory'),('more','Learn more')]),
+   ('results-in-action.html','Workspace','Results in Action',"What each Inventory showed, and what changed in the course because of it.",6,
+     [('fa26','Fall 2026 Inventory')]),
   ]),
 ]
 
@@ -1110,7 +1112,7 @@ def build_guide(g):
             body = tokens(raw.replace('[[ondemand]]', ondemand_html())) if bp.exists() else STUB
         label = num if num in SPECIAL else t
         page = head(f'{t} | {g["title"]} | {BOOK}', 2) + bookbar(2, where) + \
-          '\n<div class="shell">\n' + sidebar(g, f) + '\n  <main id="main" class="reading">\n' + crumbs(g, label) + \
+          '\n<div class="shell">\n' + sidebar(g, f) + '\n  <main id="main" class="reading' + (' workspace' if num=='Workspace' else '') + '">\n' + crumbs(g, label) + \
           lesson_header(g, i) + '\n' + body + pagenav(g, f) + '  </main>\n</div>\n' + FOOT
         write(d/f, page)
     intro = '\n'.join(f'          <p>{p}</p>' for p in g['intro'])
