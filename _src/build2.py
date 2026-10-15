@@ -353,7 +353,7 @@ CHAPTERS = [
  dict(n=10, title='Team Up — Collaboration &amp; People Skills', merit=3,
   desc="Explore how you work with others, name your collaboration strengths and challenges, and figure out what you need from a team.",
   tagline="How you work with others, and how to make it easier on everyone, including you.",
-  why=["Let's be honest: group work has a reputation, and not always a great one. This module isn't about pretending it's easy. It's about figuring out how <em>you</em> work best, so you can say so, instead of just hoping things go okay.",
+  why=["Let's be honest: group work has a reputation, and not always a great one. This module won't pretend it's easy. It will help you figure out how <em>you</em> work best, so you can say so instead of hoping things go okay.",
        "You'll take the 16Personalities assessment, look at your collaboration strengths and struggles, and pick up strategies that fit how you operate. All of it feeds straight into Mile Marker #10."],
   objectives=[("identify my natural collaboration tendencies using my 16Personalities results and explain how they show up in group work.", 'Mile Marker #10'),
               ("name two collaboration strengths and one or two challenges and explain why those challenges happen.", 'Mile Marker #10'),
