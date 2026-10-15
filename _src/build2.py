@@ -273,7 +273,7 @@ CHAPTERS = [
  dict(n=7, title='Knowing Your Strengths &amp; Values',
   desc="Discover your top strengths and personal values, and connect them to your academic habits and career direction.",
   tagline="Not what you're doing. Who you are, and what you bring to everything you do.",
-  why=["You've spent the last several modules building awareness of your time, your money, and your academic direction. This module turns the focus inward: not what you're doing, but who you are.",
+  why=["You've spent the last several modules building awareness of your time, your money, and your academic direction. This module turns the focus inward, from what you're doing to who you are.",
        "Your strengths and values shape how you learn, how you work with others, what drains you, and what energizes you. Understanding them is one of the most useful things you can do for the rest of this semester, and beyond."],
   objectives=[("identify my Top 5 HIGH5 strengths and explain what they mean for how I learn and work.", 'Mile Marker #7'),
               ("identify my Top 5 personal values and describe how they shape my decisions and priorities.", 'the Values Journal (online) or class discussion (in person)'),
