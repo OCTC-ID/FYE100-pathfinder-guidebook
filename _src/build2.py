@@ -283,6 +283,8 @@ CHAPTERS = [
   lessons=[
    ('my-values-snapshot.html','Trail Tool','My Values Snapshot',"Your Top 5 values, why they matter, and where they show up.",10,
      [('form','Fill in your snapshot')]),
+   ('my-high5-results.html','Trail Tool','My HIGH5 Results',"Your baseline before HIGH5, your Top 5 after, and what lined up.",10,
+     [('form','Fill in your results')]),
    ('7-1.html','7.1','Skill Spotlight: Adaptability &amp; Leadership',"Not a title. How you show up, especially when things change.",5,
      [('what','What this skill is'),('headed',"Where you're headed"),('looks-like','What it looks like'),('module','Where it shows up'),('life','In your own life'),('later','How it shows up later')]),
    ('7-2.html','7.2','Why Your Personal Values Matter',"Interests tell you what you enjoy. Values tell you who you are.",8,
@@ -294,7 +296,7 @@ CHAPTERS = [
    ('wrap-up.html','Wrap Up','Module 7 Wrap Up',"Pull it together before you head back to your course.",2,
      [('takeaways','Key takeaways')]),
   ],
-  builds={'my-values-snapshot.html':'B','7-1.html':'C','7-2.html':'B, C','7-3.html':'A, C, D','mile-marker.html':'A, C, D'}),
+  builds={'my-values-snapshot.html':'B','my-high5-results.html':'A','7-1.html':'C','7-2.html':'B, C','7-3.html':'A, C, D','mile-marker.html':'A, C, D'}),
  dict(n=8, title='Explore Your Career Options',
   desc="Research one career in depth, then honestly evaluate whether it fits your strengths, values, work style, and life.",
   tagline="Not the career you're supposed to want. The one that actually fits who you are.",
