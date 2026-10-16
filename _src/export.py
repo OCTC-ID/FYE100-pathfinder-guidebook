@@ -8,7 +8,7 @@ HERE = pathlib.Path(__file__).parent
 spec = importlib.util.spec_from_file_location('b', HERE / 'build2.py'); B = importlib.util.module_from_spec(spec); spec.loader.exec_module(B)
 ROOT = B.ROOT
 OUT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else HERE / 'export'); OUT.mkdir(parents=True, exist_ok=True)
-SITE = 'https://octc-id.github.io/FYE100-pathfinder-guidebook/'
+SITE = 'https://octc-instructional-design.github.io/FYE100-pathfinder-guidebook/'
 TITLE = 'Pathfinder Guidebook: FYE 100 Strategies for College Success'
 MODS = [c for c in B.CHAPTERS]
 

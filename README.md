@@ -4,12 +4,12 @@
 
 The digital textbook for **FYE 100: Strategies for College Success** at Owensboro Community & Technical College.
 
-**Live site:** https://octc-id.github.io/FYE100-pathfinder-guidebook/
+**Live site:** https://octc-instructional-design.github.io/FYE100-pathfinder-guidebook/
 
 Blackboard holds the assignments, due dates, and grades. This guidebook holds the reading. Each Blackboard module links to its chapter opener, for example:
 
 ```
-https://octc-id.github.io/FYE100-pathfinder-guidebook/chapters/ch04/
+https://octc-instructional-design.github.io/FYE100-pathfinder-guidebook/chapters/ch04/
 ```
 
 > The repository name in the link is **case-sensitive**. `FYE100-pathfinder-guidebook` works; `fye100-pathfinder-guidebook` does not.
