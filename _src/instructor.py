@@ -473,7 +473,7 @@ def ai_map(C):
     out.append(f'''    <section id="labels" aria-labelledby="lb-h">
       <div class="row"><div class="main">
         <div class="h2wrap"><h2 id="lb-h">AI use labels on assignments</h2></div>
-        <p>Students learn three levels of AI use in <a href="../ch01/1-4.html">Lesson 1.4</a>: <strong>No AI</strong>, <strong>AI-supported</strong>, and <strong>AI-integrated</strong>. Levels are set assignment by assignment, and every Mile Marker in the book carries its label.</p>
+        <p>Students learn three AI use labels in <a href="../ch01/1-4.html">Lesson 1.4</a>: <strong>No AI</strong>, <strong>AI-supported</strong>, and <strong>AI-integrated</strong>. Labels are set assignment by assignment, and every Mile Marker in the book carries one.</p>
         <ul class="dots">{"".join(labs)}</ul>
         <p>Students also have the <a href="https://octc-id.github.io/student-ai-use-guide/index.html">Using AI in Your Coursework</a> guide, linked from Lesson 1.4.</p>
       </div></div>
